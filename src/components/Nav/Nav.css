@@ -1,0 +1,71 @@
+body {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+  margin: 0;
+  background-color: #f0f0f0; /* 화면 배경색 */
+}
+
+#root {
+  width: 393px;
+  height: 852px;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*그림자 효과 */
+}
+
+.nav-container {
+  width: 100%;
+  height: 80px;
+  background-color: #ffffff;
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.nav-contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  gap: 30px;
+  color: #E3E3E3;
+}
+
+.nav-home, .nav-mission, .nav-project, .nav-mypage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.nav-mission {
+  margin-left: 10px;
+}
+
+.nav-home-img img {
+  width: 32px;
+  height: 34px;
+}
+
+.nav-mission-img img {
+  width: 32.5px;
+  height: 33px;
+}
+
+.nav-project-img img {
+  width: 32.25px;
+  height: 32.25px;
+}
+
+.nav-mypage-img img {
+  width: 33px;
+  height: 33px;
+}
