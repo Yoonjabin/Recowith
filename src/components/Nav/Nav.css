@@ -20,11 +20,26 @@ body {
   width: 100%;
   height: 80px;
   background-color: #ffffff;
-  position: absolute; 
+  position: absolute;
   bottom: 0;
   left: 0;
   z-index: 100;
+  border-top-left-radius: 20px; 
+  border-top-right-radius: 20px; 
+  overflow: hidden; 
+  box-shadow: 0 -1.3px 1px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
 }
+
+.nav-container::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #E3E3E3; 
+}
+
 
 .nav-contents {
   display: flex;
