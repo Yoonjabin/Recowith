@@ -1,0 +1,201 @@
+@font-face {
+  font-family: 'Pretendard-Black';
+  src: url('../font/Pretendard-Black.woff') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-SemiBold';
+  src: url('../font/Pretendard-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter-SemiBold';
+  src: url('../font/Inter_28pt-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url('../font/Inter_18pt-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url('../font/Inter_24pt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative; /* 애니메이션의 상대적 위치 기준 */
+}
+
+.main-title-container {
+  width: 393px;
+  height: 283px;
+  display: flex;
+  top: 0;
+  flex-direction: row;
+  justify-content: center;
+  gap: 17px;
+  align-items: center;
+  background: #F9957F;
+}
+
+.main-title-contents {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  gap: 25px;
+}
+
+.main-title-contents-nickname span {
+  font-family: 'Pretendard-Black';
+  font-size: 32.26px;
+  font-weight: 900;
+}
+
+.main-title-contents-nickname {
+  font-family: 'Inter-SemiBold';
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 38px;
+}
+
+.main-title-contents-sub {
+  font-family: 'Pretendard-SemiBold';
+  font-size: 15.53px;
+  font-weight: 600;
+  line-height: 18.54px;
+  color: #FDC9C9;
+}
+
+.main-title-myImg img {
+  width: 158px;
+  height: 153px;
+}
+
+.main-chat-container {
+  margin-top: -30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 280px;
+  height: 190px;
+  border-radius: 30px;
+  border: 1px solid #E3E3E3;
+  box-shadow: 0 0.7px 0.7px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  background-color: #FFFFFF;
+  z-index: 300;
+  transition: transform 0.7s ease-in-out; /* 슬라이드 애니메이션 */
+}
+
+.main-chat-container.hidden {
+  transform: translateX(-120%); /* 왼쪽으로 슬라이드하여 사라짐 */
+}
+
+.chatbot-container {
+  width: 280px;
+  position: absolute;
+  right: 0; /* 처음에는 화면 밖으로 시작 */
+  transform: translateX(100%); /* 화면 오른쪽에서 시작 */
+  visibility: hidden; /* 처음에는 보이지 않음 */
+  opacity: 0; /* 처음에는 투명 */
+  transition: transform 0.7s ease-in-out, visibility 0s 0.7s, opacity 0.7s ease-in-out; /* 슬라이드 애니메이션과 함께 투명도 변화 */
+}
+
+.chatbot-container.visible {
+  visibility: visible; /* 보이도록 변경 */
+  opacity: 1; /* 부드럽게 나타남 */
+  transform: translateX(0); /* 슬라이드되며 나타남 */
+}
+
+.main-chat-title {
+  margin-top: 10px;
+  font-family: 'Inter-Regular';
+  font-size: 15.74px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #000000;
+}
+
+.main-chat-title span {
+  font-family: 'Inter-Bold';
+  font-size: 15.74px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.main-chat-hashtag-contents {
+  width: 54.57px;
+  height: 24.13px;
+  border-radius: 31.48px;
+  border: 1.05px solid #ED7C90;
+  background-color: #F9DED3;
+  color: #ED7C90;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.main-chat-hashtag {
+  display: flex;
+  flex-wrap: wrap; /* 줄바꿈 허용 */
+  justify-content: space-between;
+  gap: 3px;
+  margin-top: 35px;
+}
+
+.main-chat-hashtag-contents {
+  flex: 1 1 calc(25% - 10px);
+  text-align: center;
+}
+
+.main-chat-chatting {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 300px;
+}
+
+.main-chat-chatting input {
+  width: 278px;
+  height: 34px;
+  border-radius: 20px;
+  background: #F3F3F3;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+}
+
+.main-chat-chatting input::placeholder {
+  font-family: Inter;
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #AAAAAA;
+}
+
+.main-chat-chatting-submit img {
+  width: 21.5px;
+  height: 21.5px;
+}
+
+.main-chat-chatting-submit {
+  transform: translateX(-35px);
+  margin-top: 3px;
+  cursor: pointer;
+}

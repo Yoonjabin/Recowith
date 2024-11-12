@@ -1,0 +1,150 @@
+/* Modal 스타일 */
+.gptmodal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  outline: none;
+}
+
+.gptoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.gptModal-container {
+  margin-top: 285px;
+  width: 330px;
+  height: 246px;
+  /* transform: translateY(266px); */
+  border-radius: 15px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 1px solid #E3E3E3;
+  box-shadow: 0 0.7px 0.7px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  flex-direction: column;
+}
+/* 
+.gptModal-title-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+} */
+
+.X-img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+/* 채팅 메시지 영역 스타일 */
+.gptModal-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.gptModal-chat::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gptModal-chat::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.gptModal-chat::-webkit-scrollbar-thumb {
+  background-color: #F9957F;
+  border-radius: 50px;
+  /* 스크롤바 모서리 둥글게 */
+  border: 10px solid #F9957F;
+}
+
+/* 메시지 대기 표시 */
+.gptModal-messageWait {
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+  /* margin: 10px 0; */
+}
+
+/* 메시지 스타일 */
+.gptModal-message {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.gptModal-message.user {
+  align-self: flex-end;
+  display: flex;
+  max-width: 80%;
+  color: #030027;
+  margin-left: 45px;
+}
+
+.gptModal-message.user .message-content {
+  background-color: #F3F3F3;
+  border: 1px solid #D9D9D9;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-family: 'Pretendard-Regular';
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+}
+
+/* 사용자 이미지 (오른쪽 정렬) */
+.user-img {
+  margin-left: 8px;
+}
+
+.user-img img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.gptModal-message.bot {
+  align-self: flex-start;
+  display: flex;
+  max-width: 85%;
+  color: #030027;
+}
+
+.gptModal-message.bot .message-content {
+  background-color: #F3F3F3;
+  border: 1px solid #FDC9C9;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-family: 'Pretendard-Regular';
+  font-size: 16px;
+  line-height: 22px;
+  text-align: left;
+}
+
+/* 챗봇 이미지 */
+.chatbot-img2 {
+
+  margin-right: 8px;
+}
+
+.chatbot-img2 img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* 메시지 텍스트 */
+.gptModal-message.user p,
+.gptModal-message.bot .message-content p {
+  margin: 0;
+}
