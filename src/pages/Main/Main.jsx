@@ -3,6 +3,10 @@ import "./Main.css";
 import profile from "./images/userImg.png";
 import ChatBot from "./ChatBot/ChatBot.jsx";
 import submit from "./images/submit.png";
+import proj1 from "./images/project1.png";
+import proj2 from "./images/project2.png";
+import proj3 from "./images/project3.png";
+
 
 export default function Main() {
     const user = { nickname: "간지 도치" };
@@ -16,6 +20,7 @@ export default function Main() {
         { content: "#취미" },
         { content: "#나들이" },
     ];
+
 
     const [userInput, setUserInput] = useState("");
     const [isChatVisible, setIsChatVisible] = useState(false); // 슬라이드 상태
@@ -32,6 +37,18 @@ export default function Main() {
             setTimeout(() => {
                 setIsChatBotVisible(true);
             }, 400); // 500ms 후에 챗봇이 보이도록 설정
+        }
+    };
+
+    const [slideDirection, setSlideDirection] = useState(0); // 슬라이드 방향 초기화 (0: 정지, 1: 오른쪽, -1: 왼쪽)
+
+    const handleMouseMove = (e) => {
+        // 화면의 중간을 기준으로 왼쪽 또는 오른쪽으로 마우스가 움직이는지 판단
+        const middleX = window.innerWidth / 2;
+        if (e.clientX > middleX) {
+            setSlideDirection(1); // 오른쪽으로 슬라이드
+        } else {
+            setSlideDirection(-1); // 왼쪽으로 슬라이드
         }
     };
 
@@ -77,10 +94,33 @@ export default function Main() {
                     </div>
                 </div>
             </div>
-
             {/* ChatBot component */}
             <div className={`chatbot-container ${isChatBotVisible ? "visible" : ""}`}>
                 {isChatBotVisible && <ChatBot initialMessage={userInput} />}
+            </div>
+
+            <div className='main-project-container' onMouseMove={handleMouseMove}>
+                <div className='main-project-title'>이 달의 <span>도전 프로젝트</span></div>
+                <div className={`main-project-contents slide-${slideDirection}`}>
+                    <div className='main-project-1'>
+                        <span>가족과 함께<br />떠나는 단풍놀이</span>
+                        <div className='main-project-1-img'>
+                            <img src={proj1} alt="" />
+                        </div>
+                    </div>
+                    <div className='main-project-2'>
+                        <span>우리 가족이<br />살아갈 환경 지키기</span>
+                        <div className='main-project-2-img'>
+                            <img src={proj2} alt="" />
+                        </div>                    
+                    </div>
+                    <div className='main-project-3'>
+                        <span>함께 배우는<br />역사 탐방</span>
+                        <div className='main-project-3-img'>
+                            <img src={proj3} alt="" />
+                        </div>                    
+                    </div>
+                </div>
             </div>
         </div>
     );

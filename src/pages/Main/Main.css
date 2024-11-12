@@ -10,7 +10,7 @@
   font-weight: 600;
   font-style: normal;
 }
-@font-face {
+/* @font-face {
   font-family: 'Inter-SemiBold';
   src: url('../font/Inter_28pt-SemiBold.ttf') format('truetype');
   font-weight: 600;
@@ -27,7 +27,7 @@
   src: url('../font/Inter_24pt-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-}
+} */
 
 .main-container {
   display: flex;
@@ -83,7 +83,7 @@
 }
 
 .main-chat-container {
-  margin-top: -30px;
+  margin-top: -45px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,4 +198,93 @@
   transform: translateX(-35px);
   margin-top: 3px;
   cursor: pointer;
+}
+
+.main-project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.main-project-title {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  margin-left: 140px;
+}
+.main-project-title span {
+  font-weight: 700;
+}
+
+.main-project-contents {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  transition: transform 0.7s ease; /* 슬라이드 애니메이션 속도 */
+}
+
+.slide-1 {
+  transform: translateX(-120px); /* 마우스가 오른쪽으로 이동할 때 왼쪽에서 오른쪽으로 슬라이드 */
+}
+
+.slide--1 {
+  transform: translateX(120px); /* 마우스가 왼쪽으로 이동할 때 오른쪽에서 왼쪽으로 슬라이드 */
+}
+
+.main-project-1, .main-project-2, .main-project-3 {
+  width: 180.13px;
+  height: 200px;
+  padding: 0px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 32.41px;
+  color: #ffffff;
+  background-color: #F9DED3;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 21.61px;
+}
+
+.main-project-1-img img {
+  width: 115.59px;
+  height: 98.3px;
+  margin: 5px;
+  margin-right: 50px;
+}
+.main-project-1 span {
+  padding-top: 20px;
+}
+
+.main-project-2 {
+  background-color: #C8E2FB;
+  font-size: 20.5px;
+}
+.main-project-2 span {
+  padding-top: 23px;
+}
+
+.main-project-2-img img {
+  width: 120px;
+  height: 120px;
+  margin-right: 50px;
+}
+
+.main-project-3 {
+  background-color: #FCEEC7;
+}
+.main-project-3 span {
+  padding-top: 20px;
+  margin-right: 40px;
+}
+
+.main-project-3-img img {
+  width: 139.35px;
+  height: 133.95px;
+  margin: -10px;
+  padding-left: 40px;
 }

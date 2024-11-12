@@ -9,6 +9,7 @@ Modal.setAppElement("#root");
 export default function ChatBot({ initialMessage }) {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
+    // const [isModalOpen, setIsModalOpen] = useState(true); 
     const apiKey = process.env.REACT_APP_API_KEY;
     const apiEndpoint = "https://api.openai.com/v1/chat/completions";
 
@@ -29,7 +30,7 @@ export default function ChatBot({ initialMessage }) {
         // addMessage("user", message); 
         setLoading(true);
 
-        const summaryRequest = `Please summarize your answer in 3 sentences: ${message}`;
+        const summaryRequest = `Please summarize your answer in 2 sentences: ${message}`;
 
         try {
             const response = await fetch(apiEndpoint, {
@@ -69,13 +70,9 @@ export default function ChatBot({ initialMessage }) {
         <div className='chatBot'>
             <Modal isOpen={true} contentLabel="챗지피티" className="gptmodal" overlayClassName="gptoverlay">
                 <div className="gptModal-container">
-                    {/* <div className="gptModal-title-container"> */}
-                        <div className="X-img" onClick={() => Modal.setAppElement(false)}>
-                            {/* <img src={Ximg} alt="close-img" /> */}
-                        {/* </div> */}
-                    </div>
+                    {/* <div className="chat-modal-close"  onClick={() => setIsModalOpen(false)}>x</div> */}
                     <div className="gptModal-chat">
-                        {loading && <span className="gptModal-messageWait">답변을 기다리고 있습니다...</span>}
+                        {loading && <span className="gptModal-messageWait">답변을 기다리고 있습니다..</span>}
                         {messages.map((msg, index) => (
                             <div key={index} className={`gptModal-message ${msg.sender}`}>
                                 {msg.sender === "user" && (
