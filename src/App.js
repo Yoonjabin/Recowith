@@ -6,7 +6,8 @@ import MissionMain from "./pages/Mission/Mission_main.jsx"
 import MissionDetail from "./pages/Mission/Mission_detail.jsx"
 import MissionWrite from "./pages/Mission/Mission_write.jsx"
 import MissionFinish from "./pages/Mission/Mission_finish.jsx"
-
+import ProjectWrite from "./pages/Project/Project_write.jsx"
+import ProjectFinish from "./pages/Project/Project_finish.jsx"
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path='/MissionDetail' element={<><Nav /><MissionDetail /></>}/>
         <Route path='/MissionWrite' element={<><Nav /><MissionWrite /></>}/>
         <Route path='/MissionFinish' element={<MissionFinish/>}/>
+        <Route path='/ProjectWrite' element={<><Nav /><ProjectWrite /></>}/>
+        <Route path='/ProjectFinish' element={<ProjectFinish/>}/>
       </Routes>
     </BrowserRouter>
   );

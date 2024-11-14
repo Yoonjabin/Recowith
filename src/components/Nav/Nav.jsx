@@ -23,7 +23,7 @@ export default function Nav() {
                     </div>
                     <div className='nav-mission-kor'>도전과제</div>
                 </div>
-                <div className='nav-project' onClick={() => navigate('/project')}>
+                <div className='nav-project' onClick={() => navigate('/ProjectWrite')}>
                     <div className='nav-project-img'>
                         <img src={project} alt="가족프로젝트" />
                     </div>
