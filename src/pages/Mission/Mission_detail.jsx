@@ -41,7 +41,7 @@ export default function Mission_detail(){
           </div>
         </div>
         <div className="mission-d-join">
-          <button>도전하기</button>
+          <button  onClick={() => navigate('/MissionWrite')}>도전하기</button>
         </div>
       </div>
 

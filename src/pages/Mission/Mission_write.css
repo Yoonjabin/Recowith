@@ -1,0 +1,228 @@
+@font-face {
+  font-family: 'Pretendard-SemiBold';
+  src: url('../font/Pretendard-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('../font/Pretendard-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('../font/Pretendard-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Medium';
+  src: url('../font/Pretendard-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.mission-write-date {
+  position: relative; 
+}
+
+.mission-write-calendar-modal {
+  position: absolute; 
+  top: 30px;
+  left: 0;
+  z-index: 10; 
+  /* background-color: white;  */
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 15px;  */
+}
+.mission-write-calendar-content .react-calendar {
+  background-color: #FFFFFF;
+  width: 100%; 
+  padding: 5px;
+  border-radius: 15px; 
+  /* border: none; */
+  outline: none;
+  margin: 0; 
+  box-shadow: none; 
+  transform: scale(0.8); /* 달력 전체 크기를 80%로 줄임 */
+  transform-origin: top right; 
+  border: 1px solid #F9957F;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__month-view__weekdays{
+  padding-left: 15px;
+  gap: 2px;
+}
+
+.react-calendar__month-view__days__day {
+  padding: 5px;
+  margin-top: 10px;
+}
+/* 날짜 셀 기본 스타일 */
+.react-calendar__tile {
+  font-family: 'Pretendard-Regular';
+  font-size: 16px;
+  color: #000000; 
+  background-color: #FFFFFF;
+  border: none;
+  outline: none;
+}
+/* 선택된 날짜 셀 스타일 */
+.react-calendar__tile--active {
+  background-color: #F9957F; 
+  color: #ffffff;
+}
+/* 오늘 날짜 스타일 */
+.react-calendar__tile--now {
+  /* background-color: #F9957F; */
+  color: #000000;
+}
+
+/* 날짜 셀 hover 스타일 */
+.react-calendar__tile:hover {
+  cursor: pointer;
+}
+/* 달력 헤더 */
+.react-calendar__navigation {
+  border-radius: 15px;
+  margin-left: 60px;
+  padding: 10px;
+}
+
+/* 이전/다음 버튼 스타일 */
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #F9957F; /* 버튼 색상 */
+}
+
+/* 월, 년도 텍스트 스타일 */
+.react-calendar__navigation__label {
+  font-family: 'Pretendard-SemiBold';
+  font-size: 16px;
+  color: #F9957F;
+}
+
+
+
+
+.mission-d-top{
+  background-color: #F9DED3;
+}
+
+.mission-write-main-container{
+  background-color: #F9DED3;
+  width: 393px;
+  height: 720px;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* gap: 5px; */
+}
+.mission-write-date{
+  margin-top: 15px;
+}
+
+.mission-write-date-input{
+  width: 162px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid #F9957F;
+  opacity: 0px;
+  font-family: 'Pretendard-SemiBold';
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-left: 160px;
+}
+
+.calendar-icon{
+  width: 9px;
+  height: 9.05px;
+}
+
+.mission-write-title{
+  width: 359px;
+  height: 56px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  border: 1px solid #F9957F;
+  font-family: 'Pretendard-Bold';
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 53px;  
+  text-align: center;
+  margin-top: 10px;
+}
+
+.mission-write-input-img {
+  width: 359px;
+  height: 191px;
+  border-radius: 20px;  
+  background-color: #FFFFFF;
+  margin-top: 10px;
+}
+
+.mission-write-camera-img img{
+  width: 45px;
+  height: 41.25px; 
+  display: flex;
+  justify-content: center;
+}
+.mission-write-camera-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 65px;
+}
+
+.mission-write-contents-container textarea{
+  width: 319px;
+  height: 240px;
+  border-radius: 20px;  
+  resize: none;
+  border: none;
+  outline: none;
+  font-family: 'Pretendard-Regular';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  padding: 20px;
+}
+
+.mission-write-contents-container ::placeholder{
+  font-family: 'Pretendard-Medium';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  /* padding: 15px; */
+  color: #AAAAAA;
+}
+
+.mission-write-contents-container{
+  position: relative;
+  margin-top: 18px;
+}
+.mission-write-char-count{
+  font-size: 15px;
+  color: #000000;
+  font-weight: 400;
+  display: flex;
+  position: absolute;
+  bottom: 25px; 
+  right: 25px;
+}
+
+.mission-d-join{
+  margin-top: -10px;
+}

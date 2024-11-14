@@ -20,9 +20,9 @@ export default function Mission_main(){
       </div>
 
       <div className="mission-main-contents">
-        <div className="mission-main-1">
+        <div className="mission-main-1" onClick={() => navigate('/MissionDetail')}>
           <div className="mission-main-1-text">
-            <div className="mission-main-1-sub">
+            <div className="mission-main-1-sub"  >
               지역 축제 방문하기! <br />
               <span>가을 축제 방문하기</span>
             </div>
