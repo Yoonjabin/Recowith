@@ -1,0 +1,71 @@
+.mission-d-top{
+  background-color:#ffffff;
+}
+
+.user-edit-contents{
+  display: flex;
+  flex-direction: column;
+}
+
+.user-edit-line{
+  border: 1px solid #E3E3E3
+}
+
+.user-edit-highlight{
+  color: #F9957F;
+}
+.user-edit-contents{
+  font-family: 'Pretendard-Bold';
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17.9px;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.user-edit-id input::placeholder, .user-edit-password input::placeholder,.user-edit-email input::placeholder,.user-edit-nickname input::placeholder{
+  font-family: 'Pretendard-Medium';
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.32px;
+  color: #AAAAAA;
+}
+
+.user-edit-id input,.user-edit-email input,.user-edit-nickname input,.user-edit-password input{
+  width: 317px;
+  height: 39px;
+  border-radius: 50px;
+  border: 1px solid #E3E3E3;  
+  outline: none;
+  padding-left: 15px;  
+}
+
+.user-edit-email,.user-edit-id,.user-edit-nickname,.user-edit-password{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-edit-button button{
+  width: 340px;
+  height: 60px;
+  border-radius: 50px;  
+  background: linear-gradient(90deg, #F2F5D0 0%, #F9957F 100%);
+  color: #ffffff;
+  outline: none;
+  border: none;
+  font-family: 'Pretendard-SemiBold';
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.48px;
+}
+
+.user-edit-button{
+  display: flex;
+  justify-content: center;
+  margin-top: 170px;
+}

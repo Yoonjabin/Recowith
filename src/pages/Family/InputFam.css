@@ -1,0 +1,73 @@
+.inputFamContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 위쪽 정렬 */
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    min-height: 100vh;  /* 화면 전체 높이를 차지하지만, 너무 작지 않도록 */
+    text-align: center;
+    gap: 20px;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 190px;  /* 이미지 상단에 여백 추가 */
+    margin-bottom: 20px;
+}
+
+.Hedgehog {
+    width: 200px;
+    height: auto;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 40px;
+    margin-top: 10px;  /* 가족구성원 위치를 위로 올리기 */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    background-color: #f9f9f9;
+    border-color: #F9957F;
+}
+
+.formText {
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+
+/* 링크 위치 조정 */
+.registerLink {
+    display: block;
+    font-size: 16px;
+    color: #f9957f;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    margin-top: -20px;  /* 위쪽으로 약간 올리기 */
+}
+
+.registerLink:hover {
+    text-decoration: underline;
+}
+
+/* 버튼 위치 조정 */
+.skipButton {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #F2F5D0, #F9957F);
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 120px; /* 버튼을 더 아래로 내리기 */
+}

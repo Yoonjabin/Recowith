@@ -1,0 +1,33 @@
+/* SignIn.css */
+.signContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* 수직 중앙 정렬 */
+    align-items: center;      /* 수평 중앙 정렬 */
+    height: 60%;
+    width: 100%;              /* 부모 요소의 너비를 100%로 설정 */
+    text-align: center;
+    margin: 0;                /* 불필요한 margin 제거 */
+    cursor: pointer;
+}
+
+.imageContainer {
+    margin-bottom: 20px;      /* 이미지와 텍스트 사이에 여백 추가 */
+}
+
+.Hedgehog {
+    width: 150px;  /* 이미지 크기 조절 */
+    height: auto;
+}
+
+.textContainer h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #F9957F;
+}
+
+.textContainer p {
+    font-size: 25px;
+    color: black;
+}
