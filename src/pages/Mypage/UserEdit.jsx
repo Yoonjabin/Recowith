@@ -99,21 +99,29 @@ export default function UserEdit() {
   const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
   const [email] = useState(localStorage.getItem("email"));
+  const [username] = useState(localStorage.getItem("username"));
   const [userId] = useState(localStorage.getItem("userId"));
 
+  const token = localStorage.getItem("accessToken");
   const handleSubmit = async () => {
     try {
-      const response = await axios.put("/api/auth/updateUser", {
-        userid: userId,
+      const response = await axios.put("http://44.193.101.200:80/api/auth/updateUser", {
+        userId: String(userId),
         password: password,
         email: email,
         nickname: nickname
+      },{
+        headers: {
+          Authorization: `Bearer ${token}` 
+        }
       });
 
-      if (response.data.isSuccess) {
+      if (response.status===200) {
+        console.log(response)
         alert("회원정보 수정 완료!");
-        navigate("/MypageMain");
+        // navigate("/MypageMain");
       } else {
+        console.log(response)
         alert("회원정보 수정에 실패했습니다.");
       }
     } catch (error) {
@@ -141,7 +149,7 @@ export default function UserEdit() {
           </div>
           <input
             type="text"
-            value={userId}
+            value={username}
             readOnly
           />
         </div>

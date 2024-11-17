@@ -49,7 +49,6 @@
 //   )
 // }
 
-
 import "./Mission_detail.css";
 import { useNavigate, useParams } from 'react-router-dom'; 
 import axios from 'axios';
@@ -60,28 +59,30 @@ import back from "./images/back.png";
 export default function Mission_detail() {
   const navigate = useNavigate(); 
   const { id } = useParams();  
-  const [missionDetail, setMissionDetail] = useState(null);  
+  const [missionDetail, setMissionDetail] = useState(null);  // 초기값 null
+  const [isLoading, setIsLoading] = useState(true);  // 로딩 상태 추가
 
   useEffect(() => {
     const fetchMissionDetail = async () => {
+      setIsLoading(true);
       const accessToken = localStorage.getItem('accessToken');
       try {
-        const response = await axios.get(`http://server-api/api/challenges/${id}`, {
+        const response = await axios.get(`http://44.193.101.200:80/api/challenges/${id}`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
         });
-        
-        if (response.data.code === 200) {
-          setMissionDetail(response.data.data); 
+        if (response.status === 200) {
+          setMissionDetail(response.data); 
         } else {
-          console.error('Failed to fetch mission details:', response.data.message);
+          console.error('실패', response);
         }
       } catch (error) {
         console.error('Error fetching mission details:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
-
     fetchMissionDetail();
   }, [id]);  
 
@@ -109,16 +110,24 @@ export default function Mission_detail() {
             <span>소개</span>
           </div>
           <div className="mission-d-contents-main">
-            <span>{missionDetail.period}</span>
-            <span>{missionDetail.location}</span>
-            <span>{missionDetail.fee}</span>
-            <span className="mission-d-contents-d">
-              {missionDetail.description}
-            </span>
+            {isLoading ? (
+              <span>로딩 중...</span>
+            ) : missionDetail ? (
+              <>
+                <span>{missionDetail.period}</span>
+                <span>{missionDetail.location}</span>
+                <span>{missionDetail.fee}</span>
+                <span className="mission-d-contents-d">
+                  {missionDetail.description} 
+                </span>
+              </>
+            ) : (
+              <span>데이터를 가져오지 못했습니다.</span>
+            )}
           </div>
         </div>
         <div className="mission-d-join">
-          <button onClick={() => navigate(`/MissionWrite/${missionDetail.id}`)}>도전하기</button>
+          <button onClick={() => navigate('/MissionWrite/1')}>도전하기</button>
         </div>
       </div>
     </div>

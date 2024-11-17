@@ -8,8 +8,6 @@ const NavUp = () => {
     const [headerText, setHeaderText] = useState("");  // 상태 변수 추가
 
     useEffect(() => {
-        console.log(location.pathname); // 현재 경로 출력
-
         const getHeaderText = () => {
             if (location.pathname === "/signup") {
                 return "회원가입";

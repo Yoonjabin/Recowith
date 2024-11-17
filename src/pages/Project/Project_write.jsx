@@ -3,30 +3,54 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import back from "./images/back.png";
 import camera from "./images/camera.png";
+import axios from "axios";
 import calendarIcon from "./images/date.png"; 
-import Calendar from 'react-calendar';
 
 export default function Project_write() {
   const navigate = useNavigate(); 
 
+  const [title, setTitle] = useState(''); // 제목 상태 추가
+  const [location, setLocation] = useState(''); // 장소 상태 추가
   const [charCount, setCharCount] = useState(0);
   const [description, setDescription] = useState('');
   const [imageSrc, setImageSrc] = useState(null);
   const [filename, setFilename] = useState(null); 
   const [binaryImageFile, setBinaryImageFile] = useState(null); 
+  const todayDate = new Date(); // 오늘 날짜 고정
 
-  const [selectedDate, setSelectedDate] = useState(null); 
-  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  // 게시물 등록 함수
+  const handleProjectSubmit = async () => {
+    const accessToken = localStorage.getItem('accessToken');
+    
+    const formData = new FormData();
+    formData.append("projectName", title);
+    formData.append("content", description);
+    formData.append("location", location);
+    formData.append("uploadDate", todayDate.toISOString()); 
+    if (binaryImageFile) {
+      formData.append("url", binaryImageFile);
+    }
 
-  // 날짜 선택 시 호출되는 함수: 날짜를 선택하고 캘린더를 닫음
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-    setIsCalendarOpen(false);
+    try {
+      const response = await axios.post('http://44.193.101.200:80//api/project/create', formData,
+        {
+          headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'multipart/form-data'
+          }
+        }
+      );
+      console.log(response)
+      if (response.status === 200) {
+        console.log(response.data);
+        navigate('/MissionFinish');
+      } else {
+        console.error('등록 실패:', response);
+      }
+    } catch (error) {
+      console.error('에러 발생:', error);
+    }
   };
-    // 입력 상자 클릭 시 달력 모달 닫기
-    const toggleCalendar = () => {
-      setIsCalendarOpen(!isCalendarOpen); 
-    };
 
   const handleClick = () => {
     document.getElementById('fileInput').click();
@@ -44,6 +68,7 @@ export default function Project_write() {
       setBinaryImageFile(file);
     }
   };
+
   const maxChars = 500;
   const handleDescriptionChange = (e) => {
     const value = e.target.value;
@@ -64,29 +89,18 @@ export default function Project_write() {
 
       <div className="project-write-main-container">
         <div className="project-write-date">
-          <div className="project-write-date-input" onClick={toggleCalendar}>
-            <span>{selectedDate ? `작성일자    ${selectedDate.toLocaleDateString()}` : "작성일자"}</span>
+          <div className="project-write-date-input">
+            <span>작성일자: {todayDate.toLocaleDateString()}</span>
             <img src={calendarIcon} alt="Calendar Icon" className="calendar-icon" />
           </div>
-
-          {isCalendarOpen && (
-            <div className="project-write-calendar-modal">
-              <div className="project-write-calendar-content">
-                <Calendar
-                  onChange={handleDateChange} // 날짜 선택 시 이벤트
-                  value={selectedDate || new Date()}
-                />
-              </div>
-            </div>
-          )}
         </div>
 
         <div className="project-write-title">
           <input
             type="text" 
             placeholder="프로젝트 제목을 입력해 주세요"
-            // value={title}
-            // onChange={}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)} // 제목 변경 핸들러
             required
           />
         </div>
@@ -94,8 +108,8 @@ export default function Project_write() {
           <input
             type="text" 
             placeholder="장소를 입력해 주세요"
-            // value={location}
-            // onChange={}
+            value={location}
+            onChange={(e) => setLocation(e.target.value)} // 장소 변경 핸들러
             required
           />
         </div>
@@ -130,7 +144,7 @@ export default function Project_write() {
           />
           <div className="project-write-char-count">({charCount}/{maxChars})</div>
         </div>
-        <div className="mission-d-join" onClick={() => navigate('/ProjectFinish')}>
+        <div className="mission-d-join" onClick={handleProjectSubmit}>
           <button>등록하기</button>
         </div>
       </div>

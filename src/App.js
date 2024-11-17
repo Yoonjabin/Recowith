@@ -26,7 +26,7 @@ function App() {
         <Route path='/' element={<><Nav /><Main /></>} />
         <Route path='/MissionMain' element={<><Nav /><MissionMain /></>}/>
         <Route path='/MissionDetail/:id' element={<><Nav /><MissionDetail /></>}/>
-        <Route path='/MissionWrite' element={<><Nav /><MissionWrite /></>}/>
+        <Route path='/MissionWrite/1' element={<><Nav /><MissionWrite /></>}/>
         <Route path='/MissionFinish' element={<MissionFinish/>}/>
         <Route path='/ProjectWrite' element={<><Nav /><ProjectWrite /></>}/>
         <Route path='/ProjectFinish' element={<ProjectFinish/>}/>

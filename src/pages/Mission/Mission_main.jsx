@@ -1,5 +1,5 @@
 import "./Mission_main.css"
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import axios from "axios";
 import mission1 from "./images/mission1.png"
@@ -13,24 +13,23 @@ export default function Mission_main(){
 
   useEffect(() => {
     const fetchPosts = async () => {
-    const accessToken = localStorage.getItem('accessToken');
-    try {
-        const response = await axios.get('http://server-api//api/challenges',
-            {
-                headers: {
-                    Authorization: `Bearer ${accessToken}`, 
-                }
-            });
+      const accessToken = localStorage.getItem('accessToken');
+      try {
+        const response = await axios.get('http://44.193.101.200:80/api/challenges', {
+          headers: {
+            Authorization: `Bearer ${accessToken}`, 
+          }
+        });
 
-        if (response.data.SUCCESS) {
-        setmissionPost(response.data.data); 
-        console.log("Fetched posts:", response.data.data); 
+        if (response.status === 200) {
+          setmissionPost(response.data); 
+          console.log("조회 성공", response); 
         } else {
-        console.error('Failed to fetch post:', response.data.message);
+          console.error('Failed to post:', response);
         }
-    } catch (error) {
+      } catch (error) {
         console.error('Error fetching posts:', error);
-    }
+      }
     };
     fetchPosts();
   }, []);
@@ -38,6 +37,10 @@ export default function Mission_main(){
   const handleNavigate = (id) => {
     navigate(`/MissionDetail/${id}`); 
   };
+
+  const missionId1 = missionPost.length > 0 ? missionPost.find((item) => item.id === 1) : null;
+  const missionId2 = missionPost.length > 1 ? missionPost.find((item) => item.id === 2) : null;
+  const missionId3 = missionPost.length > 2 ? missionPost.find((item) => item.id === 3) : null;
 
   return (
     <div className="mission-main-container">
@@ -59,10 +62,10 @@ export default function Mission_main(){
             </div>
             <div className="mission-main-1-daypoint">
               <div className="mission-main-1-day">
-                D-{missionPost.find(post => post.id === 1)?.remaining_days}
+                D-{missionId1 ? missionId1.dday : 'N/A'}
               </div>
               <div className="mission-main-1-point">
-                {missionPost.find(post => post.id === 1)?.points}P
+                {missionId1 && missionId1.points ? missionId1.points : 'N/A'}P
               </div>
             </div>
           </div>
@@ -79,10 +82,10 @@ export default function Mission_main(){
             </div>
             <div className="mission-main-2-daypoint">
               <div className="mission-main-2-day">
-                D-{missionPost.find(post => post.id === 2)?.remaining_days}
+                D-{missionId2 ? missionId2.dday : 'N/A'}
               </div>
               <div className="mission-main-2-point">
-                {missionPost.find(post => post.id === 2)?.points}P
+                {missionId2 && missionId2.points ? missionId2.points : 'N/A'}P
               </div>
             </div>
           </div>
@@ -99,10 +102,10 @@ export default function Mission_main(){
             </div>
             <div className="mission-main-3-daypoint">
               <div className="mission-main-3-day">
-                D-{missionPost.find(post => post.id === 3)?.remaining_days}
+                D-{missionId3 ? missionId3.dday : 'N/A'}
               </div>
               <div className="mission-main-3-point">
-                {missionPost.find(post => post.id === 3)?.points}P
+                {missionId3 && missionId3.points ? missionId3.points : 'N/A'}P
               </div>
             </div>
           </div>
@@ -112,5 +115,5 @@ export default function Mission_main(){
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -7,25 +7,30 @@ import search from "./images/search.png";
 import profileImg from "./images/profileImg.png";
 
 export default function FamilyPlus() {
-  const [query, setQuery] = useState("");
-  const [searchResults, setSearchResults] = useState(null);
-  const [error, setError] = useState(true);
-  const accessToken = localStorage.getItem("accessToken");
+  const [query, setQuery] = useState(""); // 검색어
+  const [searchResults, setSearchResults] = useState(null); // 검색 결과 저장
+  const [error, setError] = useState(false); // 에러 상태
+  const accessToken = localStorage.getItem("accessToken"); // 토큰 가져오기
   const navigate = useNavigate();
-
 
   // 검색 기능
   const handleSearch = async () => {
+    if (!query.trim()) {
+      alert("검색할 아이디를 입력하세요.");
+      return;
+    }
+
     try {
-      const response = await axios.get(`https://backend-server.com/api/group/search`, {
-        params: { id: query },
+      const response = await axios.get(`http://44.193.101.200:80/api/group/search/${query}`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
 
       if (response.data) {
+        console.log(response)
         setSearchResults(response.data);
         setError(false);
       } else {
+        console.log(response)
         setSearchResults(null);
         setError(true);
       }
@@ -36,37 +41,44 @@ export default function FamilyPlus() {
     }
   };
 
-  // 구성원 추가 기능 (백엔드에 정보 전송)
+  // 구성원 추가 기능
   const handleAddMember = async () => {
     if (searchResults) {
       try {
-        await axios.post(
-          `https://backend-server.com/api/group/add`, 
-          { memberId: searchResults.id }, 
+        const response = await axios.post(
+          `http://44.193.101.200:80/api/group/add`,
+          { userId: searchResults.data.userId }, // `userId` 접근 방식 수정
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
-              "Content-Type": "application/json"
-            }
+              "Content-Type": "application/json",
+            },
           }
         );
-        
-        alert("구성원이 성공적으로 추가되었습니다.");
-        setQuery("");
-        setSearchResults(null);
-
-        navigate("/FamilyInfo");
+  
+        // 상태 코드가 200일 때만 성공 처리
+        if (response.status === 200) {
+          console.log("구성원 추가 성공:", response.data);
+          alert("구성원이 성공적으로 추가되었습니다.");
+          setQuery("");
+          setSearchResults(null);
+          // navigate("/FamilyInfo");
+        } else {
+          console.error("구성원 추가 실패: 예상하지 못한 상태 코드", response.status);
+          alert("구성원을 추가하는 데 실패했습니다.");
+        }
       } catch (error) {
         console.error("구성원 추가 중 오류가 발생했습니다.", error);
         alert("구성원을 추가하는 중 오류가 발생했습니다.");
       }
     }
   };
+  
 
   return (
     <div className="family-plus-container">
       <div className="mission-d-top">
-        <div className="mission-d-back-img">
+        <div className="mission-d-back-img" onClick={() => navigate("/")}>
           <img src={back} alt="" />
         </div>
         <div className="mission-d-title">가족구성원 등록</div>
@@ -81,20 +93,23 @@ export default function FamilyPlus() {
             placeholder="가족구성원의 아이디를 조회해 보세요"
             className="search-input"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => setQuery(e.target.value)} // 입력 값 관리
           />
           <img src={search} alt="search icon" onClick={handleSearch} />
         </div>
         <div className="family-plus-line"></div>
 
-        {error && <p className="no-results">검색 결과 없음</p>}
+        {error && <p className="no-results">검색 결과가 없습니다. 올바른 아이디를 입력해 보세요.</p>}
 
-        
         {searchResults && (
           <div className="family-plus-search-results">
-            <img src={searchResults.profileImage} alt="profile" className="family-plus-profile-img" />
-            <p>닉네임: {searchResults.nickname}</p>
-            <p>아이디: {searchResults.id}</p>
+            <img
+              src={searchResults.profileImage || profileImg}
+              alt="profile"
+              className="family-plus-profile-img"
+            />
+            <p>닉네임: {searchResults.data.nickname}</p>
+            <p>아이디: {searchResults.data.username}</p>
             <button onClick={handleAddMember}>추가</button>
           </div>
         )}
@@ -102,6 +117,7 @@ export default function FamilyPlus() {
     </div>
   );
 }
+
 
 
 

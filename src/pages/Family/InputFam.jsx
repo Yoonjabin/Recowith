@@ -18,16 +18,17 @@ const InputFam = () => {
 
   const handleFamilySubmit = async () => {
     try {
-      const response = await axios.post('http://url/api/group/create', {
-        group_name: familyname,
+      const response = await axios.post('http://44.193.101.200:80/api/group/create', {
+        groupName: familyname,
       },{
         headers: {
           Authorization: `Bearer ${accessToken}`, 
         }
       });
       if (response.status === 200) {
-        alert("등록 성공!");
-        navigate('/meetMain');
+        // alert("등록 성공!");
+        console.log("가족이름 저장 성공",response)
+        // navigate('/MeetMain');
       }
     } catch (error) {
       console.error("등록 실패:", error);
