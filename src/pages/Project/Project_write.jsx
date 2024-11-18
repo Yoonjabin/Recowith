@@ -81,7 +81,7 @@ export default function Project_write() {
   return (
     <div className="project-write-container">
       <div className="mission-d-top">
-        <div className="mission-d-back-img" onClick={() => navigate('/')}>
+        <div className="mission-d-back-img" onClick={() => navigate('/main')}>
           <img src={back} alt="" />
         </div>
         <div className="mission-d-title">가족 프로젝트</div>

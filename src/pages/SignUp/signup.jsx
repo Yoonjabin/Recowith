@@ -35,8 +35,8 @@ const SignUp = () => {
 
       if (response.status===200 ) {
         console.log('회원가입 성공:', response.data); // 성공 메시지 출력
-        // alert('회원가입 성공!');
-        // navigate('/login'); // 필요 시 라우팅 추가
+        alert('회원가입 성공!');
+        navigate('/signin'); // 필요 시 라우팅 추가
       } else {
         console.log('회원가입 실패:', response.data); // 실패 시 응답 데이터 출력
       }

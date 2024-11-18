@@ -11,7 +11,7 @@ const InputFam = () => {
 
   const handleSkipClick = () => {
     // 건너뛰기 버튼 클릭 시 '/가족구성원페이지'로 이동
-    navigate('/가족구성원페이지');
+    navigate('/');
   };
 
   const accessToken = localStorage.getItem("accessToken")
@@ -26,7 +26,7 @@ const InputFam = () => {
         }
       });
       if (response.status === 200) {
-        // alert("등록 성공!");
+        alert("등록 성공!");
         console.log("가족이름 저장 성공",response)
         // navigate('/MeetMain');
       }
@@ -53,7 +53,7 @@ const InputFam = () => {
         {/* <p className="formText">가족명을 입력해주세요!</p> */}
       </div>
       <button className='submit-family-name' onClick={handleFamilySubmit}>저장하기</button>
-      <Link to="/가족구성원페이지" className="registerLink">
+      <Link to="/FamilyPlus" className="registerLink">
         가족구성원 등록하기 &gt;
       </Link>
       

@@ -2,9 +2,15 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-
   margin-top: 30px;
 }
+
+/* .mission-d-top{
+  background-color: #ffffff;
+} */
+/* .user-edit-line{
+  border: 1px solid #E3E3E3;
+} */
 
 .family-plus-search-bar input{
   width: 313px;
@@ -71,7 +77,28 @@
   color: black;
 }
 
-.family-plus-info span{
+.family-plus-search-result-text p{
+  font-family: 'Pretendard-Regular';
+  font-size: 12.94px;
+  font-weight: 400;
+  line-height: 15.65px;
+}
+.family-plus-search-result-text span{
+  width: 102.4px;
+  height: 23.71px;
+  padding: 3px 25px;
+  border-radius: 53.9px;
+  border: 1.08px solid #E3E3E3;
+  color: #AAAAAA;
+  font-family: 'Pretendard-Regular';
+  font-size: 12.94px;
+  font-weight: 400;
+  line-height: 15.65px;
+  margin-left: 5px;
+}
+
+
+/* .family-plus-info span{
   margin-left: 13px;
   width: 102.4px;
   height: 23.71px;
@@ -83,7 +110,7 @@
   font-weight: 400;
   line-height: 15.65px;
   color: #AAAAAA;
-}
+} */
 
 .family-plus-search-results button{
   width: 55px;
@@ -98,3 +125,12 @@
   outline: none;
   border: none;
 } 
+
+/* 추가된 상태 버튼 스타일 */
+.family-plus-search-results button.added-button {
+  width: 59px;
+  background-color: white;
+  color: black;
+  border: 1px solid #f9957f;
+  cursor: not-allowed; /* 추가된 상태에서 비활성화 */
+}

@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom"
 import "./Mission_finish.css"
 import character from "./images/character.png"
 
 export default function Mission_finish(){
+
+  const navigate= useNavigate()
+
   return(
     <div className="mission-finish-container">
         <div className="mission-finish-character">
@@ -13,7 +17,7 @@ export default function Mission_finish(){
           시간이 소요될 수 있습니다.</span>
         </div>
         <div className="mission-finish-textsub">
-          <span>마이페이지</span>를 확인해 주세요.
+          <span onClick={() => navigate("/MypageMain")}>마이페이지</span>를 확인해 주세요.
         </div>
     </div>
   )

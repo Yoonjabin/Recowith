@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import "./Project_finish.css";
 import character from "./images/character.png";
 
 export default function Project_finish() {
+
+  const navigate = useNavigate()
+
   return (
     <div className="project-finish-container">
       <div className="project-finish-character">
@@ -16,7 +20,7 @@ export default function Project_finish() {
         </span>
       </div>
       <div className="project-finish-textsub">
-        <span>마이페이지</span>를 확인해 주세요.
+        <span onClick={() => navigate("/MypageMain")}>마이페이지</span>를 확인해 주세요.
       </div>
     </div>
   );

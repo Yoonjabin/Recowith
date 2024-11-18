@@ -21,7 +21,7 @@ const NavUp = () => {
     }, [location.pathname]);
 
     const handleBackButtonClick = () => {
-        navigate("/login");
+        navigate("/");
     };
 
     return (

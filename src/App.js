@@ -17,13 +17,16 @@ import SignUp from "./pages/SignUp/signup.jsx";
 import SignIn from "./pages/SignUp/SignIn.jsx";
 import InputFam from "./pages/Family/InputFam.jsx";
 import NavUp from "./components/NavUp/NavUp.jsx";
+import FamilyInfo from "./pages/Mypage/Family_Info.jsx"
+import FamilyEdit from "./pages/Mypage/FamilyEdit.jsx"
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<><Nav /><Main /></>} />
+        <Route path='/' element={<Login />} />
+        <Route path='/main' element={<><Nav /><Main /></>} />
         <Route path='/MissionMain' element={<><Nav /><MissionMain /></>}/>
         <Route path='/MissionDetail/:id' element={<><Nav /><MissionDetail /></>}/>
         <Route path='/MissionWrite/1' element={<><Nav /><MissionWrite /></>}/>
@@ -34,10 +37,11 @@ function App() {
         <Route path='/UserEdit' element={<><Nav /><UserEdit /></>}/>
         <Route path='/FamilyPlus' element={<><Nav /><FamilyPlus /></>}/>
         <Route path='/PointMain' element={<><Nav /><PointMain /></>}/>
-        <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<><NavUp /><SignUp /></>} />
         <Route path='/signin' element={<><NavUp /><SignIn /></>} />
         <Route path='/inputFam' element={<><NavUp /><InputFam /></>} />
+        <Route path='/FamilyInfo' element={<><Nav /><FamilyInfo /></>} />
+        <Route path='/FamilyEdit' element={<><Nav /><FamilyEdit /></>} />
       </Routes>
     </BrowserRouter>
   );

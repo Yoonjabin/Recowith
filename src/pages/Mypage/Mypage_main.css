@@ -1,3 +1,266 @@
-.mission-d-top{
-  background-color:#ffffff;
+.mission-d-top {
+  background-color: #ffffff;
 }
+
+.mypage-main-container {
+  width: 393px;
+  overflow: hidden; /* 화면 가로 길이를 넘어간 부분을 숨깁니다. */
+}
+
+.mypage-main-profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.mypage-main-profile-text {
+  display: flex;
+  flex-direction: row;
+}
+
+.mypage-main-profile-kind,
+.mypage-main-profile-nickid {
+  display: flex;
+  flex-direction: column;
+}
+
+.mypage-main-profile-img img {
+  width: 100px;
+  height: 100px;
+}
+
+.mypage-main-profile-kind {
+  gap: 18px;
+  margin-top: 9px;
+  margin-right: 10px;
+}
+
+.mypage-main-profile-kind span {
+  font-family: 'Pretendard-Regular';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 15.65px;
+}
+
+.mypage-main-profile-nickid {
+  gap: 10px;
+}
+
+.mypage-main-profile-nickid span {
+  width: 102.4px;
+  height: 23.71px;
+  border-radius: 53.9px;
+  border: 1.08px solid #D9D9D9;
+  font-family: 'Pretendard-Regular';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  color: #AAAAAA;
+}
+
+.mypage-main-profile-nickid button {
+  width: 102.4px;
+  height: 24px;
+  outline: none;
+  border: none;
+  border-radius: 53.9px;
+  background-color: #F9957F;
+  color: #ffffff;
+  font-family: 'Pretendard-Regular';
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* .mypage-main-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.mypage-main-family-title,
+.mypage-main-project-title {
+  color: #000000;
+  font-family: 'Pretendard-Regular';
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 18.15px;
+  text-align: left;
+}
+
+.mypage-main-family-title span,
+.mypage-main-project-title span {
+  font-family: 'Pretendard-Bold';
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 18.15px;
+}
+
+.mypage-main-family-box {
+  display: flex;
+  flex-direction: column;
+  width: 359px;
+  height: 200px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #F9957F 0%, #F2F5D0 100%);
+}
+
+.mypage-m-f-box-top {
+  font-family: 'Pretendard-Bold';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14.52px;
+  color: #ffffff;
+  margin: 15px;
+  margin-bottom: 10px;
+}
+
+.mypage-m-f-box-family {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Pretendard-SemiBold';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14.52px;
+  color: #ffffff;
+  gap: 20px;
+}
+
+.mypage-family-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 5px;
+}
+
+.mypage-m-f-box-family img {
+  width: 60px;
+  height: 60px;
+}
+
+.mypage-main-line {
+  border: 1px solid #FFFFFF;
+  margin-top: 10px;
+}
+
+.mypage-m-f-menu {
+  font-family: 'Pretendard-Bold';
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 18.15px;
+  color: #F9957F;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
+  margin-top: 16px;
+}
+
+.mypage-main-family-container,
+.mypage-main-project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.mypage-main-family-title,
+.mypage-main-project-title {
+  margin-right: 170px;
+  margin-bottom: 18px;
+}
+
+.mypage-main-project-contents {
+  width: 131px;
+  height: 212px;
+  border-radius: 20px;
+  border: 2px solid #E3E3E3;
+}
+
+.mypage-main-project-box{
+  width: 131px;
+  height: 212px;
+}
+
+.mypage-project-tape {
+  width: 36px;
+  height: 46px;
+  margin-left: 90px;
+  margin-top: -20px;
+  z-index: 100;
+  position: absolute;
+}
+
+.mypage-main-project img {
+  width: 114px;
+  height: 146.14px;
+  border-radius: 12.4px;
+  border: 1px solid #E3E3E3;
+  margin-top: 6px;
+}
+
+.mypage-project-date {
+  font-family: 'Pretendard-Medium';
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 12.1px;
+  color: #000000;
+  margin-left: 55px;
+  margin-top: 3px;
+}
+
+.mypage-project-title {
+  font-family: 'Pretendard-SemiBold';
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 15.73px;
+  color: #F9957F;
+  margin-top: 13px;
+}
+
+.mypage-main-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mypage-main-project-contents-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow: hidden; /* 프로젝트 내용이 화면을 넘지 않도록 숨깁니다. */
+}
+
+.mypage-main-project-contents-container {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  gap: 20px; 
+  overflow: hidden; 
+}
+
+
+.mypage-main-project-contents {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  border-radius: 20px;
+  border: 2px solid #e3e3e3;
+  justify-content: center; 
+}
+
+.mypage-main-project-contents-container.slide-left .mypage-main-project-contents {
+  transform: translateX(-10px); /* 왼쪽으로 슬라이드 */
+}
+
+.mypage-main-project-contents-container.slide-right .mypage-main-project-contents {
+  transform: translateX(10px); /* 오른쪽으로 슬라이드 */
+}
+

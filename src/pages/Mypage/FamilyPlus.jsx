@@ -10,6 +10,7 @@ export default function FamilyPlus() {
   const [query, setQuery] = useState(""); // 검색어
   const [searchResults, setSearchResults] = useState(null); // 검색 결과 저장
   const [error, setError] = useState(false); // 에러 상태
+  const [isAdded, setIsAdded] = useState(false); // 버튼 상태
   const accessToken = localStorage.getItem("accessToken"); // 토큰 가져오기
   const navigate = useNavigate();
 
@@ -26,11 +27,11 @@ export default function FamilyPlus() {
       });
 
       if (response.data) {
-        console.log(response)
+        console.log(response);
         setSearchResults(response.data);
         setError(false);
       } else {
-        console.log(response)
+        console.log(response);
         setSearchResults(null);
         setError(true);
       }
@@ -47,7 +48,7 @@ export default function FamilyPlus() {
       try {
         const response = await axios.post(
           `http://44.193.101.200:80/api/group/add`,
-          { userId: searchResults.data.userId }, // `userId` 접근 방식 수정
+          { userId: searchResults.data.userId },
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -55,14 +56,11 @@ export default function FamilyPlus() {
             },
           }
         );
-  
-        // 상태 코드가 200일 때만 성공 처리
+
         if (response.status === 200) {
           console.log("구성원 추가 성공:", response.data);
           alert("구성원이 성공적으로 추가되었습니다.");
-          setQuery("");
-          setSearchResults(null);
-          // navigate("/FamilyInfo");
+          setIsAdded(true); // 버튼 상태 변경
         } else {
           console.error("구성원 추가 실패: 예상하지 못한 상태 코드", response.status);
           alert("구성원을 추가하는 데 실패했습니다.");
@@ -73,12 +71,11 @@ export default function FamilyPlus() {
       }
     }
   };
-  
 
   return (
     <div className="family-plus-container">
       <div className="mission-d-top">
-        <div className="mission-d-back-img" onClick={() => navigate("/")}>
+        <div className="mission-d-back-img" onClick={() => navigate("/MypageMain")}>
           <img src={back} alt="" />
         </div>
         <div className="mission-d-title">가족구성원 등록</div>
@@ -101,22 +98,32 @@ export default function FamilyPlus() {
 
         {error && <p className="no-results">검색 결과가 없습니다. 올바른 아이디를 입력해 보세요.</p>}
 
-        {searchResults && (
+        {searchResults && searchResults.data && (
           <div className="family-plus-search-results">
             <img
               src={searchResults.profileImage || profileImg}
               alt="profile"
               className="family-plus-profile-img"
             />
-            <p>닉네임: {searchResults.data.nickname}</p>
-            <p>아이디: {searchResults.data.username}</p>
-            <button onClick={handleAddMember}>추가</button>
+            <div className="family-plus-search-result-text">
+              <p>닉네임 <span>{searchResults.data.nickname}</span></p>
+              <p>아이디 <span>{searchResults.data.username}</span></p>
+            </div>
+
+            <button
+              onClick={handleAddMember}
+              disabled={isAdded} // 버튼 비활성화
+              className={isAdded ? "added-button" : ""}
+            >
+              {isAdded ? "추가됨" : "추가"}
+            </button>
           </div>
         )}
       </div>
     </div>
   );
 }
+
 
 
 

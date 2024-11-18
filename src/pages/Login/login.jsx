@@ -40,7 +40,7 @@ const Login = () => {
         localStorage.setItem('nickname',data.nickname)
         localStorage.setItem('userId',data.userId)
         localStorage.setItem('email',data.email)
-        navigate('/');
+        navigate('/signin');
       } else {
         console.warn('로그인 실패:', data.message || '로그인 실패');
         setErrorMessage(data.message || '로그인 실패');

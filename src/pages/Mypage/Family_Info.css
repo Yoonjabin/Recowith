@@ -1,0 +1,135 @@
+.family-info-container,.mission-d-top{
+  background-color: #F9DED3;
+}
+.user-edit-line{
+  border: 1px solid #ffffff;
+}
+
+.family-info-top-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  margin-top: 35px;
+}
+
+.family-info-box{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  border: 1.01px solid #F9957F;
+  width: 169px;
+  height: 204px;
+  border-radius: 30.44px;
+}
+.family-info-profile-text{
+  display: flex;
+  flex-direction: column;
+}
+.family-info-nickname,.family-info-username{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.family-info-profile img{
+  width: 100px;
+  height: 100px;
+}
+.family-info-profile-text{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.family-info-profile-text span{
+  font-family: "Pretendard-Regular";
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.family-info-nick-input,.family-info-username-input{
+  border: 1.08px solid #D9D9D9;
+  background-color: #ffffff;
+  color: #AAAAAA;
+  font-family: "Pretendard-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  width: 102.4px;
+  height: 23.71px;
+  border-radius: 53.9px;
+  text-align: center;
+  line-height: 22px;
+}
+
+.family-info-title{
+  font-family: 'Pretendard-Regular';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  color: #000000;
+}
+.family-info-title span{
+  font-family: 'Pretendard-Bold';
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 21.78px;
+}
+
+.family-info-edit-button button{
+  width: 102.4px;
+  height: 25px;
+  border-radius: 53.9px;
+  background: #F9957F;
+  color: #ffffff;
+  font-family: 'Pretendard-Medium';
+  font-size: 12.94px;
+  font-weight: 500;
+  line-height: 15.65px; 
+  outline: none;
+  border: none;
+}
+
+/* .family-info-main-container{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 14px;
+} */
+
+.family-info-main-container {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap; /* 한 줄에 두 개씩 배치 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  gap: 14px; 
+  overflow-y: auto; 
+  max-height: 600px; /* 컨테이너 높이를 제한 (필요에 따라 조정) */
+  padding-left: 15px; 
+}
+
+
+/* 스크롤바 기본 */
+.family-info-main-container::-webkit-scrollbar {
+  width: 8px; /* 스크롤바의 너비 */
+  background-color: #F9DED3; /* 스크롤바 트랙 배경색 */
+}
+
+/* 스크롤바의 핸들(움직이는 부분) */
+.family-info-main-container::-webkit-scrollbar-thumb {
+  background-color: #f9957f; /* 핸들의 색상 */
+  border-radius: 10px; /* 핸들의 모서리 둥글기 */
+  border: 2px solid #F9DED3; /* 핸들 주변 테두리 */
+}
+/* 스크롤바 왼쪽과 오른쪽 여백 */
+.family-info-main-container::-webkit-scrollbar-track {
+  background-color:#F9DED3; /* 트랙의 배경색 */
+  border-radius: 10px; 
+  margin: 30px 0; /* 위아래 여백 추가 (길이 줄이기 효과) */
+}

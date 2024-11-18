@@ -11,7 +11,7 @@ export default function Nav() {
     return (
         <div className='nav-container'>
             <div className='nav-contents'>
-                <div className='nav-home' onClick={() => navigate('/')}>
+                <div className='nav-home' onClick={() => navigate('/main')}>
                     <div className='nav-home-img'>
                         <img src={home} alt="홈" />
                     </div>

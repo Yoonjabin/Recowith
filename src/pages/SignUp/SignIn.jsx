@@ -7,7 +7,7 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   // const token = localStorage.getItem('accessToken');
-  const nickname = localStorage.getItem('nickname');
+  // const nickname = localStorage.getItem('nickname');
 
   const handlePageClick = () => {
     navigate('/inputFam');
@@ -20,7 +20,7 @@ const SignIn = () => {
       </div>
       <div className="textContainer">
         <h2>가입완료!</h2>
-        <p>"{nickname}"님 환영해요!</p>
+        <p>환영해요!</p>
       </div>
     </div>
   );
