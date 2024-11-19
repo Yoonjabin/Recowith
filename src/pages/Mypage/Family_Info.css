@@ -5,6 +5,29 @@
   border: 1px solid #ffffff;
 }
 
+.mission-d-top-6{
+  display: flex;
+  flex-direction: row;
+  width: 393px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color:#F9DED3;
+}
+
+.mission-d-back-img-1 img{
+  width: 22.5px;
+  height: 15px;
+  transform: translateX(-110px);
+}
+.mission-d-title{
+  font-family: 'Pretendard-SemiBold';
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 13px;
+  text-align: center;
+}
+
 .family-info-top-container{
   display: flex;
   flex-direction: row;

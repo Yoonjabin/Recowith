@@ -26,13 +26,13 @@ export default function Project_write() {
     formData.append("projectName", title);
     formData.append("content", description);
     formData.append("location", location);
-    formData.append("uploadDate", todayDate.toISOString()); 
+    formData.append("updated_at", todayDate.toISOString()); 
     if (binaryImageFile) {
       formData.append("url", binaryImageFile);
     }
 
     try {
-      const response = await axios.post('http://44.193.101.200:80//api/project/create', formData,
+      const response = await axios.post('http://44.193.101.200:80/api/project/create', formData,
         {
           headers: {
             'Authorization': `Bearer ${accessToken}`,
@@ -80,7 +80,7 @@ export default function Project_write() {
 
   return (
     <div className="project-write-container">
-      <div className="mission-d-top">
+      <div className="mission-d-top-4">
         <div className="mission-d-back-img" onClick={() => navigate('/main')}>
           <img src={back} alt="" />
         </div>

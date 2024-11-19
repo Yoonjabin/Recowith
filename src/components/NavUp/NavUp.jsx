@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import './NavUp.css';
+import back from "./back.png"
 
 const NavUp = () => {
     const navigate = useNavigate();
@@ -26,7 +27,9 @@ const NavUp = () => {
 
     return (
         <div className="header">
-            <button className="backButton" onClick={handleBackButtonClick}>←</button>
+            <button className="backButton" onClick={handleBackButtonClick}>
+                <img src={back} alt="" />
+            </button>
             <span className="headerText">{headerText}</span>
         </div>
     );

@@ -27,13 +27,14 @@
   width: 393px;
 }
 
-.mission-d-top{
+.mission-d-top-2{
   display: flex;
   flex-direction: row;
   width: 393px;
   height: 70px;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
 }
 
 .mission-d-back-img img{
@@ -130,5 +131,5 @@
   font-weight: 500;
   line-height: 20.11px;
   color: #ffffff; 
-  margin-top: 30px;
+  margin-top: 35px;
 }

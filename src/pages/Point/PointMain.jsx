@@ -21,8 +21,8 @@ export default function PointMain() {
 
   return (
     <div className="point-main-container">
-      <div className="mission-d-top">
-        <div className="mission-d-back-img" >
+      <div className="mission-d-top-7">
+        <div className="mission-d-back-img-2" >
           <img src={back} alt="" />
         </div>
         <div className="mission-d-title">포인트</div>

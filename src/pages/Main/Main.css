@@ -11,20 +11,20 @@
   font-style: normal;
 }
 /* @font-face {
-  font-family: 'Inter-SemiBold';
-  src: url('../font/Inter_28pt-SemiBold.ttf') format('truetype');
+  font-family: 'Pretendard-SemiBold';
+  src: url('../font/Pretendard_28pt-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Inter-Bold';
-  src: url('../font/Inter_18pt-Bold.ttf') format('truetype');
+  font-family: 'Pretendard-Bold';
+  src: url('../font/Pretendard_18pt-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Inter-Regular';
-  src: url('../font/Inter_24pt-Regular.ttf') format('truetype');
+  font-family: 'Pretendard-Regular';
+  src: url('../font/Pretendard_24pt-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 } */
@@ -63,7 +63,7 @@
 }
 
 .main-title-contents-nickname {
-  font-family: 'Inter-SemiBold';
+  font-family: 'Pretendard-SemiBold';
   font-size: 23px;
   font-weight: 600;
   line-height: 38px;
@@ -120,15 +120,15 @@
 
 .main-chat-title {
   margin-top: 10px;
-  font-family: 'Inter-Regular';
-  font-size: 15.74px;
+  font-family: 'Pretendard-Regular';
+  font-size: 17px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 20px;
   color: #000000;
 }
 
 .main-chat-title span {
-  font-family: 'Inter-Bold';
+  font-family: 'Pretendard-Bold';
   font-size: 15.74px;
   font-weight: 700;
   color: #000000;
@@ -141,7 +141,7 @@
   border: 1.05px solid #ED7C90;
   background-color: #F9DED3;
   color: #ED7C90;
-  font-family: Inter;
+  font-family: Pretendard;
   font-weight: 400;
   font-size: 12.5px;
   display: flex;
@@ -155,7 +155,7 @@
   flex-wrap: wrap; /* 줄바꿈 허용 */
   justify-content: space-between;
   gap: 3px;
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 .main-chat-hashtag-contents {
@@ -183,7 +183,7 @@
 }
 
 .main-chat-chatting input::placeholder {
-  font-family: Inter;
+  font-family: Pretendard;
   font-size: 14.5px;
   font-weight: 400;
   color: #AAAAAA;
@@ -197,7 +197,7 @@
 .main-chat-chatting-submit {
   transform: translateX(-35px);
   margin-top: 3px;
-  cursor: pointer;
+  cursor: poPretendard;
 }
 
 .main-project-container {
@@ -208,7 +208,7 @@
 }
 
 .main-project-title {
-  font-family: Inter;
+  font-family: Pretendard;
   font-weight: 400;
   font-size: 20px;
   color: #000000;
@@ -245,7 +245,7 @@
   border-radius: 32.41px;
   color: #ffffff;
   background-color: #F9DED3;
-  font-family: Inter;
+  font-family: Pretendard;
   font-weight: 600;
   font-size: 21.61px;
 }

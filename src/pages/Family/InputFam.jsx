@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './InputFam.css';
-import S_Hedgehog from '../../pages/Login/L_Hedgehog.png'; 
+import dochi from '../../pages/Login/loginDochi.png';
 
 const InputFam = () => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const InputFam = () => {
 
   const handleSkipClick = () => {
     // 건너뛰기 버튼 클릭 시 '/가족구성원페이지'로 이동
-    navigate('/');
+    navigate('/main');
   };
 
   const accessToken = localStorage.getItem("accessToken")
@@ -22,7 +22,7 @@ const InputFam = () => {
         groupName: familyname,
       },{
         headers: {
-          Authorization: `Bearer ${accessToken}`, 
+          Authorization: `Bearer ${accessToken}`,
         }
       });
       if (response.status === 200) {
@@ -39,25 +39,27 @@ const InputFam = () => {
   return (
     <div className="inputFamContainer">
       <div className="imageContainer">
-        <img src={S_Hedgehog} alt="Hedgehog" className="Hedgehog" />
+        <img src={dochi} alt="Hedgehog" className="cHedgehog" />
       </div>
-      <div className="formContainer">
-        <input 
-          type="text"
-          className='formText'
-          placeholder='가족명을 입력해주세요!'
-          value={familyname}
-          onChange={(e)=>setFamilyName(e.target.value)}
-          required
-        />
-        {/* <p className="formText">가족명을 입력해주세요!</p> */}
-      </div>
+      <input
+        type="text"
+        className="formText"
+        placeholder="가족명을 입력해 주세요!"
+        value={familyname}
+        onChange={(e) => setFamilyName(e.target.value)}
+        required
+      />
+
       <button className='submit-family-name' onClick={handleFamilySubmit}>저장하기</button>
       <Link to="/FamilyPlus" className="registerLink">
         가족구성원 등록하기 &gt;
       </Link>
-      
-      <button className="skipButton" onClick={handleSkipClick}>건너뛰기</button>
+
+      <p className="mypageText">
+        <span style={{ color: '#F9957F' }}>마이페이지</span>에서도 가족 구성원을 등록할 수 있습니다.
+      </p>
+
+      <button className="skipButton" onClick={handleSkipClick}>나중에 하기</button>
     </div>
   );
 };

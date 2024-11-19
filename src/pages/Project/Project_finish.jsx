@@ -12,7 +12,7 @@ export default function Project_finish() {
         <img src={character} alt="" />
       </div>
       <div className="project-finish-text">
-        참여 완료! <br />
+        등록 완료! <br />
         <span>
           <span className="highlight">500P</span> 추후에 지급될 예정이며
           <br />

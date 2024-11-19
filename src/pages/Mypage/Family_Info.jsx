@@ -37,8 +37,8 @@ export default function Family_Info() {
 
   return (
     <div className="family-info-container">
-      <div className="mission-d-top">
-        <div className="mission-d-back-img" onClick={() => navigate("/MypageMain")}>
+      <div className="mission-d-top-6">
+        <div className="mission-d-back-img-1" onClick={() => navigate("/MypageMain")}>
           <img src={back} alt="뒤로가기" />
         </div>
         <div className="mission-d-title">가족 소개</div>

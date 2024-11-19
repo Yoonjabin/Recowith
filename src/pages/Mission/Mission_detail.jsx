@@ -88,7 +88,7 @@ export default function Mission_detail() {
 
   return (
     <div className="Mission-d-container">
-      <div className="mission-d-top">
+      <div className="mission-d-top-2">
         <div className="mission-d-back-img" onClick={() => navigate('/MissionMain')}>
           <img src={back} alt="" />
         </div>
@@ -117,9 +117,13 @@ export default function Mission_detail() {
                 <span>{missionDetail.period}</span>
                 <span>{missionDetail.location}</span>
                 <span>{missionDetail.fee}</span>
-                <span className="mission-d-contents-d">
+                {/* <span className="mission-d-contents-d">
                   {missionDetail.description} 
-                </span>
+                </span> */}
+                <span className="mission-d-contents-d">
+              화담숲이 10월 18일부터 11월 17일까지 한달여 간 '가을 단풍 축제'를 진행한다. 
+              국내 단풍 명소로 자리 잡은 화담숲은 올 해에도 어김없이 청명한하늘 아래 시원한 바람과 함께 가을이 찾아와 내장단풍, 당단풍, 털단풍, 노르웨이단풍 등 400여 품종의 형형색색 단풍이 장관을 이룬다. 화담숲은 연중 쾌적하고 안전한 관람을 위해 1일 최대 관람 인원수를 1만명 이내로 관리하고 있다. 보다 간편하고 편리한 관람을 위해 화담숲 입장과 모노레일 탑승 모두 온라인 사전 예약제 운영한다.
+            </span>
               </>
             ) : (
               <span>데이터를 가져오지 못했습니다.</span>

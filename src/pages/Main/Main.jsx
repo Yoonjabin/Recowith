@@ -101,7 +101,7 @@ export default function Main() {
             {/* main-chat-container */}
             <div className={`main-chat-container ${isChatVisible ? "hidden" : ""}`}>
                 <div className='main-chat-title'>
-                    나의 자녀와 함께 할 <br /><span>프로젝트</span> 추천해 줄게!!
+                    자녀와 함께 할 <br /><span>프로젝트</span> 추천해 줄게!!
                 </div>
                 <div className='main-chat-hashtag'>
                     {hashtag.map((tag, index) => (

@@ -75,7 +75,7 @@ export default function Mission_write() {
 
   return (
     <div className="mission-write-container">
-      <div className="mission-d-top">
+      <div className="mission-d-top-3">
         <div className="mission-d-back-img" onClick={() => navigate('/MissionMain')}>
           <img src={back} alt="" />
         </div>

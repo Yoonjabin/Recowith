@@ -99,3 +99,30 @@
   width: 20px;
   height: 20px;
 }
+
+.mission-d-top-7{
+  display: flex;
+  flex-direction: row;
+  width: 393px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.mission-d-back-img-2 img{
+  width: 22.5px;
+  height: 15px;
+  transform: translateX(-123px);
+}
+.mission-d-title{
+  font-family: 'Pretendard-SemiBold';
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 13px;
+  text-align: center;
+}
+
+.mypage-underline{
+  border: 1px solid #E3E3E3;
+}

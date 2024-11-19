@@ -26,7 +26,7 @@ export default function FamilyPlus() {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
 
-      if (response.data) {
+      if (response.status===200) {
         console.log(response);
         setSearchResults(response.data);
         setError(false);
@@ -34,6 +34,11 @@ export default function FamilyPlus() {
         console.log(response);
         setSearchResults(null);
         setError(true);
+        if(response.status===400){
+          alert("이미 등록된 그룹이 있는 사용자입니다.")
+        }else if(response.status===404){
+          alert("사용자 정보를 찾을 수 없습니다.")
+        }
       }
     } catch (error) {
       console.error("검색 중 오류가 발생했습니다.", error);

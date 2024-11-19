@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; 
+import './Login.css';
 import axios from 'axios';
-import S_Hedgehog from '../../pages/Login/L_Hedgehog.png';
+import dochi from '../../pages/Login/loginDochi.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -36,10 +36,10 @@ const Login = () => {
       if (response.status === 200) {
         console.log('로그인 성공:', response);
         localStorage.setItem('accessToken', response.data.token);
-        localStorage.setItem('username',data.username)
-        localStorage.setItem('nickname',data.nickname)
-        localStorage.setItem('userId',data.userId)
-        localStorage.setItem('email',data.email)
+        localStorage.setItem('username', data.username)
+        localStorage.setItem('nickname', data.nickname)
+        localStorage.setItem('userId', data.userId)
+        localStorage.setItem('email', data.email)
         navigate('/signin');
       } else {
         console.warn('로그인 실패:', data.message || '로그인 실패');
@@ -56,31 +56,36 @@ const Login = () => {
 
   return (
     <div className="MainTheme">
-      <img src={S_Hedgehog} alt="Hedgehog" className="hedgehog" />
-      <h1 className="appName">고슴도치핑</h1>
+      <img src={dochi} alt="Hedgehog" className='LoginHedgehog' />
+
+      <div className="appName">도치둥지 로그인</div>
+
       <form className="loginForm">
-        <input 
+        <input
           type="text"
-          className="Id"
-          placeholder="아이디" 
+          className="enterId"
+          placeholder="아이디"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          required 
+          required
         />
-        <input 
+        <input
           type="password"
-          className="password"
-          placeholder="비밀번호" 
+          className="enterPassword"
+          placeholder="비밀번호"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required 
+          required
         />
+
         <button type="button" className="loginButton" onClick={handleLogin}>로그인</button>
+
+
       </form>
       {errorMessage && <p className="errorMessage">{errorMessage}</p>}
       <div className="bottomText">
-        <span>고슴도치핑 | </span>
-        <a href="/signup" className="signupLink">회원가입</a>
+        <span>도치둥지  </span>|
+        <a href="/signup" className="signupLink"> 회원가입</a>
       </div>
     </div>
   );

@@ -33,7 +33,7 @@ const SignUp = () => {
 
       console.log('응답 데이터:', response.data); // 성공 시 응답 데이터 출력
 
-      if (response.status===200 ) {
+      if (response.status === 200) {
         console.log('회원가입 성공:', response.data); // 성공 메시지 출력
         alert('회원가입 성공!');
         navigate('/signin'); // 필요 시 라우팅 추가
@@ -49,71 +49,75 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signUpForm">
-      <div className="inputGroup">
-        <label htmlFor="id">
-          아이디 <span className="required">*</span>
-        </label>
-        <input
-          type="text"
-          id="id"
-          name="id"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="inputField Id"
-          placeholder="아이디를 입력하세요"
-        />
-      </div>
+ 
+      <div className="signUpForm">
 
-      <div className="inputGroup">
-        <label htmlFor="password">
-          비밀번호 <span className="required">*</span>
-        </label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="inputField Pw"
-          placeholder="비밀번호를 입력하세요"
-        />
-      </div>
+        <div className="signinGroup">
+          <label htmlFor="id">
+            <span className="required">*</span>아이디
+          </label>
+          <input
+            type="text"
+            id="id"
+            name="id"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="mandatoryId"
+            placeholder="아이디를 입력하세요"
+          />
+        </div>
 
-      <div className="inputGroup">
-        <label htmlFor="email">
-          이메일 <span className="required">*</span>
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="inputField Email"
-          placeholder="이메일을 입력하세요"
-        />
-      </div>
+        <div className="signinGroup">
+          <label htmlFor="password">
+            <span className="required">*</span>비밀번호
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="mandatoryPw"
+            placeholder="비밀번호를 입력하세요"
+          />
+        </div>
 
-      <div className="inputGroup">
-        <label htmlFor="nickname">
-          닉네임 <span className="required">*</span>
-        </label>
-        <input
-          type="text"
-          id="nickname"
-          name="nickname"
-          value={nickname}
-          onChange={(e) => setNickname(e.target.value)}
-          className="inputField Nickname"
-          placeholder="닉네임을 입력하세요"
-        />
-      </div>
+        <div className="signinGroup">
+          <label htmlFor="email">
+            <span className="required">*</span>이메일
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="mandatoryEmail"
+            placeholder="이메일을 입력하세요"
+          />
+        </div>
 
-      <button type="submit" className="submitBtn" onClick={handleSignUp}>
-        회원가입
+        <div className="signinGroup">
+          <label htmlFor="nickname">
+            <span className="required">*</span>닉네임
+          </label>
+          <input
+            type="text"
+            id="nickname"
+            name="nickname"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+            className="mandatoryNickname"
+            placeholder="닉네임을 입력하세요"
+          />
+        </div>
+
+        <button type="submit" className="submitBtn" onClick={handleSignUp}>
+        회원가입 완료
       </button>
-    </div>
+
+      </div>
+
   );
 };
 

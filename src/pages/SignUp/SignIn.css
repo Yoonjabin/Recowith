@@ -1,33 +1,42 @@
-/* SignIn.css */
+/* position absolute 때문에 상단바와 요소를 제외한 부분에 커서가 작동 안 함 */
+
 .signContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /* 수직 중앙 정렬 */
-    align-items: center;      /* 수평 중앙 정렬 */
-    height: 60%;
-    width: 100%;              /* 부모 요소의 너비를 100%로 설정 */
-    text-align: center;
-    margin: 0;                /* 불필요한 margin 제거 */
-    cursor: pointer;
+    cursor: pointer;  /* signContainer에 커서 스타일 적용 */
+    position: absolute;
+    top: 44%; /* 화면에서 50% 아래로 */
+    left: 50%; /* 화면에서 50% 왼쪽으로 */
+    transform: translate(-50%, -50%); /* 정확히 중앙에 오도록 이동 */
 }
-
-.imageContainer {
-    margin-bottom: 20px;      /* 이미지와 텍스트 사이에 여백 추가 */
-}
-
-.Hedgehog {
-    width: 150px;  /* 이미지 크기 조절 */
+  
+.SignHedgehog {
+    width: 205px;
     height: auto;
+    display: block; /* 기본적으로 inline 요소인 이미지를 block 요소로 변경 */
+    margin-left: auto; /* 좌측 여백을 자동으로 설정 */
+    margin-right: auto; /* 우측 여백을 자동으로 설정 */
 }
 
-.textContainer h2 {
-    font-size: 25px;
-    font-weight: bold;
+.textContainer {
+    text-align: center;           /* 텍스트 중앙 정렬 */
+}
+
+.textContainer span, .textContainer p {
     margin: 10px 0;
+}
+
+.textContainer span {
+    font-size: 25px;
+    font-weight: 700;
     color: #F9957F;
+    font-size: 25px;
+    font-family: 'Pretendard-Bold';
 }
 
 .textContainer p {
-    font-size: 25px;
+    font-size: 20px;
     color: black;
+    font-family: 'Pretendard-Bold';
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 29.83px;  
 }

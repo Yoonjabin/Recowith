@@ -29,11 +29,20 @@
     font-weight: bold; 
 }
 
+.backButton img{
+    width: 22.5px;
+    height: 15px;
+    transform: translateX(-10px);
+}
+
 .headerText {
-    font-weight: bold;
     text-align: center;
     flex-grow: 1; /* 텍스트가 가운데에 배치되도록 확장 */
     position: absolute; /* 텍스트를 절대 위치로 */
     left: 50%; 
     transform: translateX(-50%); /* 가운데로 정확히 위치하도록 */
+    font-family: 'Pretendard-SemiBold';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23.87px; 
 }
