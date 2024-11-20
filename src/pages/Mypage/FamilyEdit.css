@@ -1,8 +1,32 @@
-.family-edit-container,.mission-d-top{
+.family-edit-container{
   background-color: #F9DED3;
 }
-.user-edit-line{
+
+
+.family-edit-line{
   border: 1px solid #ffffff;
+  width: 100%;
+}
+
+
+.mission-d-top-22{
+  display: flex;
+  flex-direction: row;
+  width: 393px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color: #F9DED3;
+}
+
+.family-edit-container{
+  width: 100%;
+}
+
+.mission-d-back-img-22 img{
+  width: 22.5px;
+  height: 15px;
+  transform: translateX(-100px);
 }
 
 .family-edit-top-container{
@@ -142,14 +166,20 @@
 .family-edit-container{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
+
+
 .family-edit-plus-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
+  position: fixed;
+  margin-bottom: 170px;
+  bottom: 0;
+  left: 42.8%;
+  /* margin-top: 10px; */
 }
 
 .family-edit-plus-container img{

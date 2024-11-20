@@ -73,7 +73,7 @@ export default function FamilyPlus() {
 
         if (response.status === 200) {
           console.log("구성원 추가 성공:", response.data);
-          alert("구성원이 성공적으로 추가되었습니다.");
+          // alert("구성원이 성공적으로 추가되었습니다.");
           setIsAdded(true); // 버튼 상태 변경
         } else {
           console.error("구성원 추가 실패: 예상하지 못한 상태 코드", response.status);
@@ -89,7 +89,7 @@ export default function FamilyPlus() {
   return (
     <div className="family-plus-container">
       <div className="mission-d-top-10">
-        <div className="mission-d-back-img" onClick={() => navigate("/MypageMain")}>
+        <div className="mission-d-back-img" onClick={() => navigate("/FamilyInfo")}>
           <img src={back} alt="" />
         </div>
         <div className="mission-d-title">가족구성원 등록</div>

@@ -1,51 +1,86 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import back from "./images/back.png";
-import remove from "./images/remove.png"
-import "./FamilyEdit.css"
+import remove from "./images/remove.png";
+import "./FamilyEdit.css";
 import profile from "./images/profile.png";
-import familyPlus from "./images/familyPlus.png"
+import familyPlus from "./images/familyPlus.png";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Family_Info() {
-  const userProfile = [
-    {
-      username: "aaaa",
-      nickname: "아기도치",
-      img: profile,
-    },
-    {
-      username: "bbbb",
-      nickname: "엄마도치",
-      img: profile,
-    },
-    {
-      username: "cccc",
-      nickname: "첫째도치",
-      img: profile,
-    },
-    {
-      username: "dddd",
-      nickname: "둘째도치",
-      img: profile,
-    },
-    {
-      username: "eeee",
-      nickname: "셋째도치",
-      img: profile,
-    },
-  ];
+  const [userData, setUserData] = useState(null); // 사용자 데이터 상태
+  const [error, setError] = useState(null); // 에러 상태
+
+  const userId = localStorage.getItem("userId");
+  const accessToken = localStorage.getItem("accessToken");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://dochi-nest-api.shop/api/auth/search/${userId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        );
+        if (response.status === 200) {
+          setUserData(response.data.data); // API에서 받은 데이터를 상태에 저장
+          console.log(response);
+        } else {
+          console.log(response);
+        }
+      } catch (err) {
+        setError(err.message); // 에러 메시지 저장
+        console.error("API 요청 오류:", err);
+      }
+    };
+    fetchData(); // 함수 호출
+  }, [userId]);
+
+  const handleRemoveMember = async (memberId) => {
+    try {
+      const response = await axios.patch(
+        `https://dochi-nest-api.shop/api/group/remove/${memberId}`,
+        // null,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        // 삭제 성공 시 alert 띄우고 멤버 제거
+        alert("멤버가 삭제되었습니다.");
+        setUserData((prevData) => ({
+          ...prevData,
+          members: prevData.members.filter((member) => member.userId !== memberId),
+        }));
+      } else {
+        setError(response.data.msg);
+      }
+    } catch (err) {
+      setError("가족 구성원 삭제 중 오류가 발생했습니다.");
+      console.error("삭제 요청 오류:", err);
+    }
+  };
 
   const navigate = useNavigate();
 
   return (
     <div className="family-edit-container">
-      <div className="mission-d-top">
-        <div className="mission-d-back-img" onClick={() => navigate("/FamilyInfo")}>
+      <div className="mission-d-top-22">
+        <div
+          className="mission-d-back-img-22"
+          onClick={() => navigate("/FamilyInfo")}
+        >
           <img src={back} alt="뒤로가기" />
         </div>
         <div className="mission-d-title">가족 정보 수정</div>
       </div>
-      <div className="user-edit-line"></div>
+      <div className="family-edit-line"></div>
 
       <div className="family-edit-top-container">
         <div className="family-edit-title">
@@ -56,31 +91,42 @@ export default function Family_Info() {
         </div>
       </div>
 
-      <div className="family-edit-main-container">
-        {userProfile.map((user, index) => (
-          <div className="family-edit-box" key={index}>
-            <div className="family-plus-remove">
-              <img src={remove} alt="" />
-            </div>
-            <div className="family-edit-profile">
-              <img src={user.img} alt={`${user.nickname} 프로필`} />
-            </div>
-            <div className="family-edit-profile-text">
-              <div className="family-edit-nickname">
-                <span>닉네임</span>
-                <div className="family-edit-nick-input">{user.nickname}</div>
+      {error && (
+        <div className="error-message">
+          {error}
+        </div>
+      )}
+
+      {userData && (
+        <div className="family-edit-main-container">
+          {userData.members.map((user, index) => (
+            <div className="family-edit-box" key={index}>
+              <div
+                className="family-plus-remove"
+                onClick={() => handleRemoveMember(user.userId)}
+              >
+                <img src={remove} alt="삭제" />
               </div>
-              <div className="family-edit-username">
-                <span>아이디</span>
-                <div className="family-edit-username-input">{user.username}</div>
+              <div className="family-edit-profile">
+                <img src={profile} alt={`${user.nickname} 프로필`} />
+              </div>
+              <div className="family-edit-profile-text">
+                <div className="family-edit-nickname">
+                  <span>닉네임</span>
+                  <div className="family-edit-nick-input">{user.nickname}</div>
+                </div>
+                <div className="family-edit-username">
+                  <span>아이디</span>
+                  <div className="family-edit-username-input">{user.username}</div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
       <div className="family-edit-plus-container">
-        <img src={familyPlus} alt="" />
+        <img src={familyPlus} alt="가족 추가" />
         <button onClick={() => navigate("/FamilyPlus")}>가족 구성원 추가</button>
       </div>
     </div>

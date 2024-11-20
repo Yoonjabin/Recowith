@@ -9,7 +9,7 @@ const SignIn = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/inputFam');
-    }, 2500); // 3초 후 이동
+    }, 3000); // 3초 후 이동
 
     // 컴포넌트가 언마운트되면 타이머 정리
     return () => clearTimeout(timer);
