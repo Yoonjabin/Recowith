@@ -14,45 +14,54 @@ export default function FamilyPlus() {
   const accessToken = localStorage.getItem("accessToken"); // 토큰 가져오기
   const navigate = useNavigate();
 
-  // 검색 기능
+// 검색 기능
   const handleSearch = async () => {
     if (!query.trim()) {
       alert("검색할 아이디를 입력하세요.");
       return;
     }
 
-    try {
-      const response = await axios.get(`http://3.223.46.202:80/api/group/search/${query}`, {
-        headers: { Authorization: `Bearer ${accessToken}` },
-      });
+  try {
+    const response = await axios.get(`https://dochi-nest-api.shop/api/group/search/${query}`, {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
 
-      if (response.status===200) {
-        console.log(response);
-        setSearchResults(response.data);
-        setError(false);
-      } else {
-        console.log(response);
-        setSearchResults(null);
-        setError(true);
-        if(response.status===400){
-          alert("이미 등록된 그룹이 있는 사용자입니다.")
-        }else if(response.status===404){
-          alert("사용자 정보를 찾을 수 없습니다.")
-        }
-      }
-    } catch (error) {
-      console.error("검색 중 오류가 발생했습니다.", error);
+    // 백엔드 응답 데이터 확인
+    console.log("응답 데이터:", response.data);
+
+    // 응답 상태 확인
+    if (response.status === 200 && response.data.code === 200) {
+      setSearchResults(response.data);
+      setError(false);
+      alert("사용자 검색 성공");
+    } else if (response.status === 200 &&response.data.code === 400) {
+      alert("이미 등록된 그룹이 있는 사용자입니다.");
+      setSearchResults(null);
+      setError(true);
+    } else if (response.status === 200 &&response.data.code === 404) {
+      alert("사용자 정보를 찾을 수 없습니다.");
+      setSearchResults(null);
+      setError(true);
+    } else {
+      alert("알 수 없는 오류가 발생했습니다.");
       setSearchResults(null);
       setError(true);
     }
-  };
+  } catch (error) {
+    console.error("검색 중 오류가 발생했습니다.", error);
+    alert("검색 중 오류가 발생했습니다.");
+    setSearchResults(null);
+    setError(true);
+  }
+};
+
 
   // 구성원 추가 기능
   const handleAddMember = async () => {
     if (searchResults) {
       try {
         const response = await axios.post(
-          `http://3.223.46.202:80/api/group/add`,
+          `https://dochi-nest-api.shop/api/group/add`,
           { userId: searchResults.data.userId },
           {
             headers: {
@@ -79,14 +88,14 @@ export default function FamilyPlus() {
 
   return (
     <div className="family-plus-container">
-      <div className="mission-d-top">
+      <div className="mission-d-top-10">
         <div className="mission-d-back-img" onClick={() => navigate("/MypageMain")}>
           <img src={back} alt="" />
         </div>
         <div className="mission-d-title">가족구성원 등록</div>
       </div>
 
-      <div className="user-edit-line"></div>
+      <div className="mypage-underline"></div>
 
       <div className="family-plus-main-container">
         <div className="family-plus-search-bar">
@@ -111,8 +120,12 @@ export default function FamilyPlus() {
               className="family-plus-profile-img"
             />
             <div className="family-plus-search-result-text">
-              <p>닉네임 <span>{searchResults.data.nickname}</span></p>
-              <p>아이디 <span>{searchResults.data.username}</span></p>
+              <div className="family-plus-search-result-textbox1">
+                <span>닉네임</span> <div className="family-plus-search-user-info">{searchResults.data.nickname}</div>
+              </div>
+              <div className="family-plus-search-result-textbox2">
+                <span>아이디</span> <div className="family-plus-search-user-info">{searchResults.data.username}</div>
+              </div>
             </div>
 
             <button
@@ -129,100 +142,3 @@ export default function FamilyPlus() {
   );
 }
 
-
-
-
-
-// import React, { useState } from "react";
-// import axios from "axios";
-// import { useNavigate } from "react-router-dom";
-// import "./FamilyPlus.css";
-// import back from "./images/back.png";
-// import search from "./images/search.png";
-// import profileImg from "./images/profileImg.png";
-
-// export default function FamilyPlus() {
-//   const [query, setQuery] = useState("");
-//   const [searchResults, setSearchResults] = useState({
-//     id: "user123",
-//     nickname: "홍길동"
-//   });
-//   const [error, setError] = useState(false);
-//   // const accessToken = localStorage.getItem("accessToken");
-//   const navigate = useNavigate();
-
-//   // 검색 기능 (더미 데이터로 테스트)
-//   const handleSearch = async () => {
-//     // 실제 API 호출은 생략하고 더미 데이터를 보여줍니다.
-//     if (query) {
-//       setSearchResults({
-//         id: "user123",
-//         nickname: "홍길동"
-//       });
-//       setError(false);
-//     } else {
-//       setSearchResults(null);
-//       setError(true);
-//     }
-//   };
-
-//   // 구성원 추가 기능 (백엔드에 정보 전송)
-//   const handleAddMember = async () => {
-//     if (searchResults) {
-//       try {
-//         // 더미 데이터로 추가 처리
-//         alert("구성원이 성공적으로 추가되었습니다.");
-//         setQuery("");
-//         setSearchResults(null);
-//         navigate("/FamilyInfo");
-//       } catch (error) {
-//         console.error("구성원 추가 중 오류가 발생했습니다.", error);
-//         alert("구성원을 추가하는 중 오류가 발생했습니다.");
-//       }
-//     }
-//   };
-
-//   return (
-//     <div className="family-plus-container">
-//       <div className="mission-d-top">
-//         <div className="mission-d-back-img">
-//           <img src={back} alt="" />
-//         </div>
-//         <div className="mission-d-title">가족구성원 등록</div>
-//       </div>
-
-//       <div className="user-edit-line"></div>
-
-//       <div className="family-plus-main-container">
-//         <div className="family-plus-search-bar">
-//           <input
-//             type="text"
-//             placeholder="가족구성원의 아이디를 조회해 보세요"
-//             className="search-input"
-//             value={query}
-//             onChange={(e) => setQuery(e.target.value)}
-//           />
-//           <img src={search} alt="search icon" onClick={handleSearch} />
-//         </div>
-//         <div className="family-plus-line"></div>
-
-//         {error && <p className="no-results">검색 결과 없음</p>}
-
-//         {searchResults && (
-//           <div className="family-plus-search-results">
-//             <img
-//               src={profileImg}
-//               alt="profile"
-//               className="family-plus-profile-img"
-//             />
-//             <div className="family-plus-info">
-//               <p>닉네임 <span>{searchResults.nickname}</span></p>
-//               <p>아이디 <span>{searchResults.id}</span></p>
-//             </div>
-//             <button onClick={handleAddMember}>추가</button>
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// }

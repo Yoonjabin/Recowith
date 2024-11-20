@@ -18,7 +18,7 @@ const InputFam = () => {
 
   const handleFamilySubmit = async () => {
     try {
-      const response = await axios.post('http://3.223.46.202:80/api/group/create', {
+      const response = await axios.post('https://dochi-nest-api.shop/api/group/create', {
         groupName: familyname,
       },{
         headers: {

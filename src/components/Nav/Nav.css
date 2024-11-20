@@ -84,3 +84,9 @@ body {
   width: 33px;
   height: 33px;
 }
+
+
+/* 활성화된 메뉴 */
+.active-text {
+  color: #F9957F; /* 활성화 상태의 글자색 */
+}

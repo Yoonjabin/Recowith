@@ -56,30 +56,6 @@ export default function Main() {
         }
     };
 
-    // useEffect(() => {
-    //     const fetchPosts = async () => {
-    //     const accessToken = localStorage.getItem('accessToken');
-    //     try {
-    //         const response = await axios.get('http://3.223.46.202:80//api/auth/main',
-    //             {
-    //                 headers: {
-    //                     Authorization: `Bearer ${accessToken}`, 
-    //                 }
-    //             });
-
-    //         if (response.status===200) {
-    //         setmainMissionPost(response.data); 
-    //         console.log("Fetched posts:", response.data); 
-    //         } else {
-    //         console.error('Failed to fetch post:', response.data.message);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error fetching posts:', error);
-    //     }
-    //     };
-    //     fetchPosts();
-    // }, []);
-
     return (
         <div className='main-container'>
             <div className='main-title-container'>

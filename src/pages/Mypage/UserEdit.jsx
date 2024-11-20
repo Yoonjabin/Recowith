@@ -16,7 +16,7 @@ export default function UserEdit() {
   const token = localStorage.getItem("accessToken");
   const handleSubmit = async () => {
     try {
-      const response = await axios.put("http://3.223.46.202:80/api/auth/updateUser", {
+      const response = await axios.put("https://dochi-nest-api.shop/api/auth/updateUser", {
         userId: String(userId),
         password: password,
         email: email,
@@ -43,14 +43,14 @@ export default function UserEdit() {
 
   return (
     <div className="user-edit-container">
-      <div className="mission-d-top">
+      <div className="mission-d-top-10">
         <div className="mission-d-back-img" onClick={() => navigate('/MypageMain')}>
           <img src={back} alt="" />
         </div>
-        <div className="mission-d-title">마이페이지</div>
+        <div className="mission-d-title">회원정보 수정</div>
       </div>
 
-      <div className="user-edit-line"></div>
+      <div className="mypage-underline"></div>
 
       <div className="user-edit-contents">
         <div className="user-edit-id">

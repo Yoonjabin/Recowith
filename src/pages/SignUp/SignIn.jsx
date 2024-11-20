@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SignIn.css';
 import dochi from '../../pages/Login/loginDochi.png';
@@ -6,25 +6,23 @@ import dochi from '../../pages/Login/loginDochi.png';
 const SignIn = () => {
   const navigate = useNavigate();
 
-  const token = localStorage.getItem('accessToken');
-  const nickname = localStorage.getItem('nickname');
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/inputFam');
+    }, 2500); // 3초 후 이동
 
-  const handlePageClick = () => {
-    navigate('/inputFam');
-  };
+    // 컴포넌트가 언마운트되면 타이머 정리
+    return () => clearTimeout(timer);
+  }, [navigate]);
 
   return (
-
-    <div className="signContainer" onClick={handlePageClick}>
-
+    <div className="signContainer">
       <img src={dochi} alt="Hedgehog" className="SignHedgehog" />
-
       <div className="textContainer">
         <span>가입 완료!</span>
-        <p>{nickname}님, 환영해요!</p>
+        <p>도치둥지에 오신걸, 환영해요!</p>
       </div>
     </div>
-    
   );
 };
 

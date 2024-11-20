@@ -1,3 +1,32 @@
+.mission-d-top-10{
+  display: flex;
+  flex-direction: row;
+  width: 393px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.mission-d-back-img-1 img{
+  width: 22.5px;
+  height: 15px;
+  transform: translateX(-110px);
+}
+.mission-d-title{
+  font-family: 'Pretendard-SemiBold';
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 13px;
+  text-align: center;
+}
+
+.mypage-underline{
+  border: 1px solid #E3E3E3;
+}
+
+
+
 .family-plus-search-bar{
   display: flex;
   flex-direction: row;
@@ -60,7 +89,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
   margin-top: 20px;
 }
 
@@ -77,26 +106,34 @@
   color: black;
 }
 
-.family-plus-search-result-text p{
+.family-plus-search-result-text span{
   font-family: 'Pretendard-Regular';
   font-size: 12.94px;
   font-weight: 400;
   line-height: 15.65px;
 }
-.family-plus-search-result-text span{
-  width: 102.4px;
-  height: 23.71px;
-  padding: 3px 25px;
+.family-plus-search-user-info{
+  width: 100px;
+  height: 25.71px;
+  /* padding: 0px 0px 0px 9px; */
   border-radius: 53.9px;
   border: 1.08px solid #E3E3E3;
   color: #AAAAAA;
   font-family: 'Pretendard-Regular';
   font-size: 12.94px;
+  text-align: center;
   font-weight: 400;
-  line-height: 15.65px;
+  line-height: 24px;
   margin-left: 5px;
 }
 
+.family-plus-search-result-textbox1,.family-plus-search-result-textbox2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
 
 /* .family-plus-info span{
   margin-left: 13px;
