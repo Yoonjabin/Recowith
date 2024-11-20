@@ -53,7 +53,7 @@ export default function Mission_write() {
     }
 
     try {
-      const response = await axios.post('http://44.193.101.200:80/api/challenges/1/upload', formData,
+      const response = await axios.post('http://3.223.46.202:80/api/challenges/1/upload', formData,
         {
           headers: {
             'Authorization': `Bearer ${accessToken}`,

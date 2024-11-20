@@ -9,7 +9,7 @@
 //       setIsLoading(true);
 //       const accessToken = localStorage.getItem('accessToken');
 //       try {
-//         const response = await axios.get(`http://44.193.101.200:80/api/project/search/13`, {
+//         const response = await axios.get(`http://3.223.46.202:80/api/project/search/13`, {
 //           headers: {
 //             Authorization: `Bearer ${accessToken}`,
 //             // referrerPolicy: "no-referrer"
@@ -42,7 +42,7 @@
 //   }
 
 //   // 이미지 URL이 상대 경로일 경우 절대 경로로 변경
-//   const imageUrl = `http://44.193.101.200:80/${projectDetail.data.url}`;
+//   const imageUrl = `http://3.223.46.202:80/${projectDetail.data.url}`;
 
 //   return (
 //     <div>
@@ -72,7 +72,7 @@ export default function ProjectDetail() {
       setIsLoading(true);
       const accessToken = localStorage.getItem('accessToken');
       try {
-        const response = await axios.get(`http://44.193.101.200:80/api/user/challenges/1`, {
+        const response = await axios.get(`http://3.223.46.202:80/api/user/challenges/1`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
@@ -103,7 +103,7 @@ export default function ProjectDetail() {
     return <div>프로젝트 정보를 불러오는 데 실패했습니다.</div>;
   }
   
-  const imageUrl = `http://44.193.101.200:80/${projectDetail.image}`;
+  const imageUrl = `http://3.223.46.202:80/${projectDetail.image}`;
 
   return (
     <div>

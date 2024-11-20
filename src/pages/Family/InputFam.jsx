@@ -18,7 +18,7 @@ const InputFam = () => {
 
   const handleFamilySubmit = async () => {
     try {
-      const response = await axios.post('http://44.193.101.200:80/api/group/create', {
+      const response = await axios.post('http://3.223.46.202:80/api/group/create', {
         groupName: familyname,
       },{
         headers: {

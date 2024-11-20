@@ -20,7 +20,7 @@ export default function Mypage_main() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://44.193.101.200:80/api/auth/search/${userId}`,{
+        const response = await axios.get(`http://3.223.46.202:80/api/auth/search/${userId}`,{
           headers: {
             Authorization: `Bearer ${accessToken}`,
           }
@@ -131,7 +131,7 @@ export default function Mypage_main() {
                       <img src={tape} alt="테이프" className="mypage-project-tape" />
                       <div className="mypage-main-project">
                         <img
-                          src={`http://44.193.101.200:80/${project.url}`}  // 이미지 URL 설정
+                          src={`http://3.223.46.202:80/${project.url}`}  // 이미지 URL 설정
                           alt={project.projectName}
                         />
                         <span className="mypage-project-date">{project.updatedAt.split('T')[0]}</span>

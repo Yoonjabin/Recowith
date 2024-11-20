@@ -16,7 +16,7 @@ export default function UserEdit() {
   const token = localStorage.getItem("accessToken");
   const handleSubmit = async () => {
     try {
-      const response = await axios.put("http://44.193.101.200:80/api/auth/updateUser", {
+      const response = await axios.put("http://3.223.46.202:80/api/auth/updateUser", {
         userId: String(userId),
         password: password,
         email: email,

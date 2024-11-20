@@ -22,7 +22,7 @@ export default function FamilyPlus() {
     }
 
     try {
-      const response = await axios.get(`http://44.193.101.200:80/api/group/search/${query}`, {
+      const response = await axios.get(`http://3.223.46.202:80/api/group/search/${query}`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
 
@@ -52,7 +52,7 @@ export default function FamilyPlus() {
     if (searchResults) {
       try {
         const response = await axios.post(
-          `http://44.193.101.200:80/api/group/add`,
+          `http://3.223.46.202:80/api/group/add`,
           { userId: searchResults.data.userId },
           {
             headers: {

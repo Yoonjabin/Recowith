@@ -15,7 +15,7 @@ export default function Mission_main(){
     const fetchPosts = async () => {
       const accessToken = localStorage.getItem('accessToken');
       try {
-        const response = await axios.get('http://44.193.101.200:80/api/challenges', {
+        const response = await axios.get('http://3.223.46.202:80/api/challenges', {
           headers: {
             Authorization: `Bearer ${accessToken}`, 
           }
