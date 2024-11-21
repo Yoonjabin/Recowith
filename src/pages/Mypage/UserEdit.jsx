@@ -14,6 +14,7 @@ export default function UserEdit() {
   const [userId] = useState(localStorage.getItem("userId"));
 
   const token = localStorage.getItem("accessToken");
+
   const handleSubmit = async () => {
     try {
       const response = await axios.put("https://dochi-nest-api.shop/api/auth/updateUser", {
@@ -27,17 +28,40 @@ export default function UserEdit() {
         }
       });
 
-      if (response.status===200) {
-        console.log(response)
+      if (response.status === 200) {
+        console.log(response);
         alert("회원정보 수정 완료!");
         navigate("/MypageMain");
       } else {
-        console.log(response)
+        console.log(response);
         alert("회원정보 수정에 실패했습니다.");
       }
     } catch (error) {
       console.error("회원정보 수정 중 오류가 발생했습니다.", error);
       alert("회원정보 수정에 실패했습니다.");
+    }
+  };
+
+  // 로그아웃 처리
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post("https://dochi-nest-api.shop/api/auth/logout", {}, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      if (response.status === 200) {
+        localStorage.clear();
+        alert("로그아웃 되었습니다.");
+        navigate("/");
+      } else {
+        console.error("로그아웃 실패:", response);
+        alert("로그아웃 실패");
+      }
+    } catch (error) {
+      console.error("로그아웃 오류:", error);
+      alert("로그아웃 중 오류가 발생했습니다.");
     }
   };
 
@@ -51,6 +75,10 @@ export default function UserEdit() {
       </div>
 
       <div className="mypage-underline"></div>
+
+      <div className="user-logout-button">
+        <button onClick={handleLogout}>로그아웃</button>
+      </div>
 
       <div className="user-edit-contents">
         <div className="user-edit-id">
@@ -110,4 +138,3 @@ export default function UserEdit() {
     </div>
   );
 }
-

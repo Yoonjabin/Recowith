@@ -24,7 +24,7 @@
   flex-direction: column;
   gap: 25px;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 70px;
 }
 
 .user-edit-id input::placeholder, .user-edit-password input::placeholder,.user-edit-email input::placeholder,.user-edit-nickname input::placeholder{
@@ -68,4 +68,18 @@
   display: flex;
   justify-content: center;
   margin-top: 100px;
+}
+
+.user-logout-button button{
+  background-color: #ffffff;
+  border: 2px solid #F9957F;
+  width: 100px;
+  height: 30px;
+  color: #000000;
+  font-family: 'Pretendard-Medium';
+  font-weight: 500;
+  border-radius: 50px; 
+  position: fixed;
+  right: 35%;
+  margin-top: 20px;
 }
