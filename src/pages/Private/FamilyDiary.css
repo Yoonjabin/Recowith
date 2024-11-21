@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('../font/Pretendard-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('../font/Pretendard-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('../font/Pretendard-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Medium';
+    src: url('../font/Pretendard-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+.missionTop-2{
+    background-color: #F9DED3;
+    display: flex;
+    flex-direction: row;
+    width: 393px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-family-underline-2{
+    border: #FFFFFF;
+}
+
+/* General Calendar Styles */
+.react-calendar {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid #F9957F;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(0.8);
+    transform-origin: top right;
+    margin: 0;
+}
+
+.react-calendar__month-view__weekdays {
+    padding-left: 15px;
+    gap: 2px;
+}
+
+.react-calendar__month-view__days__day {
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.react-calendar__tile {
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    color: #000000;
+    background-color: #FFFFFF;
+    border: none;
+    outline: none;
+}
+
+.react-calendar__tile--active {
+    background-color: #F9957F;
+    color: #FFFFFF;
+}
+
+.react-calendar__tile--now {
+    color: #000000;
+}
+
+.react-calendar__tile:hover {
+    cursor: pointer;
+}
+
+.react-calendar__navigation {
+    border-radius: 15px;
+    margin-left: 60px;
+    padding: 10px;
+}
+
+.react-calendar__navigation button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #F9957F;
+}
+
+.react-calendar__navigation__label {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 16px;
+    color: #F9957F;
+}
+
+/* Mission Top Section */
+.missionTop {
+    background-color: #F9DED3;
+}
+
+.mission_back_img img {
+    cursor: pointer;
+}
+
+/* Main Container */
+.diary-write-main-container {
+    background-color: #F9DED3;
+    width: 393px;
+    height: 720px;
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Date Section */
+.diary-write-date {
+    margin-top: 15px;
+    position: relative;
+}
+
+.diary-write-date-input {
+    width: 162px;
+    height: 25px;
+    border-radius: 10px;
+    border: 1px solid #F9957F;
+    opacity: 0px;
+    font-family: 'Pretendard-SemiBold';
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-left: 160px;
+    margin-top: 10px;
+}
+
+.calendar-icon {
+    width: 9px;
+    height: 9.05px;
+}
+
+/* Location Input */
+.diary-write-title input {
+    width: 359px;
+    height: 56px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    border: 1px solid #F9957F;
+    outline: none;
+    font-family: 'Pretendard-SemiBold';
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 15px;
+    line-height: 53px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* .diary-write-title ::placeholder {
+    font-size: 16px;
+    color: #AAAAAA;
+} */
+
+/* Image Input */
+.diary-write-input-img {
+    width: 359px;
+    height: 186px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    margin-top: 15px;
+}
+
+.diary-write-camera-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 68px;
+}
+
+.diary-write-camera-img img {
+    width: 45px;
+    height: 41.25px;
+}
+
+/* Textarea for Content */
+.diary-write-contents-container {
+    position: relative;
+    margin-top: 10px;
+}
+
+.diary-write-contents-container textarea {
+    width: 319px;
+    height: 240px;
+    border-radius: 20px;
+    resize: none;
+    border: none;
+    outline: none;
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.diary-write-contents-container ::placeholder {
+    font-family: 'Pretendard-Medium';
+    font-size: 16px;
+    font-weight: 500;
+    color: #AAAAAA;
+}
+
+.diary-write-char-count {
+    font-size: 15px;
+    color: #000000;
+    font-weight: 400;
+    display: flex;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+
+/* Join Section */
+.mission-d-join {
+    margin-top: -15px;
+}

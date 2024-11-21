@@ -59,6 +59,11 @@ export default function Mypage_main() {
     return "";
   };
 
+  // 프로젝트 클릭 시 해당 프로젝트 상세 페이지로 이동
+  const handleProjectClick = (projectId) => {
+    navigate(`/FamilyProject/${projectId}`); // 해당 프로젝트 ID를 포함하여 이동
+  };
+
   return (
     <div className="mypage-main-container" onMouseMove={handleMouseMove}>
       <div className="mission-d-top-5">
@@ -69,7 +74,6 @@ export default function Mypage_main() {
       </div>
 
       <div className="mypage-underline"></div>
-
 
       {userData && ( 
         <>
@@ -93,7 +97,7 @@ export default function Mypage_main() {
           {/* 가족 구성원 섹션 */}
           <div className="mypage-main-family-container">
             <div className="mypage-main-family-title">
-              {userData.groupName} <span>  가족구성원</span>
+              {userData.groupName} <span>가족구성원</span>
             </div>
             <div className="mypage-main-family-box">
               <div className="mypage-m-f-box-top">{userData.groupName}</div>
@@ -113,20 +117,20 @@ export default function Mypage_main() {
               <div className="mypage-m-f-menu">
                 <span onClick={() => navigate("/FamilyInfo")}>가족 소개</span>
                 <span onClick={() => navigate("/PointMain")}>{userData.point}P</span>
-                <span>도전 과제</span>
+                <span onClick={() => navigate("/Family_mission")}>도전 과제</span>
               </div>
             </div>
           </div>
 
-           {/* 프로젝트 섹션 */}
-            <div className="mypage-main-project-container">
+          {/* 프로젝트 섹션 */}
+          <div className="mypage-main-project-container">
             <div className="mypage-main-project-title">
               {userData.groupName} <span>프로젝트</span>
             </div>
             <div className={`mypage-main-project-contents-container ${slideDirection === 1 ? 'slide-right' : slideDirection === -1 ? 'slide-left' : ''}`}>
               {userData.projects?.length > 0 ? (
                 userData.projects.map((project, index) => (
-                  <div className="mypage-main-project-contents" key={index}>
+                  <div className="mypage-main-project-contents" key={index} onClick={() => handleProjectClick(project.projectId)}>
                     <div className="mypage-main-project-box">
                       <img src={tape} alt="테이프" className="mypage-project-tape" />
                       <div className="mypage-main-project">

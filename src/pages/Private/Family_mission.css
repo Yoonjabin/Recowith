@@ -1,0 +1,123 @@
+.missionContainer {
+    width: 393px;
+}
+
+.missionTop {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    width: 393px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-family-underline{
+    border: 1px solid #E3E3E3;
+}
+
+.mission_back_img img {
+    width: 22.5px;
+    height: 15px;
+    transform: translateX(-100px);
+    cursor: pointer;
+}
+
+.missionTitle {
+    font-family: 'Pretendard-SemiBold';
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 13px;
+    text-align: center;
+}
+
+.missionContent {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 20px;
+}
+
+.missionDate {
+    align-self: flex-start; 
+    margin-bottom: 10px; 
+    font-size: 14px; 
+    font-weight: bold;
+    color: black; 
+}
+
+.mission1 {
+    width: 359px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: #F9DED3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+}
+
+.mission_1_text {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+
+.mission_main_sub {
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 400;
+    color: #AAAAAA;
+    line-height: 24.2px;
+    width: 180px;
+    letter-spacing: -1.4px;
+}
+
+.mission_main_sub span {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+    color: #000000;
+}
+
+.mission_1_daypoint {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+}
+
+.mission_1_day {
+    width: 54px;
+    height: 23px;
+    border-radius: 30px;
+    border: 1px solid #ED7C90;
+    /* background-color: #F9DED3; */
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    color: #ED7C90;
+}
+
+.mission_1_point {
+    width: 72px;
+    height: 23px;
+    border-radius: 30px;
+    border: 1px solid #ED7C90;
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #ED7C90;
+    text-align: center;
+}
+
+.mission_1_img img {
+    width: 126px;
+    height: 108px;
+    transform: translateX(8px);
+}

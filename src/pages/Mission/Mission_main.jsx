@@ -45,7 +45,7 @@ export default function Mission_main(){
   return (
     <div className="mission-main-container">
       <div className="mission-main-top">
-        <div className="mission-main-back-img" onClick={() => navigate('/')}>
+        <div className="mission-main-back-img" onClick={() => navigate('/main')}>
           <img src={back} alt="" />
         </div>
         <div className="mission-main-title">
