@@ -127,7 +127,7 @@ export default function Mypage_main() {
             <div className="mypage-main-project-title">
               {userData.groupName} <span>프로젝트</span>
             </div>
-            <div className={`mypage-main-project-contents-container ${slideDirection === 1 ? 'slide-right' : slideDirection === -1 ? 'slide-left' : ''}`}>
+            <div className={`mypage-main-project-contents-container ${slideDirection === -1 ? 'slide-right' : slideDirection === 1 ? 'slide-left' : ''}`}>
               {userData.projects?.length > 0 ? (
                 userData.projects.map((project, index) => (
                   <div className="mypage-main-project-contents" key={index} onClick={() => handleProjectClick(project.projectId)}>

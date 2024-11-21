@@ -80,6 +80,11 @@
   font-weight: 500;
   border-radius: 50px; 
   position: fixed;
-  right: 35%;
   margin-top: 20px;
+}
+
+.user-logout-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
 }
