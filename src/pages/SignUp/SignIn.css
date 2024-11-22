@@ -107,6 +107,12 @@
     opacity: 0;
 }
 
+.signin-underline{
+    border: 1px solid #E3E3E3;
+    width: 100%;
+    margin-bottom: 220px;
+}
+
 /* 첫 번째 텍스트 애니메이션 */
 .textContainer span {
     font-size: 30px;

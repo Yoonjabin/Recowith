@@ -77,8 +77,8 @@ export default function Project_write() {
         </div>
 
         <div className="fam-project-write-input-img">
-          <span className="diary-write-camera-img">
-            <img alt="mission" src={ProjectPost.image} />
+          <span className="diary-write-project-img">
+            <img alt="projectimg" src={`https://dochi-nest-api.shop/${ProjectPost.url}`} />
           </span>
         </div>
 

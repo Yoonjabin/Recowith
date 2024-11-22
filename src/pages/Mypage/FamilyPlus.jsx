@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./FamilyPlus.css";
 import back from "./images/back.png";
 import search from "./images/search.png";
-import profileImg from "./images/profileImg.png";
+import profileImg from "./images/profile.png";
 
 export default function FamilyPlus() {
   const [query, setQuery] = useState(""); // 검색어
@@ -33,7 +33,7 @@ export default function FamilyPlus() {
     if (response.status === 200 && response.data.code === 200) {
       setSearchResults(response.data);
       setError(false);
-      alert("사용자 검색 성공");
+      // alert("사용자 검색 성공");
     } else if (response.status === 200 &&response.data.code === 400) {
       alert("이미 등록된 그룹이 있는 사용자입니다.");
       setSearchResults(null);

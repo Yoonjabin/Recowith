@@ -34,19 +34,36 @@ const Login = () => {
       const data = response.data;
       if (response.status === 200) {
         console.log('로그인 성공:', response);
-        localStorage.setItem('accessToken', response.data.token);
+        localStorage.setItem('accessToken', data.token);
         localStorage.setItem('username', data.username);
         localStorage.setItem('nickname', data.nickname);
         localStorage.setItem('userId', data.userId);
         localStorage.setItem('email', data.email);
 
-        // 최초 로그인 시에만 /signin으로 이동하도록 설정
-        const isFirstLogin = localStorage.getItem('isFirstLogin');
-        if (!isFirstLogin) {
-          localStorage.setItem('isFirstLogin', 'false'); // 첫 로그인 후 이후 로그인 여부 설정
-          navigate('/signin'); // 최초 로그인 시 /signin으로 이동
-        } else {
-          navigate('/main'); // 이후 로그인 시 /main으로 이동
+        // 최초 로그인 여부 확인 요청
+        try {
+          const firstLoginResponse = await axios.post(
+            'https://dochi-nest-api.shop/api/auth/check-first-login',
+            {},
+            {
+              headers: {
+                'Authorization': `Bearer ${data.token}`,
+              },
+            }
+          );
+
+          console.log('최초 로그인 응답:', firstLoginResponse.data);
+
+          if (firstLoginResponse.data.isFirstLogin) {
+            console.log('최초 로그인: /signin으로 이동');
+            navigate('/signin');
+          } else {
+            console.log('이미 로그인한 사용자: /main으로 이동');
+            navigate('/main');
+          }
+        } catch (firstLoginError) {
+          console.error('최초 로그인 확인 요청 중 에러 발생:', firstLoginError);
+          setErrorMessage('최초 로그인 확인 중 오류가 발생했습니다.');
         }
       } else {
         console.warn('로그인 실패:', data.message || '로그인 실패');

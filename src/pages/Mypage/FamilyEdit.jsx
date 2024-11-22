@@ -26,7 +26,7 @@ export default function Family_Info() {
           }
         );
         if (response.status === 200) {
-          setUserData(response.data.data); // API에서 받은 데이터를 상태에 저장
+          setUserData(response.data.data || { members: [] }); // API에서 받은 데이터를 상태에 저장
           console.log(response);
         } else {
           console.log(response);
@@ -37,7 +37,7 @@ export default function Family_Info() {
       }
     };
     fetchData(); // 함수 호출
-  }, [userId]);
+  }, [userId, accessToken]);
 
   const handleRemoveMember = async (memberId) => {
     try {
@@ -68,6 +68,14 @@ export default function Family_Info() {
 
   const navigate = useNavigate();
 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!userData) {
+    return <div>Loading...</div>; // Show a loading message while waiting for the data
+  }
+
   return (
     <div className="family-edit-container">
       <div className="mission-d-top-22">
@@ -82,21 +90,17 @@ export default function Family_Info() {
       <div className="family-edit-line"></div>
 
       <div className="family-edit-top-container">
-        <div className="family-edit-title">
-          도치가족 <span>가족 구성원</span>
-        </div>
+        {userData.groupName && (
+          <div className="family-edit-title">
+            {userData.groupName} <span>가족 구성원</span>
+          </div>
+        )}
         <div className="family-edit-edit-button">
           <button onClick={() => navigate("/FamilyInfo")}>수정 완료</button>
         </div>
       </div>
 
-      {error && (
-        <div className="error-message">
-          {error}
-        </div>
-      )}
-
-      {userData && (
+      {userData.members && (
         <div className="family-edit-main-container">
           {userData.members.map((user, index) => (
             <div className="family-edit-box" key={index}>

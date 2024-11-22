@@ -44,8 +44,8 @@ function App() {
         <Route path='/FamilyPlus' element={<><Nav /><FamilyPlus /></>}/>
         <Route path='/PointMain' element={<><Nav /><PointMain /></>}/>
         <Route path='/signup' element={<><NavUp /><SignUp /></>} />
-        <Route path='/signin' element={<><NavUp /><SignIn /></>} />
-        <Route path='/inputFam' element={<><NavUp /><InputFam /></>} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/inputFam' element={<InputFam />} />
         <Route path='/FamilyInfo' element={<><Nav /><FamilyInfo /></>} />
         <Route path='/FamilyEdit' element={<><Nav /><FamilyEdit /></>} />
         <Route path='/ProjectDetail' element={<><Nav /><ProjectDetail /></>} />

@@ -135,7 +135,6 @@
     height: 25px;
     border-radius: 10px;
     border: 1px solid #F9957F;
-    opacity: 0px;
     font-family: 'Pretendard-SemiBold';
     font-size: 12px;
     font-weight: 600;
@@ -184,18 +183,18 @@
     margin-top: 15px;
 }
 
-.diary-write-camera-img {
+/* .diary-write-camera-img {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 68px;
-}
+} */
 
-.diary-write-camera-img img {
-    width: 45px;
-    height: 41.25px;
+.diary-write-mission-img img{
+    width: 359px;
+    height: 191px;
+    border-radius: 20px;    
 }
-
 /* Textarea for Content */
 .diary-write-contents-container {
     position: relative;

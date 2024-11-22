@@ -66,8 +66,8 @@ export default function FamilyDiary() {
                     </div>
 
                     <div className="diary-write-input-img">
-                        <span className="diary-write-camera-img">
-                            <img alt="mission" src={missionPost.image} />
+                        <span className="diary-write-mission-img">
+                            <img alt="mission" src={`https://dochi-nest-api.shop/${missionPost.image}`} />
                         </span>
                     </div>
 

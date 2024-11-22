@@ -32,7 +32,7 @@ const InputFam = () => {
       });
 
       if (response.status === 200) {
-        alert("등록 성공!");
+        // alert("등록 성공!");
         console.log("가족이름 저장 성공", response);
         setIsFamilyNameSaved(true); // 가족 이름이 저장되었으므로 버튼 활성화
       }
@@ -44,6 +44,17 @@ const InputFam = () => {
 
   return (
     <div className="inputFamContainer">
+
+      <div className="inputFam-d-top">
+        {/* <div className="mission-d-back-img-1" onClick={() => navigate("/main")}>
+          <img src={back} alt="뒤로가기" />
+        </div> */}
+        <div className="inputFam-d-title">가입 완료</div>
+      </div>
+
+      <div className="inputFam-underline"></div>
+
+
       <div className="imageContainer">
         <img src={dochi} alt="Hedgehog" className="cHedgehog" />
       </div>

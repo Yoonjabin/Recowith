@@ -42,9 +42,13 @@ export default function Mission_main(){
     navigate(`/MissionNoDetail/${id}`)
   }
 
-  const missionId1 = missionPost.length > 0 ? missionPost.find((item) => item.id === 1) : null;
-  const missionId2 = missionPost.length > 1 ? missionPost.find((item) => item.id === 2) : null;
-  const missionId3 = missionPost.length > 2 ? missionPost.find((item) => item.id === 3) : null;
+  // const missionId1 = missionPost.length > 0 ? missionPost.find((item) => item.id === 1) : null;
+  // const missionId2 = missionPost.length > 1 ? missionPost.find((item) => item.id === 2) : null;
+  // const missionId3 = missionPost.length > 2 ? missionPost.find((item) => item.id === 3) : null;
+
+  const missionId1 = missionPost.length > 0 ? missionPost[0] : null;
+  const missionId2 = missionPost.length > 1 ? missionPost[1] : null;
+  const missionId3 = missionPost.length > 2 ? missionPost[2] : null;
 
   return (
     <div className="mission-main-container">

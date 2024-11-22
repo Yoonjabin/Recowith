@@ -105,6 +105,16 @@ const SignIn = () => {
 
   return (
     <div className="signContainer">
+
+      <div className="inputFam-d-top">
+        {/* <div className="mission-d-back-img-1" onClick={() => navigate("/main")}>
+          <img src={back} alt="뒤로가기" />
+        </div> */}
+        <div className="inputFam-d-title">가입 완료</div>
+      </div>
+
+      <div className="signin-underline"></div>
+
       <img src={dochi} alt="Hedgehog" className="SignHedgehog" />
       <div className={`textContainer ${isVisible ? 'visible' : ''} ${isBlinking ? 'blinking' : ''}`}>
         <span>가입 완료!</span>
