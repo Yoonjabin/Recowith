@@ -31,6 +31,11 @@ export default function UserEdit() {
       if (response.status === 200) {
         console.log(response);
         alert("회원정보 수정 완료!");
+
+      // 로컬 스토리지 업데이트
+      if (nickname) localStorage.setItem("nickname", nickname);
+      if (email) localStorage.setItem("email", email);
+
         navigate("/MypageMain");
       } else {
         console.log(response);

@@ -43,7 +43,7 @@ export default function Family_Info() {
     try {
       const response = await axios.patch(
         `https://dochi-nest-api.shop/api/group/remove/${memberId}`,
-        // null,
+        null,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -52,7 +52,6 @@ export default function Family_Info() {
       );
 
       if (response.status === 200) {
-        // 삭제 성공 시 alert 띄우고 멤버 제거
         alert("멤버가 삭제되었습니다.");
         setUserData((prevData) => ({
           ...prevData,
