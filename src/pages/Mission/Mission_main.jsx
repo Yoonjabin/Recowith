@@ -38,6 +38,10 @@ export default function Mission_main(){
     navigate(`/MissionDetail/${id}`); 
   };
 
+  const handleNavigateNo = (id) =>{
+    navigate(`/MissionNoDetail/${id}`)
+  }
+
   const missionId1 = missionPost.length > 0 ? missionPost.find((item) => item.id === 1) : null;
   const missionId2 = missionPost.length > 1 ? missionPost.find((item) => item.id === 2) : null;
   const missionId3 = missionPost.length > 2 ? missionPost.find((item) => item.id === 3) : null;
@@ -74,7 +78,7 @@ export default function Mission_main(){
           </div>
         </div>
 
-        <div className="mission-main-2">
+        <div className="mission-main-2" onClick={()=>handleNavigateNo(2)}>
           <div className="mission-main-2-text">
             <div className="mission-main-2-sub">
               가족과 함께하는 외부 활동<br />
@@ -94,7 +98,7 @@ export default function Mission_main(){
           </div>
         </div>
 
-        <div className="mission-main-3">
+        <div className="mission-main-3"  onClick={()=>handleNavigateNo(3)}>
           <div className="mission-main-3-text">
             <div className="mission-main-3-sub">
               역사 탐방하기 <br />

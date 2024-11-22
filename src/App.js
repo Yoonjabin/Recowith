@@ -23,6 +23,7 @@ import ProjectDetail from "./pages/Project/project_detail.jsx"
 import FamilyDiary from "./pages/Private/FamilyDiary.jsx";
 import Family_mission from "./pages/Private/Family_mission.jsx";
 import FamilyProject from "./pages/Private/FamilyProject.jsx";
+import MissionNoDetail from "./pages/Mission/Mission_noDetail.jsx"
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path='/main' element={<><Nav /><Main /></>} />
         <Route path='/MissionMain' element={<><Nav /><MissionMain /></>}/>
         <Route path='/MissionDetail/:id' element={<><Nav /><MissionDetail /></>}/>
+        <Route path='/MissionNoDetail/:id' element={<><Nav /><MissionNoDetail /></>}/>
         <Route path='/MissionWrite/1' element={<><Nav /><MissionWrite /></>}/>
         <Route path='/MissionFinish' element={<MissionFinish/>}/>
         <Route path='/ProjectWrite' element={<><Nav /><ProjectWrite /></>}/>
