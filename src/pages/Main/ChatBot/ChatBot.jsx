@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './ChatBot.css';
 import Modal from "react-modal";
+import { useNavigate } from 'react-router-dom';
 import user from "./images/user.png";
 import chatbot from "./images/chatbot.png";
 
 Modal.setAppElement("#root");
 
 export default function ChatBot({ initialMessage }) {
+    const navigate = useNavigate();
+
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
-    // const [isModalOpen, setIsModalOpen] = useState(true); 
+    const [isModalOpen, setIsModalOpen] = useState(true); // 모달 상태 관리
     const apiKey = process.env.REACT_APP_API_KEY;
     const apiEndpoint = "https://api.openai.com/v1/chat/completions";
 
@@ -27,7 +30,6 @@ export default function ChatBot({ initialMessage }) {
     const handleSendMessage = async (message) => {
         if (message.trim().length === 0) return;
 
-        // addMessage("user", message); 
         setLoading(true);
 
         const summaryRequest = `Please summarize your answer in 2 sentences: ${message}`;
@@ -66,12 +68,23 @@ export default function ChatBot({ initialMessage }) {
         }
     };
 
+    const closeModal = () => {
+        setIsModalOpen(false); // 모달을 닫는 함수
+        window.location.reload();    
+    };
+
     return (
         <div className='chatBot'>
-            <Modal isOpen={true} contentLabel="챗지피티" className="gptmodal" overlayClassName="gptoverlay">
+            <Modal 
+                isOpen={isModalOpen} 
+                onRequestClose={closeModal} // 모달 닫기 핸들러
+                contentLabel="챗지피티" 
+                className="gptmodal" 
+                overlayClassName="gptoverlay"
+                shouldCloseOnOverlayClick={true} // 오버레이 클릭 시 닫힘
+            >
                 <div className="gptModal-container">
-                    {/* <div className="chat-modal-close"  onClick={() => setIsModalOpen(false)}>x</div> */}
-                    <div className="gptModal-chat">
+                    <div className="gptModal-chat" onClick={closeModal}>
                         {loading && <span className="gptModal-messageWait">답변을 기다리고 있습니다..</span>}
                         {messages.map((msg, index) => (
                             <div key={index} className={`gptModal-message ${msg.sender}`}>

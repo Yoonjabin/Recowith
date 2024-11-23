@@ -60,7 +60,7 @@ export default function Family_mission() {
             <div className="mission-family-underline"></div>
 
             <div className="missionContent">
-                <div className="missionDate">{todayDate}</div>
+                {/* <div className="missionDate">{todayDate}</div> */}
 
                 {Array.isArray(missionPost) && missionPost.length > 0 ? (
                     missionPost.map((mission, index) => (
