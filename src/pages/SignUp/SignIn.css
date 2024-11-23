@@ -139,3 +139,28 @@
 .textContainer.blinking p {
     animation: blink 0.8s ease-in-out infinite; /* 깜빡거리는 애니메이션 */
 }
+
+
+.inputFam-d-top-1{
+    display: flex;
+    /* flex-direction: row; */
+    width: 393px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: -310px;
+}
+.inputFam-d-title-1{
+    font-family: 'Pretendard-SemiBold';
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 13px;
+    text-align: center;
+    margin-left: 15px;
+}
+.inputFam-underline{
+    margin-bottom: 170px;
+    width: 100%;
+    border: 1px solid #E3E3E3;
+}

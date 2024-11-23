@@ -70,22 +70,16 @@ const InputFam = () => {
       <button className='submit-family-name' onClick={handleFamilySubmit}>저장하기</button>
 
       {/* "가족구성원 등록하기" 버튼은 가족명이 저장된 후에만 활성화 */}
-      {isFamilyNameSaved && (
         <Link to="/FamilyPlus" className="registerLink">
           가족구성원 등록하기 &gt;
         </Link>
-      )}
       
-      {isFamilyNameSaved && (
       <p className="mypageText">
         <span style={{ color: '#F9957F' }}>마이페이지</span>에서도 가족 구성원을 등록할 수 있습니다.
       </p>
-      )}
 
-      {/* "나중에 하기" 버튼은 가족명이 저장된 후에만 활성화 */}
-      {isFamilyNameSaved && (
+
         <button className="skipButton" onClick={handleSkipClick}>나중에 하기</button>
-      )}
     </div>
   );
 };

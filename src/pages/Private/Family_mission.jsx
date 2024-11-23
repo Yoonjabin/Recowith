@@ -7,7 +7,7 @@ import mission1 from '../Mission/images/mission1.png';
 
 export default function Family_mission() {
     const navigate = useNavigate();
-    const [missionPost, setMissionPost] = useState([]);
+    const [missionPost, setMissionPost] = useState([]); // 기본값을 빈 배열로 설정
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -20,7 +20,8 @@ export default function Family_mission() {
                 });
 
                 if (response.status === 200) {
-                    setMissionPost(response.data); 
+                    // 응답 데이터가 배열인지 확인하고, 배열이 아니면 빈 배열로 설정
+                    setMissionPost(Array.isArray(response.data.data) ? response.data.data : []);
                     console.log("조회 성공", response); 
                 } else {
                     console.error('Failed to fetch:', response);
@@ -58,31 +59,34 @@ export default function Family_mission() {
             </div>
             <div className="mission-family-underline"></div>
 
-
             <div className="missionContent">
                 <div className="missionDate">{todayDate}</div>
 
-                {missionPost.map((mission, index) => (
-                    <div key={index} className="mission1" onClick={() => handleNavigate(mission.id)}>
-                        <div className="mission_1_text">
-                            <div className="mission_main_sub">
-                                {mission.title} <br />
-                                <span>{mission.category}</span>
+                {Array.isArray(missionPost) && missionPost.length > 0 ? (
+                    missionPost.map((mission, index) => (
+                        <div key={index} className="mission1" onClick={() => handleNavigate(mission.id)}>
+                            <div className="mission_1_text">
+                                <div className="mission_main_sub">
+                                    {mission.title} <br />
+                                    <span>{mission.category}</span>
+                                </div>
+                                <div className="mission_1_daypoint">
+                                    <div className="mission_1_day">
+                                        D-{mission.dday || 'N/A'}
+                                    </div>
+                                    <div className="mission_1_point">
+                                        {mission.points || 'N/A'}P
+                                    </div>
+                                </div>
                             </div>
-                            <div className="mission_1_daypoint">
-                                <div className="mission_1_day">
-                                    D-{mission.dday || 'N/A'}
-                                </div>
-                                <div className="mission_1_point">
-                                    {mission.points || 'N/A'}P
-                                </div>
+                            <div className="mission_1_img">
+                                <img src={mission1} alt="mission1" />
                             </div>
                         </div>
-                        <div className="mission_1_img">
-                            <img src={mission1} alt="mission1" />
-                        </div>
-                    </div>
-                ))}
+                    ))
+                ) : (
+                    <div className="no-missions">도전 과제가 없습니다.</div>
+                )}
             </div>
         </div>
     );

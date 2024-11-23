@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    margin-top: -310px;
+    /* margin-top: -310px; */
 }
 
 .inputFam-d-title{
@@ -19,7 +19,7 @@
     margin-left: 15px;
 }
 .inputFam-underline{
-    margin-bottom: 180px;
+    margin-bottom: 170px;
     width: 100%;
     border: 1px solid #E3E3E3;
 }
@@ -32,7 +32,7 @@
 
 
 .inputFamContainer {
-    margin-top: 90px;
+    margin-top: 50px;
     position: absolute;
     top: 40%; /* 화면에서 50% 아래로 */
     left: 50%; /* 화면에서 50% 왼쪽으로 */

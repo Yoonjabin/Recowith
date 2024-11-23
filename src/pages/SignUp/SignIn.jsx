@@ -106,11 +106,11 @@ const SignIn = () => {
   return (
     <div className="signContainer">
 
-      <div className="inputFam-d-top">
+      <div className="inputFam-d-top-1">
         {/* <div className="mission-d-back-img-1" onClick={() => navigate("/main")}>
           <img src={back} alt="뒤로가기" />
         </div> */}
-        <div className="inputFam-d-title">가입 완료</div>
+        <div className="inputFam-d-title-1">가입 완료</div>
       </div>
 
       <div className="signin-underline"></div>

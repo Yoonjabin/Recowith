@@ -124,7 +124,7 @@
   border: 1.05px solid #ED7C90;
   background-color: #F9DED3;
   color: #ED7C90;
-  font-family: Pretendard;
+  font-family: 'Pretendard-Regular';
   font-weight: 400;
   font-size: 12.5px;
   display: flex;
@@ -166,7 +166,7 @@
 }
 
 .main-chat-chatting input::placeholder {
-  font-family: Pretendard;
+  font-family: 'Pretendard-Regular';
   font-size: 14.5px;
   font-weight: 400;
   color: #AAAAAA;
@@ -191,7 +191,7 @@
 }
 
 .main-project-title {
-  font-family: Pretendard;
+  font-family: 'Pretendard-Regular';
   font-weight: 400;
   font-size: 20px;
   color: #000000;
@@ -228,7 +228,7 @@
   border-radius: 32.41px;
   color: #ffffff;
   background-color: #F9DED3;
-  font-family: Pretendard;
+  font-family: 'Pretendard-SemiBold';
   font-weight: 600;
   font-size: 21.61px;
 }
