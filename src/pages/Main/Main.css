@@ -61,8 +61,9 @@
 }
 
 .main-title-myImg img {
-  width: 180px;
-  height: 185px;
+  margin-left: 30px;
+  width: 150px;
+  height: 150px;
 }
 
 .main-chat-container {
