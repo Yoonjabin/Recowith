@@ -117,7 +117,7 @@
 .textContainer span {
     font-size: 30px;
     font-weight: 700;
-    color: #F9957F;
+    color: #0fefff;
     font-family: 'Pretendard-Bold';
     animation: slideUp 0.5s ease-out forwards; /* 아래에서 위로 등장 */
     animation-delay: 1s; 

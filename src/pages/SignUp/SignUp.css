@@ -1,5 +1,5 @@
 .required {
-    color: #F9957F;
+    color: #0026ff;
     font-size: 1.2rem;
     margin-left: -3px;
     vertical-align: middle; /* 세로 중앙 정렬 */
@@ -67,12 +67,12 @@
 .mandatoryPw:focus,
 .mandatoryEmail:focus,
 .mandatoryNickname:focus {
-    border-color: #F9957F; /* 포커스 시 색상 변경 */
+    border-color: #1612ff; /* 포커스 시 색상 변경 */
 }
 
 .submitBtn {
     padding: 10px;
-    background: linear-gradient(to right, #F2F5D0, #F9957F);
+    background: linear-gradient(to right, #bce1f7, #0044ff);
     color: white;
     height: 60px;
     /* width: 100%; 버튼을 부모 너비에 맞게 확장 */

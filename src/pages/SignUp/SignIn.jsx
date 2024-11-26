@@ -73,7 +73,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SignIn.css';
-import dochi from '../../pages/Login/loginDochi.png';
+import logo from '../../pages/Login/MainLogo.png';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -115,10 +115,10 @@ const SignIn = () => {
 
       <div className="signin-underline"></div>
 
-      <img src={dochi} alt="Hedgehog" className="SignHedgehog" />
+      <img src={logo} alt="Hedgehog" className="SignHedgehog" />
       <div className={`textContainer ${isVisible ? 'visible' : ''} ${isBlinking ? 'blinking' : ''}`}>
         <span>가입 완료!</span>
-        <p>도치둥지에 오신걸, 환영해요!</p>
+        <p>러닝메이트에 오신걸, 환영해요!</p>
       </div>
     </div>
   );

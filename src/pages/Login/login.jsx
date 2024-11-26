@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
-import dochi from '../../pages/Login/loginDochi.png';
+import logo from '../../pages/Login/MainLogo.png';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -80,9 +80,9 @@ const Login = () => {
 
   return (
     <div className="MainTheme">
-      <img src={dochi} alt="Hedgehog" className='LoginHedgehog' />
+      <img src={logo} alt="Hedgehog" className='LoginHedgehog' />  
 
-      <div className="appName">도치둥지 로그인</div>
+      <div className="appName">러닝메이트 로그인</div>
 
       <form className="loginForm">
         <input
@@ -106,7 +106,7 @@ const Login = () => {
       </form>
       {errorMessage && <p className="errorMessage">{errorMessage}</p>}
       <div className="bottomText">
-        <span>도치둥지  </span>| 
+        <span>러닝메이트  </span>| 
         <a href="/signup" className="signupLink"> 회원가입</a>
       </div>
     </div>

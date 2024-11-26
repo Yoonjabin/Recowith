@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './InputFam.css';
-import dochi from '../../pages/Login/loginDochi.png';
+import logo from '../../pages/Login/MainLogo.png';
 
 const InputFam = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const InputFam = () => {
   const handleFamilySubmit = async () => {
     // 가족 이름이 비어있으면 경고
     if (!familyname.trim()) {
-      alert('가족명을 입력해 주세요!');
+      alert('러닝메이트 친구를 입력해 주세요!');
       return;
     }
 
@@ -33,7 +33,7 @@ const InputFam = () => {
 
       if (response.status === 200) {
         // alert("등록 성공!");
-        console.log("가족이름 저장 성공", response);
+        console.log("친구 저장 성공", response);
         setIsFamilyNameSaved(true); // 가족 이름이 저장되었으므로 버튼 활성화
       }
     } catch (error) {
@@ -46,9 +46,6 @@ const InputFam = () => {
     <div className="inputFamContainer">
 
       <div className="inputFam-d-top">
-        {/* <div className="mission-d-back-img-1" onClick={() => navigate("/main")}>
-          <img src={back} alt="뒤로가기" />
-        </div> */}
         <div className="inputFam-d-title">가입 완료</div>
       </div>
 
@@ -56,12 +53,12 @@ const InputFam = () => {
 
 
       <div className="imageContainer">
-        <img src={dochi} alt="Hedgehog" className="cHedgehog" />
+        <img src={logo} alt="Hedgehog" className="cHedgehog" />
       </div>
       <input
         type="text"
         className="formText"
-        placeholder="가족명을 입력해 주세요!"
+        placeholder="친구명을 입력해 주세요!"
         value={familyname}
         onChange={(e) => setFamilyName(e.target.value)}
         required
@@ -69,13 +66,12 @@ const InputFam = () => {
 
       <button className='submit-family-name' onClick={handleFamilySubmit}>저장하기</button>
 
-      {/* "가족구성원 등록하기" 버튼은 가족명이 저장된 후에만 활성화 */}
         <Link to="/FamilyPlus" className="registerLink">
-          가족구성원 등록하기 &gt;
+         러닝 메이트 등록하기 &gt;
         </Link>
       
       <p className="mypageText">
-        <span style={{ color: '#F9957F' }}>마이페이지</span>에서도 가족 구성원을 등록할 수 있습니다.
+        <span style={{ color: '#0004ff' }}>마이페이지</span>에서도 동료 러너를 등록할 수 있습니다.
       </p>
 
 

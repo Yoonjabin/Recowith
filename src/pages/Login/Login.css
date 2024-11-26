@@ -22,7 +22,7 @@
     line-height: 29.83px;
     margin-top: 20px;
     margin-bottom: 35px;
-    color: #F9957F;
+    color: #4370eb;
 }
 
 .loginForm ::placeholder{
@@ -74,7 +74,7 @@
 .enterId:focus,
 .enterPassword:focus {
     outline: none;
-    border-color: #F9957F;
+    border-color: #5829ff;
 }
 
 
@@ -82,7 +82,7 @@
     box-shadow: 0px 3px 3px 0px #00000040;
     display: block; /* block 요소로 변경 */
     margin: auto; /* 자동 좌우 마진으로 중앙 정렬 */
-    background: linear-gradient(to right, #F2F5D0, #F9957F);
+    background: linear-gradient(to right, #bce1f7, #0044ff);
     color: white;
     width: 325px;
     height: 55px;
@@ -107,7 +107,7 @@
 }
 
 .bottomText span{
-    color: #F9957F;
+    color: #00c7eb;
 }
 
 .signupLink {
