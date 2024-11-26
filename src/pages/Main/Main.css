@@ -28,7 +28,7 @@
   justify-content: center;
   /* gap: 17px; */
   align-items: center;
-  background: #F9957F;
+  background: #00aeff;
 }
 
 .main-title-contents {
@@ -57,7 +57,7 @@
   font-size: 15.53px;
   font-weight: 600;
   line-height: 18.54px;
-  color: #FDC9C9;
+  color: #ffffff;
 }
 
 .main-title-myImg img {

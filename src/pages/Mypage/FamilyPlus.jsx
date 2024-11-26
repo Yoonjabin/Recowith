@@ -92,7 +92,7 @@ export default function FamilyPlus() {
         <div className="mission-d-back-img" onClick={() => navigate("/FamilyInfo")}>
           <img src={back} alt="" />
         </div>
-        <div className="mission-d-title">가족구성원 등록</div>
+        <div className="mission-d-title">러닝메이트 등록</div>
       </div>
 
       <div className="mypage-underline"></div>
@@ -101,7 +101,7 @@ export default function FamilyPlus() {
         <div className="family-plus-search-bar">
           <input
             type="text"
-            placeholder="가족구성원의 아이디를 조회해 보세요"
+            placeholder="러닝메이트의 아이디를 조회해 보세요"
             className="search-input"
             value={query}
             onChange={(e) => setQuery(e.target.value)} // 입력 값 관리
