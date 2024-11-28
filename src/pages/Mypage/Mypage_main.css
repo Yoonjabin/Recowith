@@ -129,17 +129,18 @@
   width: 359px;
   height: 200px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #F9957F 0%, #F2F5D0 100%);
+  background: #006eff; 
 }
 
 .mypage-m-f-box-top {
   font-family: 'Pretendard-Bold';
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 14.52px;
   color: #ffffff;
   margin: 15px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .mypage-m-f-box-family {
@@ -177,7 +178,7 @@
   font-size: 17px;
   font-weight: 700;
   line-height: 18.15px;
-  color: #F9957F;
+  color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;
