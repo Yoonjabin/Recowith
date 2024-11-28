@@ -12,7 +12,7 @@
 }
 
 .user-edit-highlight{
-  color: #F9957F;
+  color: #1000f3;
 }
 .user-edit-contents{
   font-family: 'Pretendard-Bold';
@@ -54,7 +54,7 @@
   width: 340px;
   height: 60px;
   border-radius: 50px;  
-  background: linear-gradient(90deg, #F2F5D0 0%, #F9957F 100%);
+  background: linear-gradient(90deg, #0084ff 0%, #0026ff 100%);
   color: #ffffff;
   outline: none;
   border: none;
@@ -72,7 +72,7 @@
 
 .user-logout-button button{
   background-color: #ffffff;
-  border: 2px solid #F9957F;
+  border: 2px solid #0004ff;
   width: 100px;
   height: 30px;
   color: #000000;
