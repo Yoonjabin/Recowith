@@ -20,6 +20,8 @@ import ProjectDetail from "./pages/Project/project_detail.jsx"
 import FamilyDiary from "./pages/Private/FamilyDiary.jsx";
 import Family_mission from "./pages/Private/Family_mission.jsx";
 import FamilyProject from "./pages/Private/FamilyProject.jsx";
+import ProjectMap from "./pages/ProjectMap/ProjectMap.jsx";
+import AddCom from "./pages/Mission/AddCom.jsx";
 
 
 
@@ -45,6 +47,8 @@ function App() {
         <Route path='/FamilyDiary/:id' element={<><Nav /><FamilyDiary /></>} />
         <Route path='/Family_mission' element={<><Nav /><Family_mission /></>} />
         <Route path='/FamilyProject/:id' element={<><Nav /><FamilyProject /></>} />
+        <Route path='/ProjectMap' element={<><Nav /><ProjectMap /></>} />
+        <Route path='/AddCom' element={<><AddCom /></>} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,4 +1,4 @@
-import "./Project_write.css";
+import "./AddCom.css";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import back from "./images/back.png";
@@ -6,7 +6,7 @@ import camera from "./images/camera.png";
 import axios from "axios";
 import calendarIcon from "./images/date.png"; 
 
-export default function Project_write() {
+export default function AddCom() {
   const navigate = useNavigate(); 
 
   const [title, setTitle] = useState(''); // 제목 상태 추가
@@ -81,7 +81,7 @@ export default function Project_write() {
   return (
     <div className="project-write-container">
       <div className="mission-d-top-4">
-        <div className="mission-d-back-img" onClick={() => navigate('/main')}>
+        <div className="mission-d-back-img" onClick={() => navigate('/MissionMain')}>
           <img src={back} alt="" />
         </div>
         <div className="mission-d-title">러닝 게시글</div>

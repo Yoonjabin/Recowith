@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import "./Nav.css";
 import home from "./images/home.png";
 import home2 from "./images/home2.png";
@@ -9,23 +9,39 @@ import project from "./images/project.png";
 import project2 from "./images/project2.png";
 import mypage from "./images/mypage.png";
 import mypage2 from "./images/mypage2.png";
+import map from "./images/map.png";
+import map2 from "./images/map2.png";
 
 export default function Nav() {
     const navigate = useNavigate(); 
-    const [activeTab, setActiveTab] = useState("home"); // 현재 활성화된 탭 추적
+    const location = useLocation(); // 현재 경로를 가져옴
 
-    // 탭 변경 함수
-    const handleTabClick = (tab, path) => {
-        setActiveTab(tab); // 클릭한 탭을 활성화
-        navigate(path);    // 해당 경로로 이동
+    // URL 경로에 따라 활성화된 탭 설정
+    const getActiveTab = () => {
+        switch (location.pathname) {
+            case "/main":
+                return "home";
+            case "/MissionMain":
+                return "mission";
+            case "/ProjectWrite":
+                return "project";
+            case "/ProjectMap":
+                return "map";
+            case "/MypageMain":
+                return "mypage";
+            default:
+                return ""; // 기본적으로 어떤 탭도 활성화하지 않음
+        }
     };
+
+    const activeTab = getActiveTab();
 
     return (
         <div className='nav-container'>
             <div className='nav-contents'>
                 <div
                     className={`nav-home ${activeTab === "home" ? "active" : ""}`}
-                    onClick={() => handleTabClick("home", "/main")}
+                    onClick={() => navigate("/main")}
                 >
                     <div className='nav-home-img'>
                         <img src={activeTab === "home" ? home2 : home} alt="홈" />
@@ -36,7 +52,7 @@ export default function Nav() {
                 </div>
                 <div
                     className={`nav-mission ${activeTab === "mission" ? "active" : ""}`}
-                    onClick={() => handleTabClick("mission", "/MissionMain")}
+                    onClick={() => navigate("/MissionMain")}
                 >
                     <div className='nav-mission-img'>
                         <img src={activeTab === "mission" ? mission2 : mission} alt="도전과제" />
@@ -47,7 +63,7 @@ export default function Nav() {
                 </div>
                 <div
                     className={`nav-project ${activeTab === "project" ? "active" : ""}`}
-                    onClick={() => handleTabClick("project", "/ProjectWrite")}
+                    onClick={() => navigate("/ProjectWrite")}
                 >
                     <div className='nav-project-img'>
                         <img src={activeTab === "project" ? project2 : project} alt="가족프로젝트" />
@@ -56,9 +72,22 @@ export default function Nav() {
                         가족프로젝트
                     </div>
                 </div>
+
+                <div
+                    className={`nav-map ${activeTab === "map" ? "active" : ""}`}
+                    onClick={() => navigate("/ProjectMap")}
+                >
+                    <div className='nav-map-img'>
+                        <img src={activeTab === "map" ? map2 : map} alt="지도" />
+                    </div>
+                    <div className={`nav-map-kor ${activeTab === "map" ? "active-text" : ""}`}>
+                        지도
+                    </div>
+                </div>
+
                 <div
                     className={`nav-mypage ${activeTab === "mypage" ? "active" : ""}`}
-                    onClick={() => handleTabClick("mypage", "/MypageMain")}
+                    onClick={() => navigate("/MypageMain")}
                 >
                     <div className='nav-mypage-img'>
                         <img src={activeTab === "mypage" ? mypage2 : mypage} alt="마이페이지" />

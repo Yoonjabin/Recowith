@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import back from "./images/back.png";
 import "./Mission_main.css";
 import HihiImage from "./images/character.png";
+import plus from "./images/Plus.png";
 
 const Mission_main = () => {
   const navigate = useNavigate();
@@ -42,6 +43,9 @@ const Mission_main = () => {
           <img src={back} alt="" />
         </div>
       <h1 className="on-the-record">Runners Community</h1>
+      <div className="add-community-img" onClick={() => navigate('/AddCom')}>
+          <img src={plus} alt="" />
+        </div>
       <div className="scrollable-cards-container">
         <div className="cards-container">
           {cardsData.map((card, index) => (

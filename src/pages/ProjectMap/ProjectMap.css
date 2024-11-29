@@ -1,0 +1,63 @@
+.project-map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+
+.map-d-top-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+.map-main-back-img {
+  position: absolute;
+  left: 10px;
+  cursor: pointer;
+}
+
+.map-main-back-img img {
+  width: 22.5px;
+  height: 15px;
+}
+
+.map-d-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.map-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 60px); /* 상단 헤더를 제외한 높이 */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.map-card {
+  width: 80%; /* 카드 너비 */
+  max-width: 600px; /* 카드 최대 너비 */
+  height: 400px; /* 카드 높이 */
+  background-color: white; /* 카드 배경색 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  border-radius: 10px; /* 카드 모서리를 둥글게 */
+  overflow: hidden; /* 지도가 카드 경계를 넘지 않도록 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-content {
+  width: 100%;
+  height: 100%;
+}
