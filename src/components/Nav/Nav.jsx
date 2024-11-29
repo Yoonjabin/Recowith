@@ -42,7 +42,7 @@ export default function Nav() {
                         <img src={activeTab === "mission" ? mission2 : mission} alt="도전과제" />
                     </div>
                     <div className={`nav-mission-kor ${activeTab === "mission" ? "active-text" : ""}`}>
-                        도전과제
+                        커뮤니티
                     </div>
                 </div>
                 <div

@@ -58,8 +58,8 @@ export default function Main() {
                         <br />안녕하세요!
                     </div>
                     <div className='main-title-contents-sub'>
-                        가족구성원 등록 후<br />
-                        프로젝트를 진행해 주세요
+                        러닝 커뮤니티에서<br />
+                        같이 뛸 러너를 만나보세요 !
                     </div>
                 </div>
                 <div className='main-title-myImg'>

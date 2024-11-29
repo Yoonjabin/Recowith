@@ -3,9 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nav from "./components/Nav/Nav.jsx";
 import Main from "./pages/Main/Main.jsx";
 import MissionMain from "./pages/Mission/Mission_main.jsx"
-import MissionDetail from "./pages/Mission/Mission_detail.jsx"
-import MissionWrite from "./pages/Mission/Mission_write.jsx"
-import MissionFinish from "./pages/Mission/Mission_finish.jsx"
 import ProjectWrite from "./pages/Project/Project_write.jsx"
 import ProjectFinish from "./pages/Project/Project_finish.jsx"
 import MypageMain from "./pages/Mypage/Mypage_main.jsx"
@@ -23,7 +20,7 @@ import ProjectDetail from "./pages/Project/project_detail.jsx"
 import FamilyDiary from "./pages/Private/FamilyDiary.jsx";
 import Family_mission from "./pages/Private/Family_mission.jsx";
 import FamilyProject from "./pages/Private/FamilyProject.jsx";
-import MissionNoDetail from "./pages/Mission/Mission_noDetail.jsx"
+
 
 
 function App() {
@@ -33,10 +30,6 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route path='/main' element={<><Nav /><Main /></>} />
         <Route path='/MissionMain' element={<><Nav /><MissionMain /></>}/>
-        <Route path='/MissionDetail/:id' element={<><Nav /><MissionDetail /></>}/>
-        <Route path='/MissionNoDetail/:id' element={<><Nav /><MissionNoDetail /></>}/>
-        <Route path='/MissionWrite/1' element={<><Nav /><MissionWrite /></>}/>
-        <Route path='/MissionFinish' element={<MissionFinish/>}/>
         <Route path='/ProjectWrite' element={<><Nav /><ProjectWrite /></>}/>
         <Route path='/ProjectFinish' element={<ProjectFinish/>}/>
         <Route path='/MypageMain' element={<><Nav /><MypageMain /></>}/>
