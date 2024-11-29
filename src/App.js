@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Nav from "./components/Nav/Nav.jsx";
 import Main from "./pages/Main/Main.jsx";
 import MissionMain from "./pages/Mission/Mission_main.jsx"
-import ProjectWrite from "./pages/Project/Project_write.jsx"
-import ProjectFinish from "./pages/Project/Project_finish.jsx"
 import MypageMain from "./pages/Mypage/Mypage_main.jsx"
 import UserEdit from "./pages/Mypage/UserEdit.jsx"
 import FamilyPlus from "./pages/Mypage/FamilyPlus.jsx"
@@ -16,12 +14,12 @@ import InputFam from "./pages/Family/InputFam.jsx";
 import NavUp from "./components/NavUp/NavUp.jsx";
 import FamilyInfo from "./pages/Mypage/Family_Info.jsx"
 import FamilyEdit from "./pages/Mypage/FamilyEdit.jsx"
-import ProjectDetail from "./pages/Project/project_detail.jsx"
 import FamilyDiary from "./pages/Private/FamilyDiary.jsx";
 import Family_mission from "./pages/Private/Family_mission.jsx";
 import FamilyProject from "./pages/Private/FamilyProject.jsx";
 import ProjectMap from "./pages/ProjectMap/ProjectMap.jsx";
 import AddCom from "./pages/Mission/AddCom.jsx";
+import Shop from "./pages/Shop/Shop.jsx";
 
 
 
@@ -32,8 +30,7 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route path='/main' element={<><Nav /><Main /></>} />
         <Route path='/MissionMain' element={<><Nav /><MissionMain /></>}/>
-        <Route path='/ProjectWrite' element={<><Nav /><ProjectWrite /></>}/>
-        <Route path='/ProjectFinish' element={<ProjectFinish/>}/>
+        <Route path='/Shop' element={<><Nav /><Shop /></>}/>
         <Route path='/MypageMain' element={<><Nav /><MypageMain /></>}/>
         <Route path='/UserEdit' element={<><Nav /><UserEdit /></>}/>
         <Route path='/FamilyPlus' element={<><Nav /><FamilyPlus /></>}/>
@@ -43,7 +40,6 @@ function App() {
         <Route path='/inputFam' element={<InputFam />} />
         <Route path='/FamilyInfo' element={<><Nav /><FamilyInfo /></>} />
         <Route path='/FamilyEdit' element={<><Nav /><FamilyEdit /></>} />
-        <Route path='/ProjectDetail' element={<><Nav /><ProjectDetail /></>} />
         <Route path='/FamilyDiary/:id' element={<><Nav /><FamilyDiary /></>} />
         <Route path='/Family_mission' element={<><Nav /><Family_mission /></>} />
         <Route path='/FamilyProject/:id' element={<><Nav /><FamilyProject /></>} />

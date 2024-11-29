@@ -5,7 +5,8 @@
   width: 100%;
   margin: 0 auto;
   padding-top: 60px;
-  background-color: #f9f9f9;
+  background: linear-gradient(to right, #e0f7ff, #f8fcff);
+
 }
 
 .mission-main-top {
@@ -19,6 +20,7 @@
 
 .mission-main-back-img img {
   position: absolute;
+  top:50px;
   left: 20px;
   width: 22.5px;
   height: 15px;
@@ -28,7 +30,7 @@
 
 .add-community-img {
   position: absolute;
-  top: 10px;
+  top: 50px;
   right: 20px;
   width: 22.5px;
   height: 15px;
@@ -36,42 +38,40 @@
   cursor: pointer;
 }
 
-.community-container {
-  position: relative;
-  width: 390px;
-  height: 844px;
-  display: flex;
-  flex-direction: column;
-  background: #2a04ff;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  font-family: "Pretendard-Bold";
-}
 
 .on-the-record {
-  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  font-family: 'Pretendard-SemiBold';
   font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5;
   text-align: center;
-  color: #5c564c;
+  color: #5C564C;
+  z-index: 10;
 }
 
 .scrollable-cards-container {
   position: relative;
   flex: 1;
-  margin-top: 20px;
-  overflow-y: auto;
+  margin-top: 40px; 
+  overflow-y: auto; 
   width: 100%;
-  height: calc(100% - 120px);
-  padding: 10px 0;
-  box-sizing: border-box;
+  height: calc(100% - 150px); 
 }
 
 .scrollable-cards-container::-webkit-scrollbar {
   display: none;
 }
+.scrollable-cards-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 .cards-container {
+  font-family: 'Pretendard-SemiBold';
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,23 +80,32 @@
 }
 
 .card {
-  width: 100%;
+  width: 90%;
   max-width: 349px;
-  background: rgb(155, 178, 255);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  height:60%;
+  background: linear-gradient(to right, #acd3ff, #ccf1ff, #d4f1ff, #f0f8ff);
+  box-shadow: 0px 29px 12px rgba(0, 0, 0, 0.01), 0px 16px 10px rgba(0, 0, 0, 0.05), 0px 7px 7px rgba(0, 0, 0, 0.09), 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  padding: 15px;
+  padding: 10px;
   cursor: pointer;
+  font-family: 'Pretendard-SemiBold';
   display: flex;
   flex-direction: column;
   gap: 10px;
-  animation: slideIn 0.5s ease forwards;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; 
+  transform: translateX(-100%);
+  animation: slideIn 0.5s ease forwards; 
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateX(-100%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
 }
 
 .card-header {
@@ -105,25 +114,33 @@
 }
 
 .card-date {
+  margin-top: 30px;
   font-size: 12px;
-  color: #938a7e;
+  font-family: 'Pretendard-SemiBold';
+  color: #938A7E;
   font-weight: 600;
-  margin-bottom: 5px;
+  letter-spacing: -0.03em;
+
 }
 
 .card-title {
   font-size: 15px;
+  font-family: 'Pretendard-SemiBold';
   font-weight: 600;
-  color: #453f36;
+  margin-top: -10px;
+  color: #453F36;
 }
 
 .card-content-wrapper {
+  margin-top: 5px;
   display: flex;
   gap: 15px;
   align-items: center;
+  margin-bottom:-15px;
 }
 
 .record-image-wrapper1 {
+  margin-bottom: -20px;
   position: relative;
   width: 70px;
   height: 70px;
@@ -138,59 +155,64 @@
   object-fit: cover;
 }
 
+
 .card-actions {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-top: 10px;
+  transition: opacity 0.5s ease;
 }
 
 .heart-button {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 20px; 
   color: gray;
-  transition: color 0.5s ease, transform 0.3s ease;
+  transition: color 0.5s ease, opacity 0.5s ease;
 }
 
-.heart-button:hover {
-  transform: scale(1.1);
+.heart-button.active {
   color: red;
+}
+
+.card-line {
+  width: 30px;
+  height: 2px;
+  background: gray;
+  margin: 10px auto 0;
 }
 
 .card-content {
   width: 100%;
-  overflow: hidden;
-  font-size: 14px;
+  transition: max-height 0.5s ease; 
+  overflow: hidden; 
+  font-family: 'Pretendard-SemiBold';
+  font-size:15px;
   font-weight: 400;
-  color: #5c564c;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .top-right-button {
   position: absolute;
-  top: 10px;
+  top: 50px; 
   right: 20px;
-  cursor: pointer;
+  cursor: pointer; 
   display: flex;
+  z-index: 100; 
   align-items: center;
   justify-content: center;
-  width: 25px;
-  height: 25px;
-  background: #f4f4f4;
-  border-radius: 50%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 20px;
+  height: 20px;
 }
 
 .top-right-button:hover {
-  background: #ddd;
-  transform: scale(1.1);
-  transition: background 0.2s ease, transform 0.2s ease;
+  transform: scale(1.1); 
+  transition: transform 0.2s ease;
 }
 
 .top-right-button svg {
-  width: 15px;
-  height: 15px;
-  fill: #666;
+  width: 100%;
+  height: 100%;
 }

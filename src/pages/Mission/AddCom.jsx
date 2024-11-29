@@ -98,7 +98,7 @@ export default function AddCom() {
         <div className="project-write-title">
           <input
             type="text" 
-            placeholder="프로젝트 제목을 입력해 주세요"
+            placeholder="러닝크루 공지글을 입력해 주세요"
             value={title}
             onChange={(e) => setTitle(e.target.value)} // 제목 변경 핸들러
             required
@@ -144,9 +144,9 @@ export default function AddCom() {
           />
           <div className="project-write-char-count">({charCount}/{maxChars})</div>
         </div>
-        <div className="mission-d-join" onClick={handleProjectSubmit}>
-          <button>등록하기</button>
-        </div>
+        <div className="add-d-join" onClick={handleProjectSubmit}>
+  <button className="mission-d-join">등록하기</button>
+</div>
       </div>
     </div>
   );

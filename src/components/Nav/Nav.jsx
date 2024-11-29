@@ -5,8 +5,8 @@ import home from "./images/home.png";
 import home2 from "./images/home2.png";
 import mission from "./images/mission.png";
 import mission2 from "./images/mission2.png";
-import project from "./images/project.png";
-import project2 from "./images/project2.png";
+import shop from "./images/shop.png";
+import shop2 from "./images/shop2.png";
 import mypage from "./images/mypage.png";
 import mypage2 from "./images/mypage2.png";
 import map from "./images/map.png";
@@ -23,8 +23,8 @@ export default function Nav() {
                 return "home";
             case "/MissionMain":
                 return "mission";
-            case "/ProjectWrite":
-                return "project";
+            case "/Shop":
+                return "shop";
             case "/ProjectMap":
                 return "map";
             case "/MypageMain":
@@ -62,14 +62,14 @@ export default function Nav() {
                     </div>
                 </div>
                 <div
-                    className={`nav-project ${activeTab === "project" ? "active" : ""}`}
-                    onClick={() => navigate("/ProjectWrite")}
+                    className={`nav-shop ${activeTab === "Shop" ? "active" : ""}`}
+                    onClick={() => navigate("/Shop")}
                 >
-                    <div className='nav-project-img'>
-                        <img src={activeTab === "project" ? project2 : project} alt="가족프로젝트" />
+                    <div className='nav-shop-img'>
+                        <img src={activeTab === "shop" ? shop2 : shop} alt="러닝마켓" />
                     </div>
-                    <div className={`nav-project-kor ${activeTab === "project" ? "active-text" : ""}`}>
-                        가족프로젝트
+                    <div className={`nav-shop-kor ${activeTab === "shop" ? "active-text" : ""}`}>
+                        러닝마켓
                     </div>
                 </div>
 
