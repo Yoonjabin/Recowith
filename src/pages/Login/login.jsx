@@ -16,7 +16,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        'https://dochi-nest-api.shop/api/auth/login',
+        'http://localhost:8080/api/auth/login', // 로컬 백엔드 서버
         {
           username: username,
           password: password,
@@ -43,7 +43,7 @@ const Login = () => {
         // 최초 로그인 여부 확인 요청
         try {
           const firstLoginResponse = await axios.post(
-            'https://dochi-nest-api.shop/api/auth/check-first-login',
+            'http://localhost:8080/api/auth/check-first-login',
             {},
             {
               headers: {

@@ -18,7 +18,7 @@ export default function Family_Info() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://dochi-nest-api.shop/api/auth/search/${userId}`,
+          `http://localhost:8080/api/auth/search/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,

@@ -23,7 +23,7 @@ const InputFam = () => {
     }
 
     try {
-      const response = await axios.post('https://dochi-nest-api.shop/api/group/create', {
+      const response = await axios.post('http://localhost:8080/api/group/create', {
         groupName: familyname,
       },{
         headers: {

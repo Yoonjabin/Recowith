@@ -17,7 +17,7 @@ export default function UserEdit() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.put("https://dochi-nest-api.shop/api/auth/updateUser", {
+      const response = await axios.put("http://localhost:8080/api/auth/updateUser", {
         userId: String(userId),
         password: password,
         email: email,
@@ -50,7 +50,7 @@ export default function UserEdit() {
   // 로그아웃 처리
   const handleLogout = async () => {
     try {
-      const response = await axios.post("https://dochi-nest-api.shop/api/auth/logout", {}, {
+      const response = await axios.post("http://localhost:8080/api/auth/logout", {}, {
         headers: {
           Authorization: `Bearer ${token}`
         }

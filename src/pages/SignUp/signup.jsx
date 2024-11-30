@@ -17,7 +17,7 @@ const SignUp = () => {
 
     try {
       const response = await axios.post(
-        'https://dochi-nest-api.shop/api/auth/register',
+        'http://localhost:8080/api/auth/register',
         {
           username: username,
           password: password,

@@ -22,7 +22,7 @@ export default function FamilyPlus() {
     }
 
   try {
-    const response = await axios.get(`https://dochi-nest-api.shop/api/group/search/${query}`, {
+    const response = await axios.get(`http://localhost:8080/api/group/search/${query}`, {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
 
