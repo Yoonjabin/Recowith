@@ -12,14 +12,14 @@ export default function Main() {
     const navigate = useNavigate();
 
     const hashtag = [
-        { content: "#자녀나이" },
-        { content: "#문화" },
-        { content: "#교육" },
-        { content: "#봉사" },
+        { content: "#성별" },
+        { content: "#러닝타임" },
+        { content: "#나이" },
         { content: "#장소" },
+        { content: "#지병" },
         { content: "#행사" },
         { content: "#취미" },
-        { content: "#나들이" },
+        { content: "#체력" },
     ];
 
     const [userInput, setUserInput] = useState("");

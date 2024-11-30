@@ -28,7 +28,6 @@
 .mypage-main-container {
   width: 393px;
   overflow: hidden; /* 화면 가로 길이를 넘어간 부분을 숨깁니다. */
-  background: url('./images/MPbg.png') no-repeat center center; 
 }
 
 .mypage-main-profile-container {
@@ -51,21 +50,9 @@
   flex-direction: column;
 }
 
-.mypage-main-profile-img {
-  width: 100px; /* 원하는 크기로 설정 */
-  height: 100px; /* 원하는 크기로 설정 */
-  border-radius: 50%; /* 둥근 틀 생성 */
-  overflow: hidden; /* 이미지가 틀에서 넘치지 않도록 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #ffffff; /* 테두리 추가 (선택 사항) */
-}
-
 .mypage-main-profile-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 이미지가 틀에 맞게 잘림 */
+  width: 100px;
+  height: 100px;
 }
 
 .mypage-main-profile-kind {
@@ -104,12 +91,18 @@
   outline: none;
   border: none;
   border-radius: 53.9px;
-  background-color: #0004ff;
+  background-color: #F9957F;
   color: #ffffff;
   font-family: 'Pretendard-Regular';
   font-weight: 400;
   font-size: 14px;
 }
+
+/* .mypage-main-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
 
 .mypage-main-family-title,
 .mypage-main-project-title {
@@ -135,31 +128,18 @@
   flex-direction: column;
   width: 359px;
   height: 200px;
-  border-radius: 20px; /* 둥근 모서리 */
-  background: url("./images/TimerBg.png") center/cover no-repeat; /* 배경 이미지 설정 */
-  position: relative; /* 자식 요소와 배경 이미지 정렬을 위한 설정 */
-  overflow: hidden; /* 모서리 밖으로 이미지가 넘치지 않게 */
+  border-radius: 20px;
+  background: linear-gradient(180deg, #F9957F 0%, #F2F5D0 100%);
 }
-
-/* 내부 콘텐츠 */
-.mypage-m-f-box-top,
-.mypage-main-line,
-.timer-container {
-  position: relative;
-  z-index: 1; /* 배경 이미지보다 위에 표시 */
-  color: rgb(255, 255, 255); /* 필요하면 텍스트 색상을 흰색으로 변경 */
-}
-
 
 .mypage-m-f-box-top {
   font-family: 'Pretendard-Bold';
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 14.52px;
   color: #ffffff;
   margin: 15px;
-  margin-bottom: 5px;
-  text-align: center;
+  margin-bottom: 10px;
 }
 
 .mypage-m-f-box-family {
@@ -192,6 +172,19 @@
   margin-top: 10px;
 }
 
+.mypage-m-f-menu {
+  font-family: 'Pretendard-Bold';
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 18.15px;
+  color: #F9957F;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
+  margin-top: 16px;
+}
 
 .mypage-main-family-container,
 .mypage-main-project-container {
@@ -211,7 +204,7 @@
   width: 131px;
   height: 212px;
   border-radius: 20px;
-  border: 2px solid #ffffff;
+  border: 2px solid #E3E3E3;
 }
 
 .mypage-main-project-box{
@@ -219,129 +212,77 @@
   height: 212px;
 }
 
-.timer-container h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
-  text-align: center; /* 글씨 가운데 정렬 */
+.mypage-project-tape {
+  width: 36px;
+  height: 46px;
+  margin-left: 90px;
+  margin-top: -20px;
+  z-index: 100;
+  position: absolute;
 }
 
-.timer-buttons button {
-  margin-bottom: 15px;
-  font-size: 16px;
-  margin-left: 50px;
+.mypage-main-project img {
+  width: 114px;
+  height: 146.14px;
+  border-radius: 12.4px;
+  border: 1px solid #E3E3E3;
+  margin-top: 6px;
 }
 
-.record-container {
-  margin-top: 20px;
-  text-align: left;
+.mypage-project-date {
+  font-family: 'Pretendard-Medium';
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 12.1px;
+  color: #000000;
+  margin-left: 55px;
+  margin-top: 3px;
 }
 
-.record-container h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+.mypage-project-title {
+  font-family: 'Pretendard-SemiBold';
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 15.73px;
+  color: #F9957F;
+  margin-top: 13px;
 }
 
-.record-container ul {
-  list-style: none;
-  padding: 0;
-}
-
-.record-container li {
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-
-/* 팝업 오버레이: 어두운 배경 */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+.mypage-main-project {
   display: flex;
-  justify-content: center; /* 팝업을 가로 중앙 정렬 */
-  align-items: center; /* 팝업을 세로 중앙 정렬 */
-  z-index: 1000; /* 다른 요소 위에 표시 */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 팝업 컨테이너 */
-.popup {
-  background-color: #ffffff; /* 흰색 배경 */
-  border-radius: 15px; /* 둥근 모서리 */
-  padding: 20px 30px; /* 내부 여백 */
-  width: 220px; /* 팝업 너비 */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-  text-align: center; /* 텍스트 중앙 정렬 */
-  animation: popup-appear 0.3s ease-in-out; /* 팝업 애니메이션 */
+.mypage-main-project-contents-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
-/* 팝업 텍스트 */
-.popup p {
-  font-size: 18px;
-  color: #333333; /* 텍스트 색상 */
-  margin-bottom: 20px; /* 버튼과 간격 */
+.mypage-main-project-contents-container {
+  width: 360px;
+  gap: 20px; 
+  /* transition: transform 0.5s ease-in-out; 부드러운 애니메이션 */
 }
 
-/* 버튼 공통 스타일 */
-.popup button {
-  background-color: #0288d1; /* 파란색 배경 */
-  color: white; /* 흰색 텍스트 */
-  border: none;
-  border-radius: 8px; /* 둥근 버튼 */
-  padding: 10px 20px; /* 버튼 내부 여백 */
-  margin: 0 5px; /* 버튼 간 간격 */
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease; /* 버튼 색상 전환 효과 */
+
+.mypage-main-project-contents {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  border-radius: 20px;
+  border: 2px solid #e3e3e3;
+  justify-content: center; 
+  transition: transform 0.4s ease-in-out;
+
 }
 
-.popup button:hover {
-  background-color: #0277bd; /* 마우스 오버 시 더 진한 파란색 */
+.mypage-main-project-contents-container.slide-left .mypage-main-project-contents {
+  transform: translateX(-110px); 
 }
 
-/* 애니메이션 효과 */
-@keyframes popup-appear {
-  from {
-    transform: scale(0.8); /* 작게 시작 */
-    opacity: 0; /* 투명하게 시작 */
-  }
-  to {
-    transform: scale(1); /* 원래 크기 */
-    opacity: 1; /* 불투명 */
-  }
-}
-
-.record-container {
-  background-color: #e0f7ff; /* 밝은 파란색 배경 */
-  border: 1px solid #b3e5fc; /* 연한 파란색 테두리 */
-  border-radius: 10px; /* 모서리 둥글게 */
-  padding: 20px; /* 내부 여백 */
-  max-width: 400px; /* 최대 너비 */
-  margin: 20px auto; /* 가운데 정렬 및 상하 여백 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 카드 그림자 */
-}
-
-.record-container h3 {
-  color: #000000; /* 진한 파란색 텍스트 */
-  font-size: 20px;
-  margin-bottom: 15px;
-  text-align: center; /* 제목 가운데 정렬 */
-}
-
-.record-container ul {
-  list-style: none; /* 기본 리스트 스타일 제거 */
-  padding: 0;
-}
-
-.record-container li {
-  background-color: #ffffff; /* 흰색 배경 */
-  border: 1px solid #b3e5fc; /* 연한 파란색 테두리 */
-  border-radius: 5px; /* 항목 모서리 둥글게 */
-  padding: 10px; /* 내부 여백 */
-  margin-bottom: 10px; /* 항목 간격 */
-  color: #0288d1; /* 텍스트 색상 */
-  font-size: 16px;
-  text-align: center; /* 텍스트 가운데 정렬 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 항목 그림자 */
+.mypage-main-project-contents-container.slide-right .mypage-main-project-contents {
+  transform: translateX(25px); 
 }

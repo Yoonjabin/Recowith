@@ -288,23 +288,28 @@ export default function Shop() {
             </div>
           </div>
           {isPopupOpen && (
-            <div className="cart-popup">
-              <h3>장바구니</h3>
-              {likedItems.length > 0 ? (
-                likedItems.map((item) => (
-                  <div key={item.id} className="cart-item">
-                    <img src={item.image} alt={item.title} />
-                    <div className="cart-item-title">{item.title}</div>
-                  </div>
-                ))
-              ) : (
-                <p>장바구니가 비어 있습니다.</p>
-              )}
-              <button className="close-popup" onClick={() => setIsPopupOpen(false)}>
-                닫기
-              </button>
-            </div>
-          )}
+  <div className="cart-popup">
+    <h3>장바구니</h3>
+    {likedItems.length > 0 ? (
+      likedItems.map((item) => (
+        <div key={item.id} className="cart-item">
+          <img
+            src={item.image}
+            alt={item.title}
+            onClick={() => window.open(item.link, "_blank")} // 클릭 시 URL로 이동
+            className="cart-item-image"
+          />
+          <div className="cart-item-title">{item.title}</div>
+        </div>
+      ))
+    ) : (
+      <p>장바구니가 비어 있습니다.</p>
+    )}
+    <button className="close-popup" onClick={() => setIsPopupOpen(false)}>
+      닫기
+    </button>
+  </div>
+)}
     
           {/* 상품 리스트 */}
           <div className="shop-main-container">

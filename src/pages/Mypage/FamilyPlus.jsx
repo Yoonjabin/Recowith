@@ -61,7 +61,7 @@ export default function FamilyPlus() {
     if (searchResults) {
       try {
         const response = await axios.post(
-          `https://dochi-nest-api.shop/api/group/add`,
+          `http://localhost:8080/api/group/add`,
           { userId: searchResults.data.userId },
           {
             headers: {

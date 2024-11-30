@@ -6,34 +6,37 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Family_Info() {
-  const [userData, setUserData] = useState(null); // 사용자 데이터 상태
-  const [error, setError] = useState(null); // 에러 상태
+  const [userData, setUserData] = useState({ members: [] });
+  const [error, setError] = useState(null);
 
-  const userId = localStorage.getItem('userId');
-  const accessToken = localStorage.getItem('accessToken');
+  const userId = localStorage.getItem("userId");
+  const accessToken = localStorage.getItem("accessToken");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://dochi-nest-api.shop/api/auth/search/${userId}`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
+        const response = await axios.get(
+          `http://localhost:8080/api/auth/search/${userId}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
           }
-        });
+        );
+        console.log(response.data); // API 응답 확인
         if (response.status === 200) {
-          setUserData(response.data.data); // API에서 받은 데이터를 상태에 저장
-          console.log(response);
+          setUserData(response.data.data);
         } else {
-          console.log(response);
+          setError("유저 데이터를 불러오는 데 실패했습니다.");
         }
       } catch (err) {
-        setError(err.message); // 에러 메시지 저장
+        setError(err.message);
         console.error("API 요청 오류:", err);
       }
     };
 
-    fetchData(); // 함수 호출
-  }, [userId]); 
+    fetchData();
+  }, [userId, accessToken]);
 
   const navigate = useNavigate();
 
@@ -41,8 +44,8 @@ export default function Family_Info() {
     return <div>Error: {error}</div>;
   }
 
-  if (!userData) {
-    return <div>Loading...</div>; 
+  if (!userData || !userData.members) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -54,35 +57,39 @@ export default function Family_Info() {
         <div className="mission-d-title">가족 소개</div>
       </div>
       <div className="user-edit-line"></div>
-
+  
       <div className="family-info-top-container">
         <div className="family-info-title">
-          {userData.groupName} <span>가족 구성원</span>
+          {userData.groupName || "가족 이름"} <span>가족 구성원</span>
         </div>
         <div className="family-info-edit-button" onClick={() => navigate("/FamilyEdit")}>
           <button>가족 정보 수정</button>
         </div>
       </div>
-
+  
       <div className="family-info-main-container">
-        {userData.members.map((user, index) => (
-          <div className="family-info-box" key={index}>
-            <div className="family-info-profile">
-              <img src={profile} alt={`${user.nickname} 프로필`} />
-            </div>
-            <div className="family-info-profile-text">
-              <div className="family-info-nickname">
-                <span>닉네임</span>
-                <div className="family-info-nick-input">{user.nickname}</div>
+        {userData.members?.length > 0 ? (
+          userData.members.map((user, index) => (
+            <div className="family-info-box" key={index}>
+              <div className="family-info-profile">
+                <img src={profile} alt={`${user.nickname} 프로필`} />
               </div>
-              <div className="family-info-username">
-                <span>아이디</span>
-                <div className="family-info-username-input">{user.username}</div>
+              <div className="family-info-profile-text">
+                <div className="family-info-nickname">
+                  <span>닉네임</span>
+                  <div className="family-info-nick-input">{user.nickname}</div>
+                </div>
+                <div className="family-info-username">
+                  <span>아이디</span>
+                  <div className="family-info-username-input">{user.username}</div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <div>가족 구성원이 없습니다.</div>
+        )}
       </div>
     </div>
   );
-}
+}  

@@ -42,7 +42,7 @@ export default function Family_Info() {
   const handleRemoveMember = async (memberId) => {
     try {
       const response = await axios.patch(
-        `https://dochi-nest-api.shop/api/group/remove/${memberId}`,
+        `http://localhost:8080/api/group/remove/${memberId}`,
         null,
         {
           headers: {

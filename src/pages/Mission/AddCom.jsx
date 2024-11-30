@@ -32,7 +32,7 @@ export default function AddCom() {
     }
 
     try {
-      const response = await axios.post('https://dochi-nest-api.shop/api/project/create', formData,
+      const response = await axios.post('http://localhost:8080/api/project/create', formData,
         {
           headers: {
             'Authorization': `Bearer ${accessToken}`,
