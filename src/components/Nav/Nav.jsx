@@ -81,7 +81,7 @@ export default function Nav() {
                         <img src={activeTab === "map" ? map2 : map} alt="지도" />
                     </div>
                     <div className={`nav-map-kor ${activeTab === "map" ? "active-text" : ""}`}>
-                        지도
+                         지도
                     </div>
                 </div>
 

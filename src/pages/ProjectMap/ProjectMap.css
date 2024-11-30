@@ -4,6 +4,8 @@
   align-items: center;
   width: 100%;
   padding: 0;
+  margin-bottom: 80px;
+  background: linear-gradient(to right, #acd3ff, #ccf1ff, #d4f1ff, #f0f8ff);
 }
 
 .map-d-top-4 {
@@ -11,8 +13,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 60px;
-  background-color: #f5f5f5;
+  height: 80px;
+  background: linear-gradient(to right, #acd3ff, #ccf1ff, #d4f1ff, #f0f8ff);
   border-bottom: 1px solid #ccc;
   position: relative;
 }
@@ -42,13 +44,14 @@
   height: calc(100vh - 60px); /* 상단 헤더를 제외한 높이 */
   padding: 20px;
   box-sizing: border-box;
+  background: linear-gradient(to right, #acd3ff, #ccf1ff, #d4f1ff, #f0f8ff);
 }
 
 .map-card {
-  width: 80%; /* 카드 너비 */
+  width: 90%; /* 카드 너비 */
   max-width: 600px; /* 카드 최대 너비 */
-  height: 400px; /* 카드 높이 */
-  background-color: white; /* 카드 배경색 */
+  height: 600px; /* 카드 높이 */
+  background: linear-gradient(to right, #acd3ff, #ccf1ff, #d4f1ff, #f0f8ff);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
   border-radius: 10px; /* 카드 모서리를 둥글게 */
   overflow: hidden; /* 지도가 카드 경계를 넘지 않도록 */
@@ -60,4 +63,43 @@
 .map-content {
   width: 100%;
   height: 100%;
+}
+
+/* 메시지 스타일 */
+.map-message {
+  text-align: center;
+  font-size: 24px; /* 기본 글자 크기 */
+  font-weight: bold;
+  color: #333;
+  background: linear-gradient(to right, #acd3ff, #ccf1ff, #d4f1ff, #f0f8ff);
+  position: relative;
+  animation: fadeIn 1.5s ease-out; /* 부드러운 페이드 인 효과 */
+}
+
+.map-message .highlight {
+  color: #0044ff; /* 강조 텍스트 색상 */
+  font-size: 28px; /* 강조 텍스트 크기 */
+  animation: bounce 1.5s infinite ease-in-out; /* 점프 애니메이션 */
+}
+
+/* 메시지 페이드 인 효과 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 강조 텍스트 애니메이션 */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }

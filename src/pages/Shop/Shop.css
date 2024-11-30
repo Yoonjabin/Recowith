@@ -79,3 +79,132 @@
 .shop-main-container::-webkit-scrollbar {
   display: none; /* Chrome/Safari용 스크롤바 숨기기 */
 }
+
+.liked-items-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  max-width: 300px;
+  overflow-y: auto;
+}
+
+.liked-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.liked-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.like-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.like-button.liked {
+  color: red;
+}
+
+/* 이미지 컨테이너 */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+/* 좋아요 버튼 */
+/* 좋아요 버튼 스타일 */
+.like-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: gray; /* 기본 상태 - 흑백 */
+  transition: color 0.2s;
+}
+
+.like-button.liked {
+  color: red; /* 좋아요 상태 - 빨간색 */
+}
+/* 장바구니 아이콘 */
+.cart-icon {
+  position: absolute;
+  cursor: pointer;
+  right:20px;
+  top:20px;
+}
+
+
+/* 팝업 스타일 */
+.cart-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1000;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.cart-popup h3 {
+  margin: 0 0 10px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.close-popup {
+  background: #ff5e57;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+.close-popup:hover {
+  background: #e54b47;
+}
+
+/* 장바구니 버튼 */
+.cart-button {
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}

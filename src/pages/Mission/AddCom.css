@@ -279,8 +279,8 @@
     margin-top: 20px;
     border-radius: 20px;
     padding: 10px 20px; /* 버튼 크기 */
-    background: linear-gradient(45deg, #4A90E2, #007BFF); /* 파란 계열 그라데이션 */
-    color: white; /* 글자색 */
+    background: linear-gradient(45deg, #f3c0c0, #ffe2c1); /* 파란 계열 그라데이션 */
+    color: rgb(255, 0, 0); /* 글자색 */
     font-size: 16px; /* 글자 크기 */
     font-weight: bold; /* 글자 두께 */
     border: none; /* 테두리 제거 */
@@ -290,7 +290,7 @@
   }
   
   .mission-d-join:hover {
-    background: linear-gradient(45deg, #007BFF, #4A90E2); /* 호버 시 색상 반전 */
+    background: linear-gradient(45deg, #ffcebf, #ffb49d); /* 호버 시 색상 반전 */
     transform: scale(1.05); /* 크기 확대 */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* 그림자 강조 */
   }

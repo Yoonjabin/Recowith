@@ -55,7 +55,7 @@ body {
   color: #E3E3E3;
 }
 
-.nav-home, .nav-mission, .nav-shop, .nav.map, .nav-mypage {
+.nav-home, .nav-mission, .nav-shop, .nav-map, .nav-mypage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,7 +86,7 @@ body {
 }
 
 .nav-map-img img {
-  width: 30px;
+  width: 32.25px;
   height: 33px;
 }
 

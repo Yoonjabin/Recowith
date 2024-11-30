@@ -115,7 +115,7 @@ const Card = React.forwardRef(({ card, delay }, ref) => {
             className={`heart-button ${isLiked ? "active" : ""}`}
             onClick={toggleLike}
           >
-            ❤
+             🏃‍♀️
           </button>
         )}
       </div>

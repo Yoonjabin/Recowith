@@ -28,6 +28,7 @@
 .mypage-main-container {
   width: 393px;
   overflow: hidden; /* 화면 가로 길이를 넘어간 부분을 숨깁니다. */
+  background: url('./images/MPbg.png') no-repeat center center; 
 }
 
 .mypage-main-profile-container {

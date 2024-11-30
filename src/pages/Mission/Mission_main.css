@@ -165,17 +165,24 @@
 }
 
 .heart-button {
-  background: none;
+  background: transparent;
   border: none;
+  font-size: 24px; /* 아이콘 크기 */
   cursor: pointer;
-  font-size: 20px; 
-  color: gray;
-  transition: color 0.5s ease, opacity 0.5s ease;
+  filter: grayscale(100%); /* 기본 상태: 흑백 */
+  transition: filter 0.2s ease, opacity 0.2s ease;
+  opacity: 0.5; /* 기본 상태: 투명도 */
 }
 
 .heart-button.active {
-  color: red;
+  filter: none; /* 활성 상태: 색상 표시 */
+  opacity: 1; /* 활성 상태: 불투명 */
 }
+
+.heart-button:hover {
+  filter: grayscale(50%); /* 호버 상태: 흑백 50% */
+}
+
 
 .card-line {
   width: 30px;
