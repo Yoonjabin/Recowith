@@ -98,7 +98,7 @@ export default function AddCom() {
         <div className="project-write-title">
           <input
             type="text" 
-            placeholder="러닝크루 공지글을 입력해 주세요"
+            placeholder="제목을 입력해 주세요"
             value={title}
             onChange={(e) => setTitle(e.target.value)} // 제목 변경 핸들러
             required

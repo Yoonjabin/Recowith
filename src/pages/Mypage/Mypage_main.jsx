@@ -129,11 +129,9 @@ export default function Mypage_main() {
               <div className="mypage-m-f-menu">
                 <span onClick={() => navigate("/FamilyInfo")}>러닝 크루 소개</span>
                 <span onClick={() => navigate("/PointMain")}>
-                  {userData.point}P
+                  1300P
                 </span>
-                <span onClick={() => navigate("/Family_mission")}>
-                  도전 과제
-                </span>
+                
               </div>
             </div>
           </div>
@@ -180,7 +178,7 @@ export default function Mypage_main() {
                   </div>
                 ))
               ) : (
-                <div className="no-project-">프로젝트가 없습니다.</div>
+                <div className="no-project-">게시글이 없습니다.</div>
               )}
             </div>
           </div>

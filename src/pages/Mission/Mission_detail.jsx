@@ -84,7 +84,7 @@ export default function Mission_detail() {
         <div className="mission-d-back-img" onClick={() => navigate("/MissionMain")}>
           <img src={back} alt="뒤로가기" />
         </div>
-        <div className="mission-d-title">도전 과제 안내</div>
+        <div className="mission-d-title">러닝 이벤트 안내</div>
       </div>
 
       <div className="mission-d-img">
@@ -121,7 +121,7 @@ export default function Mission_detail() {
           </div>
         </div>
         <div className="mission-c-join">
-          <button onClick={() => navigate("/AddCom")}>도전하기</button>
+          <button onClick={() => navigate("/AddCom")}>작성하기</button>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function PointMain() {
 
   const family = {
     points: 1300,
-    name: "도치 가족",
+    name: "러닝 크루",
   };
 
   const handleImageClick = () => {

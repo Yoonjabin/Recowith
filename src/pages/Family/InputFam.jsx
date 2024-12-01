@@ -58,7 +58,7 @@ const InputFam = () => {
       <input
         type="text"
         className="formText"
-        placeholder="친구명을 입력해 주세요!"
+        placeholder="러닝크루 이름을 정해주세요"
         value={familyname}
         onChange={(e) => setFamilyName(e.target.value)}
         required

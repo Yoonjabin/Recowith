@@ -57,7 +57,7 @@ export default function Mission_main(){
           <img src={back} alt="" />
         </div>
         <div className="mission-main-title">
-          모든 <span>도전 과제</span><br />확인하기
+          모든 <span>러닝 이벤트</span><br />확인하기
         </div>
       </div>
 
