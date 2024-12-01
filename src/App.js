@@ -20,6 +20,9 @@ import FamilyProject from "./pages/Private/FamilyProject.jsx";
 import ProjectMap from "./pages/ProjectMap/ProjectMap.jsx";
 import AddCom from "./pages/Mission/AddCom.jsx";
 import Shop from "./pages/Shop/Shop.jsx";
+import MissionNoDetail from "./pages/Mission/Mission_noDetail.jsx"
+import MissionDetail from "./pages/Mission/Mission_detail.jsx"
+import MissionFinish from "./pages/Mission/Mission_finish.jsx"
 
 
 
@@ -45,6 +48,10 @@ function App() {
         <Route path='/FamilyProject/:id' element={<><Nav /><FamilyProject /></>} />
         <Route path='/ProjectMap' element={<><Nav /><ProjectMap /></>} />
         <Route path='/AddCom' element={<><AddCom /></>} />
+        <Route path='/MissionDetail/:id' element={<><Nav /><MissionDetail /></>}/>
+        <Route path='/MissionNoDetail/:id' element={<><Nav /><MissionNoDetail /></>}/>
+        <Route path='/MissionFinish' element={<MissionFinish/>}/>
+
       </Routes>
     </BrowserRouter>
   );

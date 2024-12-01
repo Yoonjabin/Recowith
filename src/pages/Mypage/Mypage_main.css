@@ -206,19 +206,20 @@
   border-radius: 20px;
   border: 2px solid #E3E3E3;
 }
-
-.mypage-main-project-box{
+.mypage-main-project-box {
   width: 131px;
   height: 212px;
+  position: relative; /* 테이프가 이 박스를 기준으로 위치 */
+  overflow: visible; /* 박스를 넘어간 테이프가 잘리지 않도록 설정 */
 }
 
 .mypage-project-tape {
   width: 36px;
   height: 46px;
-  margin-left: 90px;
-  margin-top: -20px;
-  z-index: 100;
-  position: absolute;
+  position: absolute; /* 박스 상단 오른쪽에 위치 */
+  top: -20px; /* 박스 상단에 약간 겹치게 */
+  right: -10px; /* 오른쪽으로 튀어나오게 설정 */
+  z-index: 100; /* 카드보다 위에 표시 */
 }
 
 .mypage-main-project img {
@@ -259,14 +260,10 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
-}
-
-.mypage-main-project-contents-container {
   width: 360px;
   gap: 20px; 
-  /* transition: transform 0.5s ease-in-out; 부드러운 애니메이션 */
+  overflow-x: auto; /* 필요 시 가로 스크롤 활성화 */
 }
-
 
 .mypage-main-project-contents {
   display: flex;
@@ -276,7 +273,6 @@
   border: 2px solid #e3e3e3;
   justify-content: center; 
   transition: transform 0.4s ease-in-out;
-
 }
 
 .mypage-main-project-contents-container.slide-left .mypage-main-project-contents {
@@ -286,3 +282,4 @@
 .mypage-main-project-contents-container.slide-right .mypage-main-project-contents {
   transform: translateX(25px); 
 }
+

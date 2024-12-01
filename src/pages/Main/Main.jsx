@@ -101,22 +101,22 @@ export default function Main() {
                 onMouseMove={handleSlide} 
                 onTouchMove={handleSlide} // 터치 이벤트 추가
             >
-                <div className='main-project-title'>이 달의 <span>도전 프로젝트</span></div>
+                <div className='main-project-title'>이 달의 <span>도전 러닝활동</span></div>
                 <div className={`main-project-contents slide-${slideDirection}`} onClick={() => navigate("/MissionMain")}>
                     <div className='main-project-1'>
-                        <span>가족과 함께<br />떠나는 단풍놀이</span>
+                        <span>가을맞이<br />단풍걷기</span>
                         <div className='main-project-1-img'>
                             <img src={proj1} alt="" />
                         </div>
                     </div>
                     <div className='main-project-2'>
-                        <span>우리 가족이<br />살아갈 환경 지키기</span>
+                        <span>세상의 모든 걸음을<br />응원하며 달려주세요!</span>
                         <div className='main-project-2-img'>
                             <img src={proj2} alt="" />
                         </div>                    
                     </div>
                     <div className='main-project-3'>
-                        <span>함께 배우는<br />역사 탐방</span>
+                        <span>달리는<br />두근두근런</span>
                         <div className='main-project-3-img'>
                             <img src={proj3} alt="" />
                         </div>                    
