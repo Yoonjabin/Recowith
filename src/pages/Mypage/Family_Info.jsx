@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Family_Info() {
-  const [userData, setUserData] = useState({ members: [] });
+  const [userData, setUserData] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const userId = localStorage.getItem("userId");
   const accessToken = localStorage.getItem("accessToken");
@@ -32,6 +33,8 @@ export default function Family_Info() {
       } catch (err) {
         setError(err.message);
         console.error("API 요청 오류:", err);
+      } finally {
+        setLoading(false); // 로딩 상태 해제
       }
     };
 
@@ -44,7 +47,7 @@ export default function Family_Info() {
     return <div>Error: {error}</div>;
   }
 
-  if (!userData || !userData.members) {
+  if (loading) {
     return <div>Loading...</div>;
   }
 
@@ -54,21 +57,21 @@ export default function Family_Info() {
         <div className="mission-d-back-img-1" onClick={() => navigate("/MypageMain")}>
           <img src={back} alt="뒤로가기" />
         </div>
-        <div className="mission-d-title">가족 소개</div>
+        <div className="mission-d-title">러닝 크루 소개</div>
       </div>
       <div className="user-edit-line"></div>
-  
+
       <div className="family-info-top-container">
         <div className="family-info-title">
-          {userData.groupName || "가족 이름"} <span>가족 구성원</span>
+          {userData?.groupName || "가족 이름"} <span>러닝 크루 구성원</span>
         </div>
         <div className="family-info-edit-button" onClick={() => navigate("/FamilyEdit")}>
-          <button>가족 정보 수정</button>
+          <button>크루정보 수정</button>
         </div>
       </div>
-  
+
       <div className="family-info-main-container">
-        {userData.members?.length > 0 ? (
+        {userData?.members?.length > 0 ? (
           userData.members.map((user, index) => (
             <div className="family-info-box" key={index}>
               <div className="family-info-profile">
@@ -87,9 +90,9 @@ export default function Family_Info() {
             </div>
           ))
         ) : (
-          <div>가족 구성원이 없습니다.</div>
+          <div className="no-crew-members">아직 크루원이 없습니다!</div>
         )}
       </div>
     </div>
   );
-}  
+}

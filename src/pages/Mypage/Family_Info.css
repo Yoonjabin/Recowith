@@ -1,5 +1,5 @@
 .family-info-container,.mission-d-top{
-  background-color: #F9DED3;
+  background: linear-gradient(to right, #acd3ff, #ccf1ff, #d4f1ff, #f0f8ff);
 }
 .user-edit-line{
   border: 1px solid #ffffff;
@@ -12,7 +12,7 @@
   height: 70px;
   justify-content: center;
   align-items: center;
-  background-color:#F9DED3;
+  background: linear-gradient(to right, #acd3ff, #ccf1ff, #d4f1ff, #f0f8ff);
 }
 
 .mission-d-back-img-1 img{
@@ -43,7 +43,7 @@
   gap: 5px;
   justify-content: center;
   align-items: center;
-  border: 1.01px solid #F9957F;
+  border: 1.01px solid #0400ff;
   width: 169px;
   height: 204px;
   border-radius: 30.44px;
@@ -107,7 +107,7 @@
   width: 102.4px;
   height: 25px;
   border-radius: 53.9px;
-  background: #F9957F;
+  background: linear-gradient(to right, #0676f7, #00bbff, #002fff, #0400ff);
   color: #ffffff;
   font-family: 'Pretendard-Medium';
   font-size: 12.94px;
@@ -146,7 +146,7 @@
 
 /* 스크롤바의 핸들(움직이는 부분) */
 .family-info-main-container::-webkit-scrollbar-thumb {
-  background-color: #f9957f; /* 핸들의 색상 */
+  background-color: #0066ff; /* 핸들의 색상 */
   border-radius: 10px; /* 핸들의 모서리 둥글기 */
   border: 2px solid #F9DED3; /* 핸들 주변 테두리 */
 }

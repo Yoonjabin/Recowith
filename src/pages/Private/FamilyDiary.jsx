@@ -15,7 +15,7 @@ export default function FamilyDiary() {
         const fetchMission = async () => {
             const accessToken = localStorage.getItem('accessToken');
             try {
-                const response = await axios.get(`https://dochi-nest-api.shop/api/user/challenges/${id}`, {
+                const response = await axios.get(`http://localhost:8080/api/user/challenges/${id}`, {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                     }
@@ -67,7 +67,7 @@ export default function FamilyDiary() {
 
                     <div className="diary-write-input-img">
                         <span className="diary-write-mission-img">
-                            <img alt="mission" src={`https://dochi-nest-api.shop/${missionPost.image}`} />
+                            <img alt="mission" src={`http://localhost:8080/${missionPost.image}`} />
                         </span>
                     </div>
 

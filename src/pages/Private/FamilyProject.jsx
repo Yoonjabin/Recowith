@@ -15,7 +15,7 @@ export default function Project_write() {
     const fetchMission = async () => {
       const accessToken = localStorage.getItem('accessToken');
       try {
-        const response = await axios.get(`https://dochi-nest-api.shop/api/project/search/${id}`, {
+        const response = await axios.get(`http://localhost:8080/api/project/search/${id}`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           }
@@ -78,7 +78,7 @@ export default function Project_write() {
 
         <div className="fam-project-write-input-img">
           <span className="diary-write-project-img">
-            <img alt="projectimg" src={`https://dochi-nest-api.shop/${ProjectPost.url}`} />
+            <img alt="projectimg" src={`http://localhost:8080/${ProjectPost.url}`} />
           </span>
         </div>
 

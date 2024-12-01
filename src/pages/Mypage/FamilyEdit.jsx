@@ -61,7 +61,7 @@ export default function Family_Info() {
         setError(response.data.msg);
       }
     } catch (err) {
-      setError("가족 구성원 삭제 중 오류가 발생했습니다.");
+      setError("크루원 삭제 중 오류가 발생했습니다.");
       console.error("삭제 요청 오류:", err);
     }
   };
@@ -85,14 +85,14 @@ export default function Family_Info() {
         >
           <img src={back} alt="뒤로가기" />
         </div>
-        <div className="mission-d-title">가족 정보 수정</div>
+        <div className="mission-d-title">크루 정보 수정</div>
       </div>
       <div className="family-edit-line"></div>
 
       <div className="family-edit-top-container">
         {userData.groupName && (
           <div className="family-edit-title">
-            {userData.groupName} <span>가족 구성원</span>
+            {userData.groupName} <span>크루 구성원</span>
           </div>
         )}
         <div className="family-edit-edit-button">
@@ -129,8 +129,8 @@ export default function Family_Info() {
       )}
 
       <div className="family-edit-plus-container">
-        <img src={familyPlus} alt="가족 추가" />
-        <button onClick={() => navigate("/FamilyPlus")}>가족 구성원 추가</button>
+        <img src={familyPlus} alt="크루원 추가" />
+        <button onClick={() => navigate("/FamilyPlus")}>크루 구성원 추가</button>
       </div>
     </div>
   );

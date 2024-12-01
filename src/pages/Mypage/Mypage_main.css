@@ -91,7 +91,7 @@
   outline: none;
   border: none;
   border-radius: 53.9px;
-  background-color: #F9957F;
+  background: linear-gradient(to right, #0676f7, #00bbff, #002fff, #0400ff);
   color: #ffffff;
   font-family: 'Pretendard-Regular';
   font-weight: 400;
@@ -129,7 +129,7 @@
   width: 359px;
   height: 200px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #F9957F 0%, #F2F5D0 100%);
+  background: linear-gradient(180deg, #0011ff 0%, #b2f6ff 100%);
 }
 
 .mypage-m-f-box-top {
@@ -177,7 +177,7 @@
   font-size: 17px;
   font-weight: 700;
   line-height: 18.15px;
-  color: #F9957F;
+  color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;

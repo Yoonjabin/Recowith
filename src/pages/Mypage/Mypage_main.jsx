@@ -116,10 +116,10 @@ export default function Mypage_main() {
           {/* 가족 구성원 섹션 */}
           <div className="mypage-main-family-container">
             <div className="mypage-main-family-title">
-            {userData.groupName || "도치둥지"} <span>가족구성원</span>
+            {userData.groupName || "러닝메이트"} <span>크루구성원</span>
             </div>
             <div className="mypage-main-family-box">
-              <div className="mypage-m-f-box-top">{userData.groupName || "도치둥지"}</div>
+              <div className="mypage-m-f-box-top">{userData.groupName || "러닝메이트"}</div>
               <div className="mypage-m-f-box-family">
                 {userData.members?.length > 0 ? (
                   userData.members.map((member, index) => (
@@ -129,12 +129,12 @@ export default function Mypage_main() {
                     </div>
                   ))
                 ) : (
-                  <div>가족 구성원이 없습니다.</div>
+                  <div>크루 구성원이 없습니다.</div>
                 )}
               </div>
               <div className="mypage-main-line"></div>
               <div className="mypage-m-f-menu">
-                <span onClick={() => navigate("/FamilyInfo")}>가족 소개</span>
+                <span onClick={() => navigate("/FamilyInfo")}>러닝 크루 소개</span>
                 <span onClick={() => navigate("/PointMain")}>{userData.point}P</span>
                 <span onClick={() => navigate("/Family_mission")}>도전 과제</span>
               </div>
@@ -144,7 +144,7 @@ export default function Mypage_main() {
           {/* 프로젝트 섹션 */}
           <div className="mypage-main-project-container">
             <div className="mypage-main-project-title">
-            {userData.groupName || "도치둥지"} <span>프로젝트</span>
+            {userData.groupName || "러닝메이트"} <span>크루 게시판</span>
             </div>
             <div className={`mypage-main-project-contents-container ${slideDirection === -1 ? 'slide-right' : slideDirection === 1 ? 'slide-left' : ''}`}>
               {userData.projects?.length > 0 ? (

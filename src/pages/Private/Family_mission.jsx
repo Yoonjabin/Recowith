@@ -13,7 +13,7 @@ export default function Family_mission() {
         const fetchPosts = async () => {
             const accessToken = localStorage.getItem('accessToken');
             try {
-                const response = await axios.get('https://dochi-nest-api.shop/api/user/challenges', {
+                const response = await axios.get('http://localhost:8080/api/user/challenges', {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                     }
