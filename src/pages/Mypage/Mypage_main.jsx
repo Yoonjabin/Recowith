@@ -128,10 +128,8 @@ export default function Mypage_main() {
               <div className="mypage-main-line"></div>
               <div className="mypage-m-f-menu">
                 <span onClick={() => navigate("/FamilyInfo")}>러닝 크루 소개</span>
-                <span onClick={() => navigate("/PointMain")}>
-                  1300P
-                </span>
-                
+                <span onClick={() => navigate("/PointMain")}>1300P </span>
+                <span onClick={() => navigate("/Family_mission")}>타이머</span>
               </div>
             </div>
           </div>

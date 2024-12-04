@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // useNavigate를 임포트
+import { useNavigate } from 'react-router-dom';
 import './SignUp.css';
 import axios from "axios";
 
@@ -9,11 +9,11 @@ const SignUp = () => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigate = useNavigate(); // useNavigate 훅을 사용하여 navigate 함수 생성
+  const navigate = useNavigate(); 
 
   const handleSignUp = async () => {
-    console.log('회원가입 요청 시작'); // 요청 시작 로그
-    console.log('요청 데이터:', { username, password, email, nickname }); // 입력된 데이터 확인
+    console.log('회원가입 요청 시작'); 
+    console.log('요청 데이터:', { username, password, email, nickname }); 
 
     try {
       const response = await axios.post(
@@ -31,20 +31,20 @@ const SignUp = () => {
         }
       );
 
-      console.log('응답 데이터:', response.data); // 성공 시 응답 데이터 출력
+      console.log('응답 데이터:', response.data); 
 
       if (response.status === 200) {
-        console.log('회원가입 성공:', response.data); // 성공 메시지 출력
+        console.log('회원가입 성공:', response.data); 
         alert('회원가입 성공!');
-        navigate('/'); //로그인으로 이동
+        navigate('/'); 
       } else {
-        console.log('회원가입 실패:', response.data); // 실패 시 응답 데이터 출력
+        console.log('회원가입 실패:', response.data); 
       }
     } catch (error) {
-      console.error('회원가입 중 에러 발생:', error.message); // 에러 메시지
-      console.error('에러 응답:', error.response?.data || '응답 없음'); // 응답 데이터
-      console.error('에러 상태 코드:', error.response?.status || '상태 코드 없음'); // 상태 코드
-      console.error('에러 요청 설정:', error.config); // 요청 설정
+      console.error('회원가입 중 에러 발생:', error.message); 
+      console.error('에러 응답:', error.response?.data || '응답 없음'); 
+      console.error('에러 상태 코드:', error.response?.status || '상태 코드 없음'); 
+      console.error('에러 요청 설정:', error.config); 
     }
   };
 

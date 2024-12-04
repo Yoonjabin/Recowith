@@ -46,7 +46,7 @@ export default function Project_write() {
 
   return (
     <div className="project-map-container">
-      {/* 상단 헤더 */}
+     
       <div className="map-d-top-4">
         <div className="map-main-back-img" onClick={() => navigate("/main")}>
           <img src={back} alt="뒤로가기" />
